@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tenneco Clean Air - South America Engineering</title>
+
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" src="_javascript/funcoes_ta2.js">
+    </script>
+ <!--   <link href="../site_eng/css/reset.css" rel="stylesheet" type="text/css" />-->
+
+<style>
+
+    .linha-impar {
+    background-color: rgba(0,0,0,.05);
+    color: rgb(0, 0, 0,1);
+
+}
+
+
+fieldset {
+    -webkit-transition:background-color 0.5s;
+    -moz-transition:background-color 0.5s;
+    -o-transition:background-color 0.5s;
+    transition:background-color 0.5s;
+}
+
+
+.linha-par {
+    background-color: rgba(15, 3, 36, 0.1);
+    color: rgba(0, 0, 0, 1);
+
+    
+}
+
+.linhaok {
+    background-color: rgba(46, 139, 86, 0.2);
+    width: 370px;
+    font-size: 10pt;
+    padding: 10px;
+}
+
+
+#copia_fluxo_vis {
+    position: relative;
+    left: 355px;
+    top: -690px;
+}
+#botao_reset {
+    position: relative;
+    left: 420px;
+    top: 55px;
+}
+
+
+td.coluna-titulo {
+    width: 100px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 10pt;
+    text-align: right;
+    padding: 5px;
+    text-transform: uppercase;
+
+}
+
+td.coluna-opcao {
+    width: 374px;
+    font-size: 10pt;
+    padding: 10px;
+
+}
+
+div#descricao-titulo {
+    width: 350px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    font-size: 11pt;
+}
+div#descricao-escopo {
+    width: 350px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    font-size: 11pt;
+}
+
+label.legenda-radio {
+    margin-right: 15px;
+    
+}
+legend.legenda {
+    font-size: 11pt;
+    font-weight: bold;
+    color: rgb(60, 41, 129);
+    background-color: white;
+}
+
+td.coluna-opcao select.select-maior {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 9pt;
+    width: 150px;
+}
+
+.input-menor {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 9pt;
+    width: 70px;
+}
+
+input#cProjeto {
+
+    padding: 5px;
+    font-size: 9pt;
+}
+
+textarea.tarea-visivel {
+    display: unset;
+    position: absolute;
+    top: 90px;
+    left: 900px;
+}
+
+textarea.tarea-nvisivel {
+    display: none;
+}
+
+section#corpo {
+    display: block;
+    float: left;
+}
+
+
+.resultado_vis {
+    display: unset;
+}
+
+.resultado_nvis {
+    display: none;
+}
+
+#fluxo_ta2_vis {
+    position: absolute;
+    top: 5000px;
+
+}
+
+button.botao {
+    padding: 5px;
+    margin: 5px 5px 5px auto;
+}
+button.botao_nvis {
+display: none;
+}
+
+.prazo_nvis {
+    display: none;
+}
+
+
+.itemChanged_nvis {
+
+    display: none;
+}
+div.itemChanged_vis {
+    display: unset;
+}
+div.itemChanged_vis td{
+    height: auto;
+    background-color: rgba(255, 64, 0, 0.1);
+}
+
+
+.Comprados_nvis {
+    display: none;
+}
+
+.Comprados_vis {
+    display: unset;
+
+}
+
+#tabelaNomeID_nvis {
+    display: none;
+}
+.formulario_ok {
+    background-color: rgba(46, 139, 86, 0.2);
+    width: 100%;
+}
+
+.formulario_nok {
+    background-color: rgba(15, 3, 36, 0.05);
+    width: 100%;
+}
+.tabela_workflow_ta2 {
+    font-size: 10pt;
+    width: 100%;
+    }
+
+.tabela_workflow_ta2 table {
+    width: 100%;
+    padding-left: 20px;
+    background-color: rgba(15, 3, 36, 0.05);
+
+}
+fieldset#usuario {
+    height: 40px;
+    padding-top: 10px;
+}
+fieldset#businesStatus {
+    height: 50px;
+    padding-top: 0px;
+    
+}
+
+
+fieldset#customer_ECMtype {
+    height: 150px;
+    padding-top: 10px;
+}
+fieldset#customer_ECMtype select{
+    margin-bottom: 10px;
+}
+table.tabela_tipo_ecm td  {
+    height: 30px;
+}
+fieldset#itemtype {
+    height: 100px;
+    padding-top: 10px;
+}
+.botao_select {
+
+    padding: 5px;
+}
+select {
+    margin: 5px auto 10px auto;
+}
+
+#resumo_final {
+    display: block;
+    float: right;
+width: 340px;
+height: 410px;
+margin-bottom: 20px;
+background-color: rgba(255, 255, 0, 0.2);
+}
+
+.nomenclatura_wf {
+    display: block;
+    float: right; 
+    width: 300px;
+    font-size: 12pt;   
+
+}
+
+    </style>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+<div id="interface">
+
+        <header id="cabecalho">
+                <div id="logo-topo">
+                        <img src="_imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
+
+                </div><!--logo-topo"-->
+
+                <div id="titulo_cleanair">
+
+                        <h1>Clean Air Engineering - South America</h1>
+        
+                </div><!--titulo-->
+
+        </header>
+
+        <section id="lado_esquerdo">
+        </br>
+        
+        <nav id="menu">
+            <h1>Munu Principal</h1>
+            <ul>
+                    <li><a href="index.html" target="_self">Home</a></li>
+                    
+                    <li class="linha_principal">SAP A104 - PLP (GPDM)</li>
+                    
+                    <li id="lista-segundo"><a href="sapplpecm_desc.html" target="_self">ECM (Texto Base)</a></li>
+                    <li id="lista-segundo">MM (Descrição Standard)</li>
+                    <li id="lista-segundo">Informações</li>
+
+                    <li class="linha_principal">SAP A101 - TA2</li>
+                    
+                    <li id="lista-segundo">ECM - Texto Base</li>
+                    <li id="lista-segundo"><a href="sapta2mcm_wf.html" target="_self">ECM - Aprovadores</a></li>
+                    <li id="lista-segundo"><a href="sapta2mcm_info.html" target="_self">Procedimentos</a></li>
+       
+                    <li class="linha_principal">Cálculos</li>
+                    
+                    <li id="lista-segundo">Massa (kg)</li>
+                    <li id="lista-segundo">Estudo de GAP</li>
+                    <li id="lista-segundo">Catalisador</li>
+            </ul>
+        </nav>
+
+        </section>
+
+        <aside id="lado_direito">
+            <div>
+            <h1>SAP A101 - TA2: Processo de liberação de Material Master.</h1>
+
+            
+                <h2>1. Siglas do SAP/TA2:</h2>
+                    <p><strong>MM:</strong> “Material Master” é o “Part Number” das peças, conjuntos ou produtos.<br>
+                    <strong>MCM:</strong> “Manufacturing Change Master” Documento do SAP/TA2 para a administração  das atualizações dos MM na planta.<br>
+                    <strong>MOM2:</strong> Planta Tenneco Clean Air em Mogi Mirim/SP.<br>
+                    <strong>CAM1:</strong> Planta Tenneco Clean Air em Camaçari/BA.<br>
+                    <strong>BOM:</strong> Lista técnica dos conjuntos.<br></p>
+
+                <h2>2. Fluxo das atvidades:</h2>
+                <p>O fluxograma ilustrado na imagem abaixo, representa a sequencia das atividades necessárias em cada setor para que as modificação <strong>MM</strong> possam ser implementadas na manufatura, ou seja, no SAP/TA2.</p>
+                <img src="_imagens/WF_TA2.png" height="1253px" width="500px" alt="">
+
+                <div class="nomenclatura_wf">
+                <table>
+                    <tr><td><img src="_imagens/sapta2_mcm_nivel.png" height="26px" width="50px" alt=""></td><td>Representa o início de cada nível de aprovação.</td></tr>
+                    <tr><td><img src="_imagens/sapta2_mcm_aprov_fixos.png" height="50px" width="50px" alt=""></td><td>Setor fixo, independe do tipo de material.</td></tr>
+                    <tr><td><img src="_imagens/sapta2_mcm_aprov_opt.png" height="50px" width="50px" alt=""></td><td>Setor opcional, depende do tipo de material.</td></tr>
+                    <tr><td><img src="_imagens/sapta2_mcm_analise.png" height="50px" width="50px" alt=""></td><td>Analise do tipo de material e status do programa.</td></tr>
+                </table></div>
+            
+
+                <h2>3. Tipo de ECM:</h2>
+                <p>Nova Produção (NP): Usado para fazer a liberação de novos Materiais (Part numbers) na planta.</p>
+                <p>Autorização de modificação (ADM): Usado para liberar as modificações solicitadas nos MMs, listas técnicas ou desenhos. Para as ADM de listas técnicas existe um fluxo de aprovação especifico chamado de “ADM BOM”, onde faz se necessário fazer o controle do ponto de corte do MM a ser substituído.</p>
+    
+
+                <h2>4. Tipo de Material:</h2>
+                <p>O tipo de material determina a origem de manufatura, assim como o nível de processamento, onde para o processo de liberação dos Materiais no SAP, precisamos apenas basear nas seguintes opções;</p>
+                <p>Produto Acabado (Fabricado): São todos os MM de produtos vendáveis.</p>
+                <p>Semiacabado (Fabricado): São os MM de conjuntos ou componentes fabricados nas dependências da fabrica da Tenneco no local onde o mesmo está sendo liberado.</p>
+                <p>GSCM (Comprados): São todos os componentes e conjuntos comprados.</p>
+
+
+                <h2>5. Status do Programa:</h2>
+                <p>TENPlus: Sistema de Gerenciamento de Lançamento dos novos produtos.</p>
+                <p>Series Production: São os produtos de série, já implementados na fabrica e fora do sistema TENPlus.</p>
+
+
+                <h2>6. Fluxo de atividades:</h2>
+            
+            <p>DEFINIÇÃO;</p>
+            
+            <p>6.1	Nível 1: Engenharia e Custos.</p>
+            <p>6.2	Nível 2: Engenharia e Custos.</p>
+            <p>6.3	Nível 3: Engenharia e Custos.</p>
+            <p>6.4	Nível 4: Engenharia e Custos.</p>
+            <p>6.5	Nível 5: Engenharia e Custos.</p>
+            <p>6.6	Nível 6: Engenharia e Custos.</p>
+            <p>6.7	Nível 7: Engenharia e Custos.</p>
+            <p>6.8	Nível 8: Engenharia e Custos.</p>
+            <p>6.9	Nível 9: Engenharia e Custos.</p>
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+            
+            
+           
+        
+        </aside>
+
+</div> <!--divGeral-->
+
+<textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
+
+<script>
+    parent.validacao();
+</script>
+
+
+
+</body>
+</html>

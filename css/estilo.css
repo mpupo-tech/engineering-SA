@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+body {
+background-color: rgb(255, 255, 255);
+}
+
+a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+#interface {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(230, 230, 230, 0.3);
+	width: 1200px;
+	height: 5076px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.6);
+	}
+
+header#cabecalho {
+	margin: auto;
+	width: 100%;
+	height: 78px;
+	border-bottom: 1px #000000 solid;
+}
+
+#logo-topo {
+	position: relative;
+	display: block;
+	float: left;
+	background-color: #0054A6;
+	height: 100%;
+	width: 299px;
+	border-right: 1px #000000 solid;
+}
+
+#logo-topo img {
+position: relative;
+top: 20px;
+left: 45px;
+}
+
+#titulo_cleanair {
+	position: relative;
+	display: block;
+	float: left;
+	background-color: rgba(230, 230, 230, 0.9);
+	height: 100%;
+	width: 900px;
+	text-align: center;
+	font-size:18px;
+}
+
+
+
+#lado_esquerdo {
+	display: block;
+	float: left;
+	width: 299px;
+    height: 5000px;
+	background-color: rgba(0, 83, 166, 0.9);
+	border-right: 1px #000000 solid;
+
+	color:white;
+
+}
+
+
+
+nav#menu {
+	background: rgba(170, 170, 170, 0.4);
+	font-size: 18px;
+}
+
+nav#menu h1 {
+	display: none;
+}
+
+nav#menu li{
+	text-transform: uppercase;
+	position: relative;
+	left: -30px;
+	
+	display: block;
+	
+	list-style: none;
+	padding-top: 10px;
+
+}
+
+.linha_principal {
+margin-top: 20px;
+
+}
+#lista-segundo {
+	color: rgba(255, 255, 255, 0.7);
+	font-weight: 900;
+	margin-left: 20px;
+	font-size: 12pt;
+
+}
+
+
+/*Formatação do escopo do documento.*/
+
+#escopo {
+	display: block;
+	float: right;
+	
+}
+
+
+#lado_direito {
+	position: relative;
+	display: block;
+	float: left;
+	font-size:18px;
+	margin-left: 10px;
+	width:880px;
+
+
+}
+	
+
+	
+
+
+

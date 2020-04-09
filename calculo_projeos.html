@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos de projetos.</title>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    <!--   <link href="../site_eng/css/reset.css" rel="stylesheet" type="text/css" />-->
+
+</head>
+<body>
+    
+    <div id="interface">
+
+        <header id="cabecalho">
+                <div id="logo-topo">
+                        <img src="_imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
+
+                </div><!--logo-topo"-->
+
+                <div id="titulo_cleanair">
+
+                        <h1>Clean Air Engineering - South America</h1>
+        
+                </div><!--titulo-->
+
+        </header>
+
+        <section id="lado_esquerdo">
+        </br>
+        
+        <nav id="menu">
+            <h1>Munu Principal</h1>
+            <ul>
+                    <li><a href="index.html" target="_self">Home</a></li>
+                    
+                    <li class="linha_principal">SAP A104 - PLP (GPDM)</li>
+                    
+                    <li id="lista-segundo"><a href="sapplpecm_desc.html" target="_self">ECM (Texto Base)</a></li>
+                    <li id="lista-segundo">MM (Descrição Standard)</li>
+                    <li id="lista-segundo">Informações</li>
+
+                    <li class="linha_principal">SAP A101 - TA2</li>
+                    
+                    <li id="lista-segundo">ECM - Texto Base</li>
+                    <li id="lista-segundo"><a href="sapta2mcm_wf.html" target="_self">ECM - Aprovadores</a></li>
+                    <li id="lista-segundo"><a href="sapta2mcm_info.html" target="_self">Procedimentos</a></li>
+       
+                    <li class="linha_principal">Cálculos</li>
+                    
+                    <li id="lista-segundo">Massa (kg)</li>
+                    <li id="lista-segundo">Estudo de GAP</li>
+                    <li id="lista-segundo">Catalisador</li>
+            </ul>
+        </nav>
+
+        </section>
+
+        <aside id="lado_direito">
+            <div id="calc_massa">
+            <p><strong>Cálculos de Projetos:</strong> Massa (kg).</p>
+
+            <p><strong>Chapas</strong><input type="button" value="Reset" id="reseteChapa" onclick="resetarChapa();"></p>
+            <table>
+                <tr><td>Comprimento<br>[mm]</td>
+                    <td>Largura<br>[mm]</td>
+                    <td>Espessura<br>[mm]</td>
+                    <td>Material<br>[mm]</td>
+                    <td><input type="button" onclick="calc_chapa()" value="Resultado"></td></tr>
+
+                <tr><td><input type="number" id="comprimentoChapa"></td>
+                    <td><input type="number" id="larguraChapa"></td>
+                    <td><select id="espessuraChapa">
+                        <option value="0.6">0.6</option>
+                        <option value="0.8">0.8</option>
+                        <option value="1.0">1.0</option>
+                        <option value="1.2" selected>1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="1.8">1.8</option>
+                        <option value="2.0">2.0</option>
+                    </select></td>
+                    <td><select id="materialChapa"><optgroup label="INOX">
+                            <option value="7900" selected>AISI 304</option>
+                            <option value="7700">AISI 409</option>
+                            <option value="7700">AISI 439</option>
+                            <option value="7700">AISI 441</option>
+                            <option value="7700">AISI 304</option>
+                        </optgroup>
+                            <optgroup label="CARBONO">
+                                <option value="7870">SAE 1020</option>
+                                <option value="7850">St73-2</option>
+                                <option value="7850">LN 38</option>
+                        </optgroup></select>
+                    <td id="resultadoChapa">Resultado</td></tr>
+            </table>
+            <div id="relatoriochapa" style="display: none;" class="relatorio"><fieldset id="descricaoChapa"><legend id="legendaChapa">Descrição da chapa.</legend>
+            <table id="descricaoTabela">
+            </table>
+            </fieldset></div>
+            
+            
+            <p><strong>Tubos</strong><input type="button" value="Reset" id="reseteTubo"></p>
+            <table>
+                <tr><td>Comprimento<br>[mm]</td>
+                    <td>Diâmetro<br>[mm]</td>
+                    <td>Espessura<br>[mm]</td>
+                    <td>Material<br>[mm]</td>
+                    <td><input type="button" value="Resultado" onclick="calc_tubo();"></td></tr>
+
+                <tr><td><input type="number" id="comprimentoTubo"></td>
+                    <td><select id="diametroTubo">
+                        <option value="12">12</option>
+                        <option value="31.75">31.75</option>
+                        <option value="35">35</option>
+                        <option value="38">38</option>
+                        <option value="38.1">38.1</option>
+                        <option value="41.27">41.27</option>
+                        <option value="42">42</option>
+                        <option value="44.45">44.45</option>
+                        <option value="45" selected>45</option>
+                        <option value="45">45</option>
+                        <option value="47.6">47.6</option>
+                        <option value="48">48</option>
+                        <option value="50">50</option>
+                        <option value="50.8">50.8</option>
+                        <option value="53">53</option>
+                        <option value="55">55</option>
+                        <option value="57.15">57.15</option>
+                        <option value="60">60</option>
+                        <option value="60.3">60.3</option>
+                        <option value="62">62</option>
+                        <option value="63.5">63.5</option>
+                        <option value="65">65</option>
+                        <option value="70">70</option>
+                        <option value="76.2">76.2</option>
+                        <option value="88.9">88.9</option>
+                        <option value="101.6">101.6</option>
+                        <option value="114.3">114.3</option>
+                        <option value="127">127</option></select>
+                    </td>
+                    <td><select id="espessuraTubo">
+                        <option value="0.6">0.6</option>
+                        <option value="0.8">0.8</option>
+                        <option value="1.0">1.0</option>
+                        <option value="1.2" selected>1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="1.8">1.8</option>
+                        <option value="2.0">2.0</option>
+                    </select></td>
+                    <td><select id="materialTubo"><optgroup label="INOX">
+                            <option value="7900" selected>AISI 304</option>
+                            <option value="7700">AISI 409</option>
+                            <option value="7700">AISI 439</option>
+                            <option value="7700">AISI 441</option>
+                            <option value="7700">AISI 304</option>
+                        </optgroup>
+                            <optgroup label="CARBONO">
+                                <option value="7870">SAE 1020</option>
+                                <option value="7850">St73-2</option>
+                                <option value="7850">LN 38</option>
+                        </optgroup></select>
+                    <td id="resultadoTubo">Resultado</td></tr>
+            </table>
+            <div id="relatoriotubo" style="display: none;" class="relatorio"><fieldset id="descricaoTubo"><legend id="legendaTubo">Descrição do tubo.</legend>
+                <table id="tabelaTubo"></table>
+                </fieldset></div>
+
+            
+        </div><!--FIM DIV CALC MASSA-->
+
+        </aside>
+
+</div> <!--divGeral-->
+
+<script>
+    function calc_chapa() {
+        var compchapa = document.getElementById('comprimentoChapa')
+        var largchapa = document.getElementById('larguraChapa')
+        var espechapa = document.getElementById('espessuraChapa').options[document.getElementById('espessuraChapa').selectedIndex];
+        var matechapa = document.getElementById('materialChapa').options[document.getElementById('materialChapa').selectedIndex];
+        var relachapa = document.getElementById('relatoriochapa')
+        var legendachapa = document.getElementById("legendaChapa")
+        var teste_chapa1 = "A"
+        var tabelaChapa = document.getElementById('descricaoTabela')
+
+    if (compchapa.value == "" || compchapa.value == 0) {
+        teste_chapa1 += `B`
+}
+    if (largchapa.value == "" || largchapa.value == 0) {
+        teste_chapa1 += `C`}
+
+switch (teste_chapa1) {
+    case "ABC":
+        alert(`Preencha os campos:\nCOMPRIMENTO\nLARGURA`)
+    break
+    case "AB":
+        //alert(`Preencha os campos:\nCOMPRIMENTO`)
+        relachapa.style = 'display: unset;'
+        tabelaChapa.innerHTML = `<tr><td>EN</td><td>COIL ${largchapa.value} x ${espechapa.value} - ${matechapa.innerHTML}</td><td></td></tr>
+        <tr><td>PT</td><td>BOBINA ${largchapa.value} x ${espechapa.value} - ${matechapa.innerHTML}</td><td></td></tr>`
+        document.getElementById("legendaChapa").innerHTML = "Descrição da bobina"
+        if (largchapa.value < 130) {alert("[RECOMENDAÇÕES] - A MENOR largura de bobina é 150mm.")} 
+        else if (largchapa.value > 1200) {alert("[RECOMENDAÇÕES] - A MAIOR largura de bobina é 1200mm.")}
+    break
+    case "AC":
+        alert(`Preencha os campos:\nLARGURA`)
+    break
+    case "A":
+        var resuchapa = compchapa.value * largchapa.value * espechapa.value * matechapa.value * (0.000000001)
+        relachapa.style = 'display: unset;'
+        document.querySelector("td#resultadoChapa").innerHTML = `${resuchapa.toFixed(3)}kg.`
+        tabelaChapa.innerHTML = `<tr><td>EN</td><td>BLANK ${compchapa.value}H x ${largchapa.value}W x ${espechapa.value} - ${matechapa.innerHTML}</td><td>${resuchapa.toFixed(3)}kg</td></tr>
+        <tr><td>PT</td><td>BLANK ${compchapa.value}C x ${largchapa.value}L x ${espechapa.value} - ${matechapa.innerHTML}</td><td>${resuchapa.toFixed(3)}kg</td></tr>`
+        document.getElementById("legendaChapa").innerHTML = "Descrição da chapa"
+    break
+    default:
+        alert("[ERRO], contate o administrador.")
+    
+}}
+
+function resetarChapa() {
+
+    document.getElementById('descricaoTabela').innerHTML = ""
+    document.getElementById('comprimentoChapa').value = ""
+    document.getElementById('larguraChapa').value = ""
+    document.querySelector("td#resultadoChapa").innerHTML = "Resultado"
+    document.getElementById('relatoriochapa').style = 'display: none;'
+
+    document.getElementById("tabelaTubo").innerHTML = ""
+    document.getElementById('comprimentoTubo').value = ""
+    document.querySelector("td#resultadoTubo").innerHTML = "Resultado"
+    document.getElementById('relatoriotubo').style = 'display: none;'
+
+
+}
+
+function calc_tubo() {
+    var comptubo = document.getElementById('comprimentoTubo')
+    var diamtubo = document.getElementById('diametroTubo').options[document.getElementById('diametroTubo').selectedIndex];
+    var espetubo = document.getElementById('espessuraTubo').options[document.getElementById('espessuraTubo').selectedIndex];
+    var matetubo = document.getElementById('materialTubo').options[document.getElementById('materialTubo').selectedIndex];
+    var relatubo = document.getElementById('relatoriotubo')
+    var tabelatubo = document.getElementById("tabelaTubo")
+    var legendatubo = document.getElementById("legendaTubo")
+
+    switch (comptubo.value) {
+        case "":
+        alert(`Preencha os campos:\nCOMPRIMENTO`)
+        break
+        default:
+            
+        var resutubo = diamtubo.value * 3.1415 * espetubo.value * matetubo.value * comptubo.value * (0.000000001)
+        document.querySelector("td#resultadoTubo").innerHTML = `${resutubo.toFixed(3)}kg.`
+        relatubo.style = 'display: unset;'
+        
+        tabelatubo.innerHTML = `<tr><td>EN</td><td>PIPE ${diamtubo.value} x ${espetubo.value} x ${comptubo.value} - ${matetubo.innerHTML}</td><td>${resutubo.toFixed(3)}kg</td></tr>
+        <tr><td>PT</td><td>TUBO ${diamtubo.value} x ${espetubo.value} x ${comptubo.value} - ${matetubo.innerHTML}</td><td>${resutubo.toFixed(3)}kg</td></tr>`
+        break
+
+    }
+    }
+
+
+</script>
+
+</body>
+</html>

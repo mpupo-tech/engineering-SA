@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+  <body>
+    <!-- Botão de seleção -->
+    <button id="selecionar-tabela">Selecionar tabela</button>
+    <!-- Tabela a ser selecionada -->
+    <table id="minha-tabela">
+        <thead>
+            <tr>
+              <th>Cabeçalho</th>
+              <th>Cabeçalho</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Conteúdo</td>
+            <td>Conteúdo</td>
+          </tr>
+          <tr>
+            <td>Conteúdo</td>
+            <td>Conteúdo</td>
+          </tr>
+          <tr>
+            <td>Conteúdo</td>
+            <td>Conteúdo</td>
+          </tr>
+        </tbody>
+    </table>
+    <!-- \\ Fim da tabela -->
+    <script>
+    var Tabela = {
+        selecionarTabela: function(el) {
+          var body = document.body, range, sel;
+          if (document.createRange && window.getSelection) {
+              range = document.createRange();
+              sel = window.getSelection();
+              sel.removeAllRanges();
+              try {
+                  range.selectNodeContents(el);
+                  sel.addRange(range);
+              } catch (e) {
+                  range.selectNode(el);
+                  sel.addRange(range);
+              }
+          } else if (body.createTextRange) {
+              range = body.createTextRange();
+              range.moveToElementText(el);
+              range.select();
+          }
+          try {
+            document.execCommand('copy');
+            range.blur();
+          } catch(error){
+            // Exceção aqui
+          }
+        }
+      }
+      
+      var selecionaTabelaBtn = document.querySelector("#selecionar-tabela");
+      var tabelaDeDados = document.querySelector("#minha-tabela");
+      // Seleciona a tabela no clique do botão
+      selecionaTabelaBtn.addEventListener("click", function(){
+        Tabela.selecionarTabela(tabelaDeDados);
+      });</script>
+  </body>
+</html>
