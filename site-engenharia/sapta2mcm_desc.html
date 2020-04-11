@@ -7,102 +7,42 @@
     <title>Tenneco Clean Air - South America Engineering</title>
 
     <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" src="_javascript/funcoes_ta2.js">
+    </script>
  <!--   <link href="../site_eng/css/reset.css" rel="stylesheet" type="text/css" />-->
 
 <style>
 
-    .linha-impar {
-    background-color: rgba(0,0,0,.05);
-    color: rgb(0, 0, 0,1);
 
+#copia_fluxo_vis {
+    position: relative;
+    left: 355px;
+    top: -710px;
 }
-
-
-table td {
-    -webkit-transition:background-color 0.5s;
-    -moz-transition:background-color 0.5s;
-    -o-transition:background-color 0.5s;
-    transition:background-color 0.5s;
-}
-
-
-.linha-par {
-    background-color: rgba(15, 3, 36, 0.1);
-    color: rgba(0, 0, 0, 1);
-
-    
-}
-
-.linhaok {
-    background-color: rgba(46, 139, 86, 0.2);
-    width: 370px;
-    font-size: 10pt;
-    padding: 10px;
-}
-
-
-
-
-td.coluna-titulo {
-    width: 100px;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 10pt;
-    text-align: right;
-    padding: 5px;
-    text-transform: uppercase;
-
-}
-
-td.coluna-opcao {
-    width: 374px;
-    font-size: 10pt;
-    padding: 10px;
-
-}
-
-div#descricao-titulo {
-    width: 350px;
-    height: 15px;
-    background-color: rgba(0, 0, 0, 0.25);
-    padding: 10px;
-    font-size: 11pt;
-}
-div#descricao-escopo {
-    width: 350px;
-    height: 225px;
-    background-color: rgba(0, 0, 0, 0.15);
-    padding: 10px;
-    font-size: 11pt;
+#botao_reset {
+    position: relative;
+    left: 420px;
+    top: 55px;
 }
 
 label.legenda-radio {
     margin-right: 15px;
     
 }
-
-td.coluna-opcao select.select-maior {
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 9pt;
-    width: 150px;
+legend.legenda {
+    font-size: 11pt;
+    font-weight: bold;
+    color: rgb(60, 41, 129);
+    background-color: white;
 }
 
-.input-menor {
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 9pt;
-    width: 70px;
-}
 
-input#cProjeto {
-
-    padding: 5px;
-    font-size: 9pt;
-}
 
 textarea.tarea-visivel {
     display: unset;
+    position: absolute;
+    top: 90px;
+    left: 900px;
 }
 
 textarea.tarea-nvisivel {
@@ -115,9 +55,17 @@ section#corpo {
 }
 
 
-aside#resultado {
-    display: block;
-    float:right
+.resultado_vis {
+    display: unset;
+}
+
+.resultado_nvis {
+    display: none;
+}
+
+#fluxo_ta2_vis {
+    position: absolute;
+    top: 5000px;
 
 }
 
@@ -125,463 +73,299 @@ button.botao {
     padding: 5px;
     margin: 5px 5px 5px auto;
 }
+button.botao_nvis {
+display: none;
+}
 
-</style>
+.prazo_nvis {
+    display: none;
+}
 
 
+.itemChanged_nvis {
+
+    display: none;
+}
+div.itemChanged_vis {
+    display: unset;
+}
+div.itemChanged_vis td{
+    height: auto;
+    background-color: rgba(255, 64, 0, 0.1);
+}
+
+
+.Comprados_nvis {
+    display: none;
+}
+
+.Comprados_vis {
+    display: unset;
+
+}
+
+#tabelaNomeID_nvis {
+    display: none;
+}
+
+.tabela_workflow_ta2 {
+    font-size: 12pt;
+    width: 100%;
+    }
+
+.tabela_workflow_ta2 table {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(15, 3, 36, 0.05);
+}
+
+
+fieldset#usuario {
+    height: 40px;
+    padding-top: 10px;
+}
+fieldset#businesStatus {
+    height: 50px;
+    padding-top: 0px;
+}
+
+fieldset#customer_ECMtype {
+    height: 150px;
+    padding-top: 10px;
+}
+
+fieldset#customer_ECMtype select{
+    margin-bottom: 10px;
+}
+
+fieldset#itemtype {
+    height: 100px;
+    padding-top: 10px;
+}
+
+
+#resumo_final {
+    display: block;
+    float: right;
+    width: 340px;
+    height: 410px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+    </style>
+
+    <script>
+
+    </script>
 </head>
 
 <body>
 
 <div id="interface">
 
-        <header id="cabecalho">
-                <div id="logo-topo">
-                        <img src="_imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
+    <header id="cabecalho">
+        <div id="logo-topo">
+            <img src="_imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
 
-                </div><!--logo-topo"-->
+        </div><!--logo-topo"-->
 
-                <div id="titulo_cleanair">
+        <div id="titulo_cleanair">
+            <h1>Clean Air Engineering - South America</h1>
+        </div><!--titulo-->
 
-                        <h1>Clean Air Engineering - South America</h1>
-        
-                </div><!--titulo-->
+    </header>
 
-        </header>
-
-        <section id="lado_esquerdo">
+    <section id="lado_esquerdo">
         </br>
-        
+    
         <nav id="menu">
             <h1>Munu Principal</h1>
             <ul>
-                    <li><a href="index.html" target="_self">Home</a></li>
-                    
-                    <li class="linha_principal">SAP A104 - PLP (GPDM)</li>
-                    
-                    <li id="lista-segundo"><a href="sapplpecm_desc.html" target="_self">ECM (Texto Base)</a></li>
-                    <li id="lista-segundo">MM (Descrição Standard)</li>
-                    <li id="lista-segundo">Informações</li>
+                <li><a href="index.html" target="_self">Home</a></li>
+                
+                <li class="linha_principal">SAP A104 - PLP (GPDM)</li>
+                
+                <li id="lista-segundo"><a href="sapplpecm_desc.html" target="_self">ECM (Texto Base)</a></li>
+                <li id="lista-segundo">MM (Descrição Standard)</li>
+                <li id="lista-segundo">Informações</li>
 
-                    <li class="linha_principal">SAP A101 - TA2</li>
-                    
-                    <li id="lista-segundo">ECM - Texto Base</li>
-                    <li id="lista-segundo"><a href="sapta2mcm_wf.html" target="_self">ECM - Aprovadores</a></li>
-                    <li id="lista-segundo"><a href="sapta2mcm_info.html" target="_self">Procedimentos</a></li>
-       
-                    <li class="linha_principal">Cálculos</li>
-                    
-                    <li id="lista-segundo">Massa (kg)</li>
-                    <li id="lista-segundo">Estudo de GAP</li>
-                    <li id="lista-segundo">Catalisador</li>
+                <li class="linha_principal">SAP A101 - TA2</li>
+                
+                <li id="lista-segundo"><a href="sapta2mcm_desc.html" target="_self">ECM - Texto Base</a></li>
+                <li id="lista-segundo"><a href="sapta2mcm_wf.html" target="_self">ECM - Aprovadores</a></li>
+                <li id="lista-segundo"><a href="sapta2mcm_info.html" target="_self">Procedimentos</a></li>
+    
+                <li class="linha_principal"><a href="calculo_projeos.html" target="_self">Cálculos</a></li>
+                
+                <li id="lista-segundo">Massa (kg)</li>
+                <li id="lista-segundo">Estudo de GAP</li>
+                <li id="lista-segundo">Catalisador</li>
             </ul>
         </nav>
 
-        </section>
+    </section>
 
-        <aside id="lado_direito">
-            <p><strong>SAP A104 - PLP (GPDM):</strong> ECM (TEXTO BASE)</p>
-            
-            <section id="corpo">
-                <table>
-                    <tr class="linha-impar"><td class="coluna-titulo">Dados da ECM</td>
-                        <td class="coluna-opcao" id="linha01">
-                            <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
-                            <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label>
-                            <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label>
-                            <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>
-                        </td>
-                    </tr>
+    <aside id="lado_direito">
+        <div style="width: 500px;">
+            <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
+            <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
 
+            <form onchange="validacao();ta2_workflow()">
+                <section id="corpo">
+                    <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Identificação do Usuário</legend> 
+                        <input type="radio" name="UserID" id="cUserID" checked value="" style="display: none;"/>
+                        <input type="radio" name="UserID" id="radio_FILIREGO" value="FILIREGO"/><label class="legenda-radio" for="radio_FILIREGO">Filipe</label>
+                        <input type="radio" name="UserID" id="radio_JEANFRA1" value="JEANFRA1"/><label class="legenda-radio" for="radio_JEANFRA1">Jean</label>
+                        <input type="radio" name="UserID" id="radio_MARCSANT" value="MARCSANT"/><label class="legenda-radio" for="radio_MARCSANT">Marcelo</label>
+                    </fieldset>
 
-            <tr class="linha-par">
-                <td class="coluna-titulo" rowspan="2">Programa</td>
-                <td class="coluna-opcao" id="linha03">
-                    <select style="margin-left: 8px;" class="select-maior" name="tCliente" id="cCliente">
-                        <option value="" selected style="display: none;"></option>
-                        <optgroup label="LV">
-                            <option value="VW">VOLKSWAGEN</option>
-                            <option value="FRD">FORD</option>
-                            <option value="GMB">GENERAL MOTORS</option>
-                            <option value="FCA">FIAT</option>
-                            <option value="PSA">PSA</option>
-                            <option value="KIA">KIA</option>
-                            <option value="HYU">HYUNDAI</option>
-                            <option value="CHE">CHERY</option>
-                            <option value="HPE">HPE</option>
-                            <option value="REN">RENAULT</option>
-                            <option value="NIS">NISSAN</option>
-                        </optgroup>
-                            <optgroup label="CTOH">
-                                <option value="DAI">MERCEDES BENZ</option>
-                                <option value="SCN">SCANIA</option>
-                                <option value="IVE">IVECO</option>
-                                <option value="MAN">MAN</option>
-                                <option value="CAO">CAOA</option>
-                                <option value="CNH">CNH</option>
-                                <option value="MWM">MWM</option>
-                                <option value="VOL">VOLVO</option>
-                                <option value="TEN">TENNECO</option>
-                        </optgroup> 
-                    <label for="cProjeto">Projeto:</label>
-                    <input type="text" name="tProjeto" id="cProjeto" maxlength="40" size="20" placeholder="Nome do Projeto" list="projetos"/>
-                    <datalist id="projetos">
-                        <option value="MQBA1"></option>
-                        <option value="B562MCA"></option>
-                        <option value="BR900"></option>
-                        <option value="NCG"></option></datalist>
-                </td>
-            </tr>
+                    <fieldset id="businesStatus" class="formulario_nok"><legend class="legenda">Busines Status</legend> 
+                        <table><tr><td>
+                        <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
+                        <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
+                        <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label></td>
+                            <td style="height: 50px;">
+                        <select class="prazo_nvis" name="tprazoDias" id="prazoDias" style="width: 80px;">
+                            <option value="30" selected>30 dias</option>
+                            <option value="90">90 dias</option>
+                            <option value="180">180 dias</option>
+                        </select></td></tr></table>
+                    </fieldset>
 
-            
-            <tr class="linha-par">
-                <td class="coluna-opcao" id="linha04">
-                    <select style="margin-left: 8px;" class="select-maior" name="tProduto" id="cProduto">
-                        <option value="" selected style="display: none;"></option>
-                        <optgroup label="LV">
-                            <option value="CE-LV">Cold End</option>
-                            <option value="HE-LV">Hot End</option>
-                            <option value="DP-LV">Down Pipe</option>
-                            <option value="CN-LV">Canning</option>
-                            <option value="CP-LV">Components for LV</option>
-                        </optgroup>
-                        <optgroup label="CTOH">
-                            <option value="BX-VI-CTOH">EURO VI - BOX</option>
-                            <option value="IL-VI-CTOH">EURO VI - IN LINE</option>
-                            <option value="BX-V-CTOH">EURO V - BOX</option>
-                            <option value="IL-V-CTOH">EURO V - IN LINE</option>
-                            <option value="CP-CTOH">Components for CTOH</option>
-                        </optgroup>
-                            <option value="Others">Outros</option>
-                    </select>
-            
-                    <input type="checkbox" id="cMogi" name="tMogi">
-                    <label class="legenda-radio" for="cMogi">Mogi Mirim</label>
-                    <input type="checkbox" id="cCamacari" name="tCamacari">
-                    <label class="legenda-radio" for="cCamacari">Camaçari</label>
-                </td>
-            </tr>
+                    <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
+                        <select class="botao_select" name="tCliente" id="cCliente">
+                            <option value="" selected style="display: none;"></option>
+                            <optgroup label="LV">
+                                <option value="VW">VOLKSWAGEN</option>
+                                <option value="FRD">FORD</option>
+                                <option value="GMB">GENERAL MOTORS</option>
+                                <option value="FCA">FIAT</option>
+                                <option value="PSA">PSA</option>
+                                <option value="KIA">KIA</option>
+                                <option value="HYU">HYUNDAI</option>
+                                <option value="CHE">CHERY</option>
+                                <option value="HPE">HPE</option>
+                                <option value="REN">RENAULT</option>
+                                <option value="NIS">NISSAN</option>
+                            </optgroup>
+                                <optgroup label="CTOH">
+                                    <option value="DAI">MERCEDES BENZ</option>
+                                    <option value="SCN">SCANIA</option>
+                                    <option value="IVE">IVECO</option>
+                                    <option value="MAN">MAN</option>
+                                    <option value="CAO">CAOA</option>
+                                    <option value="CNH">CNH</option>
+                                    <option value="MWM">MWM</option>
+                                    <option value="VOL">VOLVO</option>
+                                    <option value="TEN">TENNECO</option>
+                            </optgroup></select>
 
+                        <input type="text" name="tProjeto" id="cProjeto" class="botao_select" maxlength="40" size="20" placeholder="Nome do Projeto" list="projetos"/>
+                        <datalist id="projetos">
+                            <option value="MQBA1"></option>
+                            <option value="B562MCA"></option>
+                            <option value="BR900"></option>
+                            <option value="NCG"></option>
+                        </datalist>
+                        </br>
+                        <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
+                        <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label>
+                        <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label>
+                        <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>
+                        <div class="itemChanged_nvis" id="div_tipoSubstituido">
+                            <table>
+                                <tr><td><p style="text-align: center;margin: 10px;"><strong>Item substituido na BOM</strong></p>
+                                <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
+                                <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
+                                <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label></td></tr>
+                            </table>
+                        </div>
+                    </fieldset>
 
-            <tr class="linha-impar">
-                <td class="coluna-titulo">Status</td>
-                <td class="coluna-opcao" id="linha05">
-                    <input type="radio" name="tStatus-programa" id="cStatus-programa" value="" checked style="display: none;"/>
-                    <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
-                    <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label>
-                    <input type="radio" name="tStatus-programa" id="Prototype" value="Protótipo"/><label class="legenda-radio" for="Prototype">Protótipo</label>
-                </td>
-            </tr>
-            
-            <tr class="linha-par">
-                <td class="coluna-titulo" rowspan="2">Conteúdo</td>
-                <td class="coluna-opcao" id="linha08">
-                    <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
-                    <input type="radio" name="tTipo-item" id="PA" value="Produto Acabado"/><label class="legenda-radio" for="PA">Produto Acabado</label>
-                    <input type="radio" name="tTipo-item" id="SA" value="Semi-Acabado"/><label class="legenda-radio" for="SA">Semi-Acabado</label>
-                    <input type="radio" name="tTipo-item" id="CP" value="Comprados"/><label class="legenda-radio" for="CP">Comprados</label>  
-                </td>
-            </tr>
-            <tr class="linha-par"><td class="coluna-opcao">
-
-                <select name="tComprados" id="cComprados" class="select-maior" style="width: 340px;">
-                    <option value="" style="display: none;"></option>
-                    <option value="GSCM_001" selected>COMPRADOS: Absorption Materials - Cold End</option>
-                    <option value="GSCM_002">COMPRADOS: Hangers</option>
-                    <option value="GSCM_003">COMPRADOS: Hot End Insulation</option>
-                    <option value="GSCM_004">COMPRADOS: Support Mats</option>
-                    <option value="GSCM_005">COMPRADOS: Wire Mesh</option>
-                    <option value="GSCM_006">COMPRADOS: OE Monoliths</option>
-                    <option value="GSCM_007">COMPRADOS: Stainless Steel</option>
-                    <option value="GSCM_008">COMPRADOS: Steel / Aluminized Carbon Steel</option>
-                    <option value="GSCM_009">COMPRADOS: Tubing / Stainless Straight Tube</option>
-                    <option value="GSCM_010">COMPRADOS: ICY</option>
-                    <option value="GSCM_011">COMPRADOS: Welding Wire</option>
-                    <option value="GSCM_012">COMPRADOS: Manipulated Pipes (Nacional)</option>
-                    <option value="GSCM_013">COMPRADOS: Stampings (Nacional)</option>
-                    <option value="GSCM_014">COMPRADOS: Bosses</option>
-                    <option value="GSCM_015">COMPRADOS: Castings</option>
-                    <option value="GSCM_016">COMPRADOS: Clamps</option>
-                    <option value="GSCM_017">COMPRADOS: Cold Headings / Fasteners</option>
-                    <option value="GSCM_018">COMPRADOS: Flex Couplings</option>
-                    <option value="GSCM_019">COMPRADOS: Gaskets</option>
-                    <option value="GSCM_020">COMPRADOS: Plastic</option>
-                    <option value="GSCM_021">COMPRADOS: Rubber Components</option>
-                    <option value="GSCM_022">COMPRADOS: Hydroforming</option>
-                    <option value="GSCM_023">COMPRADOS: Manipulated Pipes(Importado)</option>
-                    <option value="GSCM_024">COMPRADOS: Stampings(Importado)</option>
-                </select>
-                <br><input type="checkbox" id="importados" name="importados">
-                <label class="legenda-radio" for="importados">IMPORTADO</label>
-            </td></tr>
-            
-            </table>
-            <table>
-                <tr><td><textarea style="width: 498px; height: 100px; font-size: 9pt;"></textarea></td></tr>
-                <tr><td><textarea  style="width: 70px; height: 100px; font-size: 9pt;"></textarea></td></tr>
-                <tr><td>DE:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
-                    <select name="unidade_de" id="adm_unidade_de">
-                        <option value="" selected style="display: none;"></option>
-                        <option value="ADMDE_001">PC</option>
-                        <option value="ADMDE_002">KG</option>
-                        <option value="ADMDE_003">BM</option> 
-                    </select>
+                    <fieldset id="itemtype" class="formulario_nok"><legend class="legenda">Tipo de Material</legend>
+                        <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
+                            <input type="radio" name="tTipo-item" id="radio_FG" value="Produto Acabado"/><label class="legenda-radio" for="radio_FG">Produto Acabado</label>
+                            <input type="radio" name="tTipo-item" id="radio_SA" value="Semi Acabado"/><label class="legenda-radio" for="radio_SA">Semi Acabado</label>
+                            <input type="radio" name="tTipo-item" id="radio_GSCM" value="Comprados"/><label class="legenda-radio" for="radio_GSCM">Comprados</label>  
+                        
+                        <div id="Comprados" class="Comprados_nvis"><br>
+                            <select name="tComprados" id="cComprados" class="botao_select">
+                                <option value="" style="display: none;"></option>
+                                <option value="GSCM_001" selected>COMPRADOS: Absorption Materials - Cold End</option>
+                                <option value="GSCM_002">COMPRADOS: Hangers</option>
+                                <option value="GSCM_003">COMPRADOS: Hot End Insulation</option>
+                                <option value="GSCM_004">COMPRADOS: Support Mats</option>
+                                <option value="GSCM_005">COMPRADOS: Wire Mesh</option>
+                                <option value="GSCM_006">COMPRADOS: OE Monoliths</option>
+                                <option value="GSCM_007">COMPRADOS: Stainless Steel</option>
+                                <option value="GSCM_008">COMPRADOS: Steel / Aluminized Carbon Steel</option>
+                                <option value="GSCM_009">COMPRADOS: Tubing / Stainless Straight Tube</option>
+                                <option value="GSCM_010">COMPRADOS: ICY</option>
+                                <option value="GSCM_011">COMPRADOS: Welding Wire</option>
+                                <option value="GSCM_012">COMPRADOS: Manipulated Pipes (Nacional)</option>
+                                <option value="GSCM_013">COMPRADOS: Stampings (Nacional)</option>
+                                <option value="GSCM_014">COMPRADOS: Bosses</option>
+                                <option value="GSCM_015">COMPRADOS: Castings</option>
+                                <option value="GSCM_016">COMPRADOS: Clamps</option>
+                                <option value="GSCM_017">COMPRADOS: Cold Headings / Fasteners</option>
+                                <option value="GSCM_018">COMPRADOS: Flex Couplings</option>
+                                <option value="GSCM_019">COMPRADOS: Gaskets</option>
+                                <option value="GSCM_020">COMPRADOS: Plastic</option>
+                                <option value="GSCM_021">COMPRADOS: Rubber Components</option>
+                                <option value="GSCM_022">COMPRADOS: Hydroforming</option>
+                                <option value="GSCM_023">COMPRADOS: Manipulated Pipes(Importado)</option>
+                                <option value="GSCM_024">COMPRADOS: Stampings(Importado)</option>
+                            </select>   
+                            <br>
+                            <input type="checkbox" id="importados" name="importados">
+                            <label class="legenda-radio" for="importados">IMPORTADO</label>
+                        </div>
+                    </fieldset>
                     
-                    <input type="number" style="width: 70px;"></td></tr>
-                <tr><td>PARA:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
-                    <select name="unidade_de" id="adm_unidade_de">
-                        <option value="" selected style="display: none;"></option>
-                        <option value="ADMDE_001">PC</option>
-                        <option value="ADMDE_002">KG</option>
-                        <option value="ADMDE_003">BM</option> 
-                    </select>
-                    
-                    <input type="number" style="width: 70px;"></td></tr>
+                </section>
+            </form>
+        </div>
 
-            </table>
+        <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
+            <div id="resumo_final_div" style="width: 320px;text-align: center;">
+            </div>
+        </fieldset>
+    <table>
+        <tr><td><textarea style="width: 498px; height: 100px; font-size: 9pt;"></textarea></td></tr>
+        <tr><td><textarea  style="width: 70px; height: 100px; font-size: 9pt;"></textarea></td></tr>
+        <tr><td>DE:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
+            <select name="unidade_de" id="adm_unidade_de">
+                <option value="" selected style="display: none;"></option>
+                <option value="ADMDE_001">PC</option>
+                <option value="ADMDE_002">KG</option>
+                <option value="ADMDE_003">BM</option> 
+            </select>
             
+            <input type="number" style="width: 70px;"></td></tr>
+        <tr><td>PARA:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
+            <select name="unidade_de" id="adm_unidade_de">
+                <option value="" selected style="display: none;"></option>
+                <option value="ADMDE_001">PC</option>
+                <option value="ADMDE_002">KG</option>
+                <option value="ADMDE_003">BM</option> 
+            </select>
             
-               
-                </fieldset>
-            </section>
-            
-                <!--<input type="button" value="Teste 2" onclick="descricao()"/>-->
-                <aside id="resultado">
-                <button id="textotitulo" class="botao" value="Copiar Titulo" onclick="copiatexto1()">Copiar Titulo</button>
-                <button id="textocompleto" class="botao" value="Copiar Descrição" onclick="copiatexto2()">Copiar Descrição</button>
-                
-                <div id="descricao-titulo"></div>
-                
-                
-                <div id="descricao-escopo"></div>
-                <button id="reinia" class="botao" value="Reiniciar" onclick="resetar()">Reiniciar</button>
-                </aside>
-                
-                <textarea id="inputTest1" class="tarea-nvisivel" rows="10" cols="50"></textarea>
-                <textarea id="inputTest2" class="tarea-nvisivel" rows="10" cols="50"></textarea>
+            <input type="number" style="width: 70px;"></td></tr>
 
-             
-        </aside>
+    </table>
+    </aside>
+    
 
 </div> <!--divGeral-->
-         
-<script language="javascript">
-                    
-    function descricao() {
-        var customerFullName = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].text;
-        var projectName = document.getElementById('cProjeto').value;
-        var changeType = document.querySelector('input[name="tTipo-ecm"]:checked').value;
-        var programStatus = document.querySelector('input[name="tStatus-programa"]:checked').value;
-        var ecmStatus = document.querySelector('input[name="Status-ECM"]:checked').value;
-        var productType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].text;
-        var itemType = document.querySelector('input[name="tTipo-item"]:checked').value;
-        var engineeringRegion = document.querySelector('input[name="tRegion"]:checked').value;
-        var yearsop = document.getElementById('cSOP').options[document.getElementById('cSOP').selectedIndex].text;
-        var anualVolume = document.getElementById('cVolume').value;
-        var textodefault2 = "Aqui vai o escopo do documento."
-        var textodefault1 = "Aqui vai o titulo."
-        var mogimirim = document.getElementById('cMogi');
-        var camacari = document.getElementById('cCamacari');
-        var MOM2 = 'MOM2';
-        var CAM1 = 'CAM1';
-        var mcmtype = ''
 
-        
-
-        if (mogimirim.checked && camacari.checked) {            
-            txtplanta = `<strong>Planta:</strong> ${MOM2} e ${CAM1}.<br>`
-            } else { if (mogimirim.checked) {
-                txtplanta = `<strong>Planta:</strong> ${MOM2}.<br>`
-            } else { if (camacari.checked) {
-                txtplanta = `<strong>Planta:</strong> ${CAM1}.<br>`
-            } else { txtplanta = ''}
-            }
-            }
-
-
-        //alert(changeType);
-
-        //Linha Projetos: 
-        if (customerFullName && productType && projectName != "") {
-            linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${productType} - ${projectName}.<br>`
-            }else { if (customerFullName && productType != "") {
-                linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${productType}.<br>`
-            } else { if (customerFullName && projectName != "") {
-                linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${projectName}.<br>`
-            } else {linhaProjetos = ""}
-            }
-            }
-        //Fim da Linha Projetos:
-
-        //linha Planta
-        
-        //Fim Planta
-        //Linha Tipo de ECM
-        if (changeType && itemType != "") {
-        linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${changeType} - ${itemType}.<br>`
-        } else {if (changeType != "") {
-            linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${changeType}.<br>`
-        } else {if (itemType != "") {
-            linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${itemType}.<br>`
-        } else {linhatipoECM = ""}
-        }
-        }
-
-        
-        //Fim da linha Tipo da ECM
-
-        //Linha Status da ECM
-        if (programStatus && ecmStatus && engineeringRegion != "") {
-        linhastsus = `<br><strong>Status da ECM:</strong> ${programStatus}, ${ecmStatus} - Programa ${engineeringRegion}.<br>`
-    } else {if (programStatus && ecmStatus != "") {
-        linhastsus = `<br><strong>Status da ECM:</strong> ${programStatus}, ${ecmStatus}.<br>`        
-    } else {if (programStatus && engineeringRegion != "") {
-        linhastsus = `<br><strong>Status da ECM:</strong> ${programStatus} - Programa ${engineeringRegion}.<br>`
-    } else {linhastsus = ""}
-    }
-    }
-        //fIM sTATUS ecm
-
-        //Linha linha SOP e volume anual.
-
-        if (yearsop && anualVolume != "") {        
-        linhasop = `<br><strong>Início de Produção em:</strong> ${yearsop} e volume anual de ${anualVolume}pçs.<br>`
-        } else { if (yearsop != "") {
-            linhasop = `<br><strong>Início de Produção em:</strong> ${yearsop}</strong>.<br>`
-        } else { if (anualVolume != "") {
-            linhasop = `<br>Volume anual de ${anualVolume}pçs.<br>`
-        } else {linhasop = ""
-
-        }
-        }
-        }
-
-        //Linha Titulo
-        if (changeType != "") {
-            var changeType_short = document.querySelector('input[name="tTipo-ecm"]:checked').id + " ";
-        } else {var changeType_short = ""}
-
-        if (programStatus != "") {
-            var programStatus_short = document.querySelector('input[name="tStatus-programa"]:checked').id + " ";
-        } else {var programStatus_short = ""}
-
-        if (customerFullName != "") {
-            var customerName_short = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value + " ";
-        } else {var customerName_short = ""}
-
-        if (projectName != "") {
-            var projectName_short = projectName + " "
-        } else {var projectName_short = ""}
-
-        if (itemType != "") {
-            var itemType_short = document.querySelector('input[name="tTipo-item"]:checked').id + " ";
-        } else {var itemType_short = ""}
-
-        if (yearsop != "") {
-            yearsop_short = `- ${yearsop}`
-        } else {yearsop_short = ""}
-
-
-
-
-
-
-
-
-
-        if ((linhaProjetos + txtplanta + linhatipoECM + linhastsus + linhasop) == "") {
-            document.getElementById('descricao-titulo').innerText = textodefault1
-            document.getElementById('descricao-escopo').innerText = textodefault2
-
-        } else {
-            document.getElementById('descricao-escopo').innerHTML = `${linhaProjetos}${txtplanta}${linhatipoECM}${linhastsus}${linhasop}
-            <p>Detalhes da ECM:`;
-
-            document.getElementById('descricao-titulo').innerText = `${changeType_short}${programStatus_short}${customerName_short}${projectName_short}${itemType_short}${yearsop_short}`
-        }
-                
-
-        if (changeType != "") {
-            document.getElementById('linha01').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-
-        if (engineeringRegion != "") {
-            document.getElementById('linha02').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        if (customerFullName && projectName != "") {
-            document.getElementById('linha03').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        if (txtplanta && productType != "") {
-            document.getElementById('linha04').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        if (programStatus != "") {
-            document.getElementById('linha05').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        if (yearsop && anualVolume != "") {
-            document.getElementById('linha06').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        if (ecmStatus != "") {
-            document.getElementById('linha07').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        if (itemType != "") {
-            document.getElementById('linha08').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        }
-
-    function copiatexto2() {
-                
-        document.getElementById('inputTest2').innerHTML = document.getElementById('descricao-escopo').innerText
-        var textocopia = document.getElementById('inputTest2')
-        textocopia.className = "tarea-visivel"
-        textocopia.select()
-        document.execCommand('copy')
-        textocopia.className = "tarea-nvisivel"
-        //alert(textocopia.innerText)
-
-    }
-    function copiatexto1() {
-                
-                document.getElementById('inputTest1').innerHTML = document.getElementById('descricao-titulo').innerText
-                var textocopia = document.getElementById('inputTest1')
-                textocopia.className = "tarea-visivel"
-                textocopia.select()
-                document.execCommand('copy')
-                textocopia.className = "tarea-nvisivel"
-                //alert(textocopia.innerText)
-        
-            }
-
-    function resetar() {
-        document.getElementById('cTipo-ecm').checked = true
-        document.getElementById('cRegion').checked = true
-        document.getElementById('cStatus-programa').checked = true
-        document.getElementById('cStatus-ECM').checked = true
-        document.getElementById('cTipo-item').checked = true
-        document.getElementById('cCliente').selectedIndex = 0;
-        document.getElementById('cProjeto').value = ""
-        document.getElementById('cProduto').selectedIndex = 0;
-        document.getElementById('cMogi').checked = false
-        document.getElementById('cCamacari').checked = false
-        document.getElementById('cSOP').selectedIndex = 0;
-        document.getElementById('cVolume').value = ""
-        document.getElementById('linha01').style = document.getElementsByClassName('linha-impar').style
-        document.getElementById('linha02').style = document.getElementsByClassName('linha-impar').style
-        document.getElementById('linha03').style = document.getElementsByClassName('linha-par').style
-        document.getElementById('linha04').style = document.getElementsByClassName('linha-par').style
-        document.getElementById('linha05').style = document.getElementsByClassName('linha-impar').style
-        document.getElementById('linha06').style = document.getElementsByClassName('linha-impar').style
-        document.getElementById('linha07').style = document.getElementsByClassName('linha-impar').style
-        document.getElementById('linha08').style = document.getElementsByClassName('linha-par').style
-        document.getElementById('descricao-escopo').innerText = "Aqui vai o escopo do documento."
-        document.getElementById('descricao-titulo').innerText = "Aqui vai o titulo."
-
-    }
-    
-</script>
+<textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
 
 <script>
-    parent.descricao();
+    parent.validacao();
 </script>
+
+
 
 </body>
 </html>

@@ -126,9 +126,9 @@ button.botao {
     margin: 5px 5px 5px auto;
 }
 
+</style>
 
 
-    </style>
 </head>
 
 <body>
@@ -183,20 +183,17 @@ button.botao {
             <p><strong>SAP A104 - PLP (GPDM):</strong> ECM (TEXTO BASE)</p>
             
             <section id="corpo">
-                <table onchange="descricao()">
-            <tr class="linha-impar"><td class="coluna-titulo" rowspan="2">Dados da ECM</td>
-                <td class="coluna-opcao" id="linha01">
-                <input type="radio" name="tTipo-ecm" id="cTipo-ecm" checked value="" style="display: none;"/>
-                <input type="radio" name="tTipo-ecm" id="NP" value="Nova Produção"/><label class="legenda-radio" for="NP">Nova Produção</label>
-                <input type="radio" name="tTipo-ecm" id="ADM" value="Autorização de Modificação"/><label class="legenda-radio" for="ADM">Autorização de Modificação</label>
-            </td></tr>
-            <tr class="linha-impar"><td class="coluna-opcao" id="linha02">Engenharia:
-                    <input type="radio" name="tRegion" id="cRegion" checked value="" style="display: none;"/>
-                    <input type="radio" name="tRegion" id="Region-Global" value="Global"/><label class="legenda-radio" for="Region-Global">Global</label>
-                    <input type="radio" name="tRegion" id="Region-Local" value="Local"/><label class="legenda-radio" for="Region-Local">Local</label>
-                </td>
-            </tr>
-            
+                <table>
+                    <tr class="linha-impar"><td class="coluna-titulo">Dados da ECM</td>
+                        <td class="coluna-opcao" id="linha01">
+                            <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
+                            <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label>
+                            <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label>
+                            <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>
+                        </td>
+                    </tr>
+
+
             <tr class="linha-par">
                 <td class="coluna-titulo" rowspan="2">Programa</td>
                 <td class="coluna-opcao" id="linha03">
@@ -235,6 +232,7 @@ button.botao {
                         <option value="NCG"></option></datalist>
                 </td>
             </tr>
+
             
             <tr class="linha-par">
                 <td class="coluna-opcao" id="linha04">
@@ -263,8 +261,10 @@ button.botao {
                     <label class="legenda-radio" for="cCamacari">Camaçari</label>
                 </td>
             </tr>
+
+
             <tr class="linha-impar">
-                <td rowspan="3" class="coluna-titulo">Status</td>
+                <td class="coluna-titulo">Status</td>
                 <td class="coluna-opcao" id="linha05">
                     <input type="radio" name="tStatus-programa" id="cStatus-programa" value="" checked style="display: none;"/>
                     <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
@@ -272,49 +272,75 @@ button.botao {
                     <input type="radio" name="tStatus-programa" id="Prototype" value="Protótipo"/><label class="legenda-radio" for="Prototype">Protótipo</label>
                 </td>
             </tr>
-            <tr class="linha-impar">
-                <td class="coluna-opcao" id="linha06">
-                    <label for="cSOP" style="margin-left: 8px;">SOP:</label>
-                    <select class="input-menor" name="tSOP" id="cSOP">
-                        <option value="" selected style="display: none;"></option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
-                        <option value="2030">2030</option>
-                        <option value="2030+">2030+</option>
-                    </select>
-                    <label for="cVolume">Volume Anual:</label>
-                    <input class="input-menor" type="number" name="tVolume" id="cVolume">
-                </td>
-            </tr>
-            <tr class="linha-impar">
-                <td class="coluna-opcao" id="linha07">
-                    <input type="radio" name="Status-ECM" id="cStatus-ECM" checked value="" style="display: none;"/>
-                    <input type="radio" name="Status-ECM" id="PR" value="Production Release"/><label class="legenda-radio" for="PR">Production</label>
-                    <input type="radio" name="Status-ECM" id="XR" value="Development Release"/><label class="legenda-radio" for="XR">Development</label>
-                    <input type="radio" name="Status-ECM" id="QR" value="Quick Release"/><label class="legenda-radio" for="QR">Quick</label>
             
-                </td>
-            </tr>
             <tr class="linha-par">
-                <td class="coluna-titulo">Conteúdo</td>
+                <td class="coluna-titulo" rowspan="2">Conteúdo</td>
                 <td class="coluna-opcao" id="linha08">
                     <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
-                    <input type="radio" name="tTipo-item" id="FG" value="Produto Acabado"/><label class="legenda-radio" for="FG">Produto Acabado</label>
-                    <input type="radio" name="tTipo-item" id="SA" value="Sub Conjunto"/><label class="legenda-radio" for="SA">Sub Conjunto</label>
-                    <input type="radio" name="tTipo-item" id="IC" value="Componentes"/><label class="legenda-radio" for="IC">Componentes</label>  
+                    <input type="radio" name="tTipo-item" id="PA" value="Produto Acabado"/><label class="legenda-radio" for="PA">Produto Acabado</label>
+                    <input type="radio" name="tTipo-item" id="SA" value="Semi-Acabado"/><label class="legenda-radio" for="SA">Semi-Acabado</label>
+                    <input type="radio" name="tTipo-item" id="CP" value="Comprados"/><label class="legenda-radio" for="CP">Comprados</label>  
                 </td>
             </tr>
+            <tr class="linha-par"><td class="coluna-opcao">
+
+                <select name="tComprados" id="cComprados" class="select-maior" style="width: 340px;">
+                    <option value="" style="display: none;"></option>
+                    <option value="GSCM_001" selected>COMPRADOS: Absorption Materials - Cold End</option>
+                    <option value="GSCM_002">COMPRADOS: Hangers</option>
+                    <option value="GSCM_003">COMPRADOS: Hot End Insulation</option>
+                    <option value="GSCM_004">COMPRADOS: Support Mats</option>
+                    <option value="GSCM_005">COMPRADOS: Wire Mesh</option>
+                    <option value="GSCM_006">COMPRADOS: OE Monoliths</option>
+                    <option value="GSCM_007">COMPRADOS: Stainless Steel</option>
+                    <option value="GSCM_008">COMPRADOS: Steel / Aluminized Carbon Steel</option>
+                    <option value="GSCM_009">COMPRADOS: Tubing / Stainless Straight Tube</option>
+                    <option value="GSCM_010">COMPRADOS: ICY</option>
+                    <option value="GSCM_011">COMPRADOS: Welding Wire</option>
+                    <option value="GSCM_012">COMPRADOS: Manipulated Pipes (Nacional)</option>
+                    <option value="GSCM_013">COMPRADOS: Stampings (Nacional)</option>
+                    <option value="GSCM_014">COMPRADOS: Bosses</option>
+                    <option value="GSCM_015">COMPRADOS: Castings</option>
+                    <option value="GSCM_016">COMPRADOS: Clamps</option>
+                    <option value="GSCM_017">COMPRADOS: Cold Headings / Fasteners</option>
+                    <option value="GSCM_018">COMPRADOS: Flex Couplings</option>
+                    <option value="GSCM_019">COMPRADOS: Gaskets</option>
+                    <option value="GSCM_020">COMPRADOS: Plastic</option>
+                    <option value="GSCM_021">COMPRADOS: Rubber Components</option>
+                    <option value="GSCM_022">COMPRADOS: Hydroforming</option>
+                    <option value="GSCM_023">COMPRADOS: Manipulated Pipes(Importado)</option>
+                    <option value="GSCM_024">COMPRADOS: Stampings(Importado)</option>
+                </select>
+                <br><input type="checkbox" id="importados" name="importados">
+                <label class="legenda-radio" for="importados">IMPORTADO</label>
+            </td></tr>
             
             </table>
+            <table>
+                <tr><td><textarea style="width: 498px; height: 100px; font-size: 9pt;"></textarea></td></tr>
+                <tr><td><textarea  style="width: 70px; height: 100px; font-size: 9pt;"></textarea></td></tr>
+                <tr><td>DE:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
+                    <select name="unidade_de" id="adm_unidade_de">
+                        <option value="" selected style="display: none;"></option>
+                        <option value="ADMDE_001">PC</option>
+                        <option value="ADMDE_002">KG</option>
+                        <option value="ADMDE_003">BM</option> 
+                    </select>
+                    
+                    <input type="number" style="width: 70px;"></td></tr>
+                <tr><td>PARA:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
+                    <select name="unidade_de" id="adm_unidade_de">
+                        <option value="" selected style="display: none;"></option>
+                        <option value="ADMDE_001">PC</option>
+                        <option value="ADMDE_002">KG</option>
+                        <option value="ADMDE_003">BM</option> 
+                    </select>
+                    
+                    <input type="number" style="width: 70px;"></td></tr>
+
+            </table>
+            
+            
                
                 </fieldset>
             </section>

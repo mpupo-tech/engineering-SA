@@ -144,7 +144,7 @@ margin-top: 20px;
     width: 100%;
 }
 
-select {
+.botao_select {
 	padding: 5px;
 	margin: 5px auto 10px auto;
 }
