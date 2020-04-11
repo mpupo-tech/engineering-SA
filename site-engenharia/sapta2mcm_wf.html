@@ -13,79 +13,16 @@
 
 <style>
 
-    .linha-impar {
-    background-color: rgba(0,0,0,.05);
-    color: rgb(0, 0, 0,1);
-
-}
-
-
-fieldset {
-    -webkit-transition:background-color 0.5s;
-    -moz-transition:background-color 0.5s;
-    -o-transition:background-color 0.5s;
-    transition:background-color 0.5s;
-}
-
-
-.linha-par {
-    background-color: rgba(15, 3, 36, 0.1);
-    color: rgba(0, 0, 0, 1);
-
-    
-}
-
-.linhaok {
-    background-color: rgba(46, 139, 86, 0.2);
-    width: 370px;
-    font-size: 10pt;
-    padding: 10px;
-}
-
 
 #copia_fluxo_vis {
     position: relative;
     left: 355px;
-    top: -690px;
+    top: -710px;
 }
 #botao_reset {
     position: relative;
     left: 420px;
     top: 55px;
-}
-
-
-td.coluna-titulo {
-    width: 100px;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 10pt;
-    text-align: right;
-    padding: 5px;
-    text-transform: uppercase;
-
-}
-
-td.coluna-opcao {
-    width: 374px;
-    font-size: 10pt;
-    padding: 10px;
-
-}
-
-div#descricao-titulo {
-    width: 350px;
-    height: 15px;
-    background-color: rgba(0, 0, 0, 0.25);
-    padding: 10px;
-    font-size: 11pt;
-}
-div#descricao-escopo {
-    width: 350px;
-    height: 225px;
-    background-color: rgba(0, 0, 0, 0.15);
-    padding: 10px;
-    font-size: 11pt;
 }
 
 label.legenda-radio {
@@ -99,25 +36,7 @@ legend.legenda {
     background-color: white;
 }
 
-td.coluna-opcao select.select-maior {
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 9pt;
-    width: 150px;
-}
 
-.input-menor {
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 9pt;
-    width: 70px;
-}
-
-input#cProjeto {
-
-    padding: 5px;
-    font-size: 9pt;
-}
 
 textarea.tarea-visivel {
     display: unset;
@@ -188,26 +107,19 @@ div.itemChanged_vis td{
 #tabelaNomeID_nvis {
     display: none;
 }
-.formulario_ok {
-    background-color: rgba(46, 139, 86, 0.2);
-    width: 100%;
-}
 
-.formulario_nok {
-    background-color: rgba(15, 3, 36, 0.05);
-    width: 100%;
-}
 .tabela_workflow_ta2 {
-    font-size: 10pt;
+    font-size: 12pt;
     width: 100%;
     }
 
 .tabela_workflow_ta2 table {
     width: 100%;
-    padding-left: 20px;
+    padding: 10px;
     background-color: rgba(15, 3, 36, 0.05);
-
 }
+
+
 fieldset#usuario {
     height: 40px;
     padding-top: 10px;
@@ -215,40 +127,30 @@ fieldset#usuario {
 fieldset#businesStatus {
     height: 50px;
     padding-top: 0px;
-    
 }
-
 
 fieldset#customer_ECMtype {
     height: 150px;
     padding-top: 10px;
 }
+
 fieldset#customer_ECMtype select{
     margin-bottom: 10px;
 }
-table.tabela_tipo_ecm td  {
-    height: 30px;
-}
+
 fieldset#itemtype {
     height: 100px;
     padding-top: 10px;
 }
-.botao_select {
 
-    padding: 5px;
-}
-select {
-    margin: 5px auto 10px auto;
-}
 
 #resumo_final {
     display: block;
     float: right;
-width: 340px;
-height: 410px;
-margin-bottom: 20px;
-background-color: rgba(255, 255, 0, 0.2);
-
+    width: 340px;
+    height: 410px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 0, 0.2);
 }
 
     </style>
@@ -335,7 +237,7 @@ background-color: rgba(255, 255, 0, 0.2);
                     </select></td></tr></table>
                 </fieldset>
 
-            <fieldset id="customer_ECMtype"><legend class="legenda">Cliente e tipo de MCM</legend>
+            <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
                 <select class="botao_select" name="tCliente" id="cCliente">
                     <option value="" selected style="display: none;"></option>
                     <optgroup label="LV">
@@ -393,7 +295,7 @@ background-color: rgba(255, 255, 0, 0.2);
 
             </fieldset>
 
-            <fieldset id="itemtype"><legend class="legenda">Tipo de Material</legend>
+            <fieldset id="itemtype" class="formulario_nok"><legend class="legenda">Tipo de Material</legend>
                 <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
                     <input type="radio" name="tTipo-item" id="radio_FG" value="Produto Acabado"/><label class="legenda-radio" for="radio_FG">Produto Acabado</label>
                     <input type="radio" name="tTipo-item" id="radio_SA" value="Semi Acabado"/><label class="legenda-radio" for="radio_SA">Semi Acabado</label>
@@ -434,6 +336,7 @@ background-color: rgba(255, 255, 0, 0.2);
                     <label class="legenda-radio" for="importados">IMPORTADO</label>
                     </div>
                 </fieldset>
+            
             </div>
 
                 <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>

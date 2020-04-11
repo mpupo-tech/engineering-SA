@@ -9,6 +9,13 @@ a {
 	color: rgba(255, 255, 255, 0.7);
 }
 
+fieldset {
+    -webkit-transition:background-color 0.5s;
+    -moz-transition:background-color 0.5s;
+    -o-transition:background-color 0.5s;
+    transition:background-color 0.5s;
+}
+
 #interface {
 	margin-left: auto;
 	margin-right: auto;
@@ -121,6 +128,35 @@ margin-top: 20px;
 
 
 }
+
+
+
+/*User frame OK*/
+
+
+.formulario_ok {
+    background-color: rgba(46, 139, 86, 0.2);
+    width: 100%;
+}
+
+.formulario_nok {
+    background-color: rgba(15, 3, 36, 0.05);
+    width: 100%;
+}
+
+select {
+	padding: 5px;
+	margin: 5px auto 10px auto;
+}
+
+/*user frame TRASH
+
+.linhaok {
+    background-color: rgba(46, 139, 86, 0.2);
+    width: 370px;
+    font-size: 12pt;
+    padding: 10px;
+}*/
 	
 
 	
