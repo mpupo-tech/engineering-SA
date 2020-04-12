@@ -339,13 +339,60 @@ div.itens-alterados {
         </fieldset>
 
         <div class="itens-alterados">
+
             <textarea style="width: 393px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px;">Testo dos itens em aleração</textarea>
             <textarea style="width: 80px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px;">Teste</textarea>
             </div>
 
+        <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 100%;">
+            <h3 style="text-align: center;">Autorização de Modificação</h3>
+            <form>
+                <table><tr id="ADM_LINHA_"><td><legend>Material</legend><input type="text"></td><td><legend>Descrição</legend><input type="text"></td><td><legend>BOM</legend><input type="checkbox"></td><td><legend>Notas</legend><input type="checkbox"></td><td><legend>Tolerância</legend><input type="checkbox"></td><td><legend>Outros</legend><input type="checkbox"></td><td><legend>Adicionar item</legend><input type="checkbox"></td></tr></table>
+            
+                <div id="DIV_BOM_">
+                    <fieldset><legend>BOM</legend>
+                        <table>
+                            <tr>
+                                <td><label for="a">DE:</label></td>
+                                <td><input type="text" name="" id="a" placeholder="Material + Descrição"></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Qtde"></td>
+                                <td><select name="unidade_de" id="adm_unidade_de" placeholder="Unidade">
+                                    <option value="" selected style="display: none;"></option>
+                                    <option value="ADMDE_001">PC</option>
+                                    <option value="ADMDE_002">KG</option>
+                                    <option value="ADMDE_003">BM</option> 
+                                    </select></td>
+                            </tr>
+                            <tr><td><label for="a">PARA:</label></td><td><input type="text" name="" id="a" placeholder="Material + Descrição"></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Qtde"></td>
+                                <td><select name="unidade_de" id="adm_unidade_de" placeholder="Unidade">
+                                <option value="" selected style="display: none;"></option>
+                                <option value="ADMDE_001">PC</option>
+                                <option value="ADMDE_002">KG</option>
+                                <option value="ADMDE_003">BM</option> 
+                            </select></td>
+                            </tr>
+                        </table>
+                        
+                        
+                        
+                        
+                        
+                    </fieldset>
+                    
+                </div>
+               
+            </form>
 
+        </div>
+        
+        <!--
         <div style="background-color: aqua; padding: 10px; width: 700px;">
+            <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">DETALHES DAS ALTERAÇÕES EM DESENHO</textarea>
+            </p>
 
+            <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+            </p>
             <h3 style="text-align: center;">ADM BOM</h3>
             <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
 
@@ -379,7 +426,8 @@ div.itens-alterados {
 
             <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
             </p>
-        </div>
+        </div>-->
+
     </aside>
     
 
