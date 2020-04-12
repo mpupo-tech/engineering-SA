@@ -153,6 +153,12 @@ fieldset#itemtype {
     background-color: rgba(255, 255, 0, 0.2);
 }
 
+div.itens-alterados {
+    width: 500px;
+    
+
+}
+
     </style>
 
     <script>
@@ -207,7 +213,7 @@ fieldset#itemtype {
     </section>
 
     <aside id="lado_direito">
-        <div style="width: 500px;">
+        <div class="itens-alterados">
             <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
             <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
 
@@ -221,7 +227,7 @@ fieldset#itemtype {
                     </fieldset>
 
                     <fieldset id="businesStatus" class="formulario_nok"><legend class="legenda">Busines Status</legend> 
-                        <table><tr><td>
+                        <table>
                         <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
                         <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
                         <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label></td>
@@ -275,7 +281,7 @@ fieldset#itemtype {
                         <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>
                         <div class="itemChanged_nvis" id="div_tipoSubstituido">
                             <table>
-                                <tr><td><p style="text-align: center;margin: 10px;"><strong>Item substituido na BOM</strong></p>
+                                <p style="text-align: center;margin: 10px;"><strong>Item substituido na BOM</strong></p>
                                 <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
                                 <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
                                 <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label></td></tr>
@@ -331,29 +337,49 @@ fieldset#itemtype {
             <div id="resumo_final_div" style="width: 320px;text-align: center;">
             </div>
         </fieldset>
-    <table>
-        <tr><td><textarea style="width: 498px; height: 100px; font-size: 9pt;"></textarea></td></tr>
-        <tr><td><textarea  style="width: 70px; height: 100px; font-size: 9pt;"></textarea></td></tr>
-        <tr><td>DE:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
-            <select name="unidade_de" id="adm_unidade_de">
-                <option value="" selected style="display: none;"></option>
-                <option value="ADMDE_001">PC</option>
-                <option value="ADMDE_002">KG</option>
-                <option value="ADMDE_003">BM</option> 
-            </select>
-            
-            <input type="number" style="width: 70px;"></td></tr>
-        <tr><td>PARA:<textarea  style="width: 200px; font-size: 9pt;"></textarea>
-            <select name="unidade_de" id="adm_unidade_de">
-                <option value="" selected style="display: none;"></option>
-                <option value="ADMDE_001">PC</option>
-                <option value="ADMDE_002">KG</option>
-                <option value="ADMDE_003">BM</option> 
-            </select>
-            
-            <input type="number" style="width: 70px;"></td></tr>
 
-    </table>
+        <div class="itens-alterados">
+            <textarea style="width: 393px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px;">Testo dos itens em aleração</textarea>
+            <textarea style="width: 80px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px;">Teste</textarea>
+            </div>
+
+
+        <div style="background-color: aqua; padding: 10px; width: 700px;">
+
+            <h3 style="text-align: center;">ADM BOM</h3>
+            <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+
+                <select style="vertical-align:4px; padding: 6px;" name="unidade_de" id="adm_unidade_de">
+                    <option value="" selected style="display: none;"></option>
+                    <option value="ADMDE_001">PC</option>
+                    <option value="ADMDE_002">KG</option>
+                    <option value="ADMDE_003">BM</option> 
+                </select>
+
+                <input style="vertical-align:4px ;padding: 6px; width: 70px;" type="number">
+            </p>
+
+            <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+
+                <select style="vertical-align:4px; padding: 6px;" name="unidade_de" id="adm_unidade_de">
+                    <option value="" selected style="display: none;"></option>
+                    <option value="ADMDE_001">PC</option>
+                    <option value="ADMDE_002">KG</option>
+                    <option value="ADMDE_003">BM</option> 
+                </select>
+
+                <input style="vertical-align:4px ;padding: 6px; width: 70px;" type="number">
+            </p>
+        </div>
+        <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 700px;">
+
+            <h3 style="text-align: center;">ADM DESENHO</h3>
+            <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">DETALHES DAS ALTERAÇÕES EM DESENHO</textarea>
+            </p>
+
+            <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+            </p>
+        </div>
     </aside>
     
 
