@@ -347,7 +347,27 @@ div.itens-alterados {
         <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 100%;">
             <h3 style="text-align: center;">Autorização de Modificação</h3>
             <form>
-                <table><tr id="ADM_LINHA_"><td><legend>Material</legend><input type="text"></td><td><legend>Descrição</legend><input type="text"></td><td><legend>BOM</legend><input type="checkbox"></td><td><legend>Notas</legend><input type="checkbox"></td><td><legend>Tolerância</legend><input type="checkbox"></td><td><legend>Outros</legend><input type="checkbox"></td><td><legend>Adicionar item</legend><input type="checkbox"></td></tr></table>
+                <table>
+                    <tr id="ADM_linha_titulo">
+                        <td>Material</td>
+                        <td>Descrição</td>
+                        <td>BOM</td>
+                        <td>Notas</td>
+                        <td>Tolerância</td>
+                        <td>Outros</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="" id=""></td>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><input type="button" value="Adic. Linha"></td>
+
+                    </tr>
+                </table>
             
                 <div id="DIV_BOM_">
                     <fieldset><legend>BOM</legend>
@@ -360,7 +380,8 @@ div.itens-alterados {
                                     <option value="" selected style="display: none;"></option>
                                     <option value="ADMDE_001">PC</option>
                                     <option value="ADMDE_002">KG</option>
-                                    <option value="ADMDE_003">BM</option> 
+                                    <option value="ADMDE_003">BM</option>
+
                                     </select></td>
                             </tr>
                             <tr><td><label for="a">PARA:</label></td><td><input type="text" name="" id="a" placeholder="Material + Descrição"></td>
@@ -373,13 +394,92 @@ div.itens-alterados {
                             </select></td>
                             </tr>
                         </table>
-                        
-                        
-                        
-                        
-                        
                     </fieldset>
                     
+                    <fieldset><legend>Notas</legend>
+                        <table>
+                            <tr>
+                                <td><label for="a">DE:</label></td>
+                                <td><input type="text" name="" id="a" placeholder="Nota antiga"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr><td><label for="a">PARA:</label></td><td><input type="text" name="" id="a" placeholder="Nota nova"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset><legend>Tolerânia</legend>
+                        <select name="unidade_de" id="adm_unidade_de" placeholder="Unidade">
+                            <option value="" selected style="display: none;"></option>
+                            <option value="ADMDE_FRT">VISTA FRONTAL</option>
+                            <option value="ADMDE_TOP">VISTA TOPO</option>
+                            <option value="ADMDE_CORTE">VISTA CORTE</option> 
+                            <option value="ADMDE_DET">VISTA DETALHE</option> 
+                            <option value="ADMDE_AUX">VISTA AUXILIAR</option> 
+                            <option value="ADMDE_NA">NÃO DEFINIDO</option>
+                        </select>
+                        <select name="letraVista" id="letraVista" class= "select_letra" style="width: 40px;">
+                            <option value="" selected style="display: none;"></option>
+                            <option value="Vista_A">A</option>
+                            <option value="Vista_B">B</option>
+                            <option value="Vista_C">C</option>
+                            <option value="Vista_D">D</option>
+                            <option value="Vista_E">E</option>
+                            <option value="Vista_F">F</option>
+                            <option value="Vista_G">G</option>
+                            <option value="Vista_H">H</option>
+                            <option value="Vista_I">I</option>
+                            <option value="Vista_J">J</option>
+                            <option value="Vista_K">K</option>
+                            <option value="Vista_L">L</option>
+                            <option value="Vista_M">M</option>
+                            <option value="Vista_N">N</option>
+                            <option value="Vista_O">O</option>
+                            <option value="Vista_P">P</option>
+                            <option value="Vista_Q">Q</option>
+                            <option value="Vista_R">R</option>
+                            <option value="Vista_S">S</option>
+                            <option value="Vista_T">T</option>
+                            <option value="Vista_U">U</option>
+                            <option value="Vista_V">V</option>
+                            <option value="Vista_W">W</option>
+                            <option value="Vista_X">X</option>
+                            <option value="Vista_Y">Y</option>
+                            <option value="Vista_Z">Z</option>
+                            </select> <br>
+
+                            
+                            
+                            
+                        <table>
+                            <tr>
+                                <td style="text-align: right;">Tipo:</td>
+                                <td><input type="radio" name="dim_D" id="dim_D"><label for="dim_D">Diâmetro</label>
+                                    <input type="radio" name="dim_R" id="dim_R"><label for="dim_R">Raio</label>
+                                    <input type="radio" name="dim_A" id="dim_A"><label for="dim_A">Angulo</label>
+                                    <input type="radio" name="dim_L" id="dim_L"><label for="dim_L">Linear</label></td>
+                                <td></td></tr>
+
+                            <tr>
+                                <td style="text-align: right;"><label for="dim_valor">Dimensão:</label></td>
+                                <td><input type="number" name="dim_valor" id="dim_valor"></td>
+                                <td></td></tr>
+                            
+                            <tr>
+                                <td rowspan="2" style="text-align: right;">(Tolerância)</td>
+                                <td><input type="text" name="" id="a" placeholder="Nota antiga"><label for="a" style="margin-left: 10px;">(DE)</label></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" name="" id="a" placeholder="Nota nova"><label for="a" style="margin-left: 10px;">(PARA)</label></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <input type="button" value="Add">
+                    </fieldset>
                 </div>
                
             </form>
