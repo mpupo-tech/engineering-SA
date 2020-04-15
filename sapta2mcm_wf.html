@@ -86,12 +86,17 @@ display: none;
 
     display: none;
 }
-div.itemChanged_vis {
+
+.itemChanged_vis {
     display: unset;
 }
-div.itemChanged_vis td{
-    height: auto;
+
+div.itemChanged_vis fieldset{
+    margin-top: 10px;
+    height: 40px;
+    width: 300px;
     background-color: rgba(255, 64, 0, 0.1);
+    text-align: center;
 }
 
 
@@ -162,28 +167,23 @@ fieldset#itemtype {
 
 <body>
 
-<div id="interface">
+    <div id="interface">
 
         <header id="cabecalho">
-                <div id="logo-topo">
-                        <img src="imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
+            <div id="logo-topo">
+                <img src="imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
+            </div><!--logo-topo"-->
 
-                </div><!--logo-topo"-->
-
-                <div id="titulo_cleanair">
-
-                        <h1>Clean Air Engineering - South America</h1>
-        
-                </div><!--titulo-->
-
+            <div id="titulo_cleanair">
+                <h1>Clean Air Engineering - South America</h1>
+            </div><!--titulo-->
         </header>
 
         <section id="lado_esquerdo">
-        </br>
-        
-        <nav id="menu">
-            <h1>Munu Principal</h1>
-            <ul>
+            </br>
+            <nav id="menu">
+                <h1>Munu Principal</h1>
+                <ul>
                     <li><a href="index.html" target="_self">Home</a></li>
                     
                     <li class="linha_principal">SAP A104 - PLP (GPDM)</li>
@@ -197,265 +197,261 @@ fieldset#itemtype {
                     <li id="lista-segundo"><a href="sapta2mcm_desc.html" target="_self">ECM - Texto Base</a></li>
                     <li id="lista-segundo"><a href="sapta2mcm_wf.html" target="_self">ECM - Aprovadores</a></li>
                     <li id="lista-segundo"><a href="sapta2mcm_info.html" target="_self">Procedimentos</a></li>
-       
+        
                     <li class="linha_principal"><a href="calculo_projeos.html" target="_self">Cálculos</a></li>
                     
                     <li id="lista-segundo">Massa (kg)</li>
                     <li id="lista-segundo">Estudo de GAP</li>
                     <li id="lista-segundo">Catalisador</li>
-            </ul>
-        </nav>
-
+                </ul>
+            </nav>
         </section>
 
         <aside id="lado_direito">
             <div style="width: 500px;">
-            <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
+                <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
+                <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
+                <form onchange="validacao();ta2_workflow()">
 
-            <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
+                    <section id="corpo">
+                        <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Identificação do Usuário</legend> 
+                            <input type="radio" name="UserID" id="cUserID" checked value="" style="display: none;"/>
+                            <input type="radio" name="UserID" id="radio_FILIREGO" value="FILIREGO"/><label class="legenda-radio" for="radio_FILIREGO">Filipe</label>
+                            <input type="radio" name="UserID" id="radio_JEANFRA1" value="JEANFRA1"/><label class="legenda-radio" for="radio_JEANFRA1">Jean</label>
+                            <input type="radio" name="UserID" id="radio_MARCSANT" value="MARCSANT"/><label class="legenda-radio" for="radio_MARCSANT">Marcelo</label>
+                        </fieldset>
 
-            <form onchange="validacao();ta2_workflow()">
+                        <fieldset id="businesStatus" class="formulario_nok"><legend class="legenda">Busines Status</legend> 
+                            <table><tr><td>
+                            <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
+                            <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
+                            <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label></td>
+                                <td style="height: 50px;">
+                            <select class="prazo_nvis" name="tprazoDias" id="prazoDias" style="width: 80px;">
+                                <option value="30" selected>30 dias</option>
+                                <option value="90">90 dias</option>
+                                <option value="180">180 dias</option>
+                            </select></td></tr></table>
+                        </fieldset>
 
-            <section id="corpo">
-                <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Identificação do Usuário</legend> 
-                    <input type="radio" name="UserID" id="cUserID" checked value="" style="display: none;"/>
-                    <input type="radio" name="UserID" id="radio_FILIREGO" value="FILIREGO"/><label class="legenda-radio" for="radio_FILIREGO">Filipe</label>
-                    <input type="radio" name="UserID" id="radio_JEANFRA1" value="JEANFRA1"/><label class="legenda-radio" for="radio_JEANFRA1">Jean</label>
-                    <input type="radio" name="UserID" id="radio_MARCSANT" value="MARCSANT"/><label class="legenda-radio" for="radio_MARCSANT">Marcelo</label>
-                </fieldset>
+                        <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
+                            <select class="botao_select" name="tCliente" id="cCliente">
+                                <option value="" selected style="display: none;"></option>
+                                <optgroup label="LV">
+                                    <option value="VW">VOLKSWAGEN</option>
+                                    <option value="FRD">FORD</option>
+                                    <option value="GMB">GENERAL MOTORS</option>
+                                    <option value="FCA">FIAT</option>
+                                    <option value="PSA">PSA</option>
+                                    <option value="KIA">KIA</option>
+                                    <option value="HYU">HYUNDAI</option>
+                                    <option value="CHE">CHERY</option>
+                                    <option value="HPE">HPE</option>
+                                    <option value="REN">RENAULT</option>
+                                    <option value="NIS">NISSAN</option>
+                                </optgroup>
+                                <optgroup label="CTOH">
+                                    <option value="DAI">MERCEDES BENZ</option>
+                                    <option value="SCN">SCANIA</option>
+                                    <option value="IVE">IVECO</option>
+                                    <option value="MAN">MAN</option>
+                                    <option value="CAO">CAOA</option>
+                                    <option value="CNH">CNH</option>
+                                    <option value="MWM">MWM</option>
+                                    <option value="VOL">VOLVO</option>
+                                    <option value="TEN">TENNECO</option>
+                                </optgroup>
+                            </select></br>
 
-                <fieldset id="businesStatus" class="formulario_nok"><legend class="legenda">Busines Status</legend> 
-                    <table><tr><td>
-                    <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
-                    <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
-                    <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label></td>
-                        <td style="height: 50px;">
-                    <select class="prazo_nvis" name="tprazoDias" id="prazoDias" style="width: 80px;">
-                        <option value="30" selected>30 dias</option>
-                        <option value="90">90 dias</option>
-                        <option value="180">180 dias</option>
-                    </select></td></tr></table>
-                </fieldset>
+                            <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
+                            <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label>
+                            <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label>
+                            <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label><br>
 
-            <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
-                <select class="botao_select" name="tCliente" id="cCliente">
-                    <option value="" selected style="display: none;"></option>
-                    <optgroup label="LV">
-                        <option value="VW">VOLKSWAGEN</option>
-                        <option value="FRD">FORD</option>
-                        <option value="GMB">GENERAL MOTORS</option>
-                        <option value="FCA">FIAT</option>
-                        <option value="PSA">PSA</option>
-                        <option value="KIA">KIA</option>
-                        <option value="HYU">HYUNDAI</option>
-                        <option value="CHE">CHERY</option>
-                        <option value="HPE">HPE</option>
-                        <option value="REN">RENAULT</option>
-                        <option value="NIS">NISSAN</option>
-                    </optgroup>
-                        <optgroup label="CTOH">
-                            <option value="DAI">MERCEDES BENZ</option>
-                            <option value="SCN">SCANIA</option>
-                            <option value="IVE">IVECO</option>
-                            <option value="MAN">MAN</option>
-                            <option value="CAO">CAOA</option>
-                            <option value="CNH">CNH</option>
-                            <option value="MWM">MWM</option>
-                            <option value="VOL">VOLVO</option>
-                            <option value="TEN">TENNECO</option>
-                    </optgroup></select> </br>
+                            <div class="itemChanged_nvis" id="div_tipoSubstituido">
 
-                        <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
-                        
-                        <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label>
-                        <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label>
-                        <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>
-                        <div class="itemChanged_nvis" id="div_tipoSubstituido"><table><tr><td>
-                            <p style="text-align: center;margin: 10px;"><strong>Item substituido na BOM</strong></p>
-                                <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
-                                <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
-                                <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label>
-                        </td></tr></table></div>
-                           
-                               
-                    
-               <!-- <table class="tabela_tipo_ecm">
-                    <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
-                    
-                    <tr><td><input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label></td><td></td></tr>
-                    <tr><td><input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label></td><td></td></tr>
-                    <tr><td><input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label></td>
-                        <td><div class="itemChanged_nvis" id="div_tipoSubstituido">Item substituido na BOM<br>
-                            <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
-                            <input type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
-                            <input type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label></div>
-                        </td></tr>
-                </table>-->
+                                <fieldset>
+                                    <strong>Item substituido na BOM</strong><br>
+                                    <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
+                                    <input type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
+                                    <input type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label>
+                                    </fieldset>
+                                    
+                                
+                            </div>
+                        <!-- 
+                            <table><tr><td>
+                            </td></tr></table>
+                            <table class="tabela_tipo_ecm">
+                                <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
+                                
+                                <tr><td><input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label></td><td></td></tr>
+                                <tr><td><input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label></td><td></td></tr>
+                                <tr><td><input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label></td>
+                                    <td><div class="itemChanged_nvis" id="div_tipoSubstituido">Item substituido na BOM<br>
+                                        <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
+                                        <input type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
+                                        <input type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label></div>
+                                    </td></tr>
+                            </table>-->
 
+                        </fieldset>
 
-            </fieldset>
+                        <fieldset id="itemtype" class="formulario_nok"><legend class="legenda">Tipo de Material</legend>
+                            <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
+                            <input type="radio" name="tTipo-item" id="radio_FG" value="Produto Acabado"/><label class="legenda-radio" for="radio_FG">Produto Acabado</label>
+                            <input type="radio" name="tTipo-item" id="radio_SA" value="Semi Acabado"/><label class="legenda-radio" for="radio_SA">Semi Acabado</label>
+                            <input type="radio" name="tTipo-item" id="radio_GSCM" value="Comprados"/><label class="legenda-radio" for="radio_GSCM">Comprados</label>                
+                            <div id="Comprados" class="Comprados_nvis"><br>
+                                <select name="tComprados" id="cComprados" class="botao_select">
+                                    <option value="" style="display: none;"></option>
+                                    <option value="GSCM_001" selected>COMPRADOS: Absorption Materials - Cold End</option>
+                                    <option value="GSCM_002">COMPRADOS: Hangers</option>
+                                    <option value="GSCM_003">COMPRADOS: Hot End Insulation</option>
+                                    <option value="GSCM_004">COMPRADOS: Support Mats</option>
+                                    <option value="GSCM_005">COMPRADOS: Wire Mesh</option>
+                                    <option value="GSCM_006">COMPRADOS: OE Monoliths</option>
+                                    <option value="GSCM_007">COMPRADOS: Stainless Steel</option>
+                                    <option value="GSCM_008">COMPRADOS: Steel / Aluminized Carbon Steel</option>
+                                    <option value="GSCM_009">COMPRADOS: Tubing / Stainless Straight Tube</option>
+                                    <option value="GSCM_010">COMPRADOS: ICY</option>
+                                    <option value="GSCM_011">COMPRADOS: Welding Wire</option>
+                                    <option value="GSCM_012">COMPRADOS: Manipulated Pipes (Nacional)</option>
+                                    <option value="GSCM_013">COMPRADOS: Stampings (Nacional)</option>
+                                    <option value="GSCM_014">COMPRADOS: Bosses</option>
+                                    <option value="GSCM_015">COMPRADOS: Castings</option>
+                                    <option value="GSCM_016">COMPRADOS: Clamps</option>
+                                    <option value="GSCM_017">COMPRADOS: Cold Headings / Fasteners</option>
+                                    <option value="GSCM_018">COMPRADOS: Flex Couplings</option>
+                                    <option value="GSCM_019">COMPRADOS: Gaskets</option>
+                                    <option value="GSCM_020">COMPRADOS: Plastic</option>
+                                    <option value="GSCM_021">COMPRADOS: Rubber Components</option>
+                                    <option value="GSCM_022">COMPRADOS: Hydroforming</option>
+                                    <option value="GSCM_023">COMPRADOS: Manipulated Pipes(Importado)</option>
+                                    <option value="GSCM_024">COMPRADOS: Stampings(Importado)</option>
 
-            <fieldset id="itemtype" class="formulario_nok"><legend class="legenda">Tipo de Material</legend>
-                <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
-                    <input type="radio" name="tTipo-item" id="radio_FG" value="Produto Acabado"/><label class="legenda-radio" for="radio_FG">Produto Acabado</label>
-                    <input type="radio" name="tTipo-item" id="radio_SA" value="Semi Acabado"/><label class="legenda-radio" for="radio_SA">Semi Acabado</label>
-                    <input type="radio" name="tTipo-item" id="radio_GSCM" value="Comprados"/><label class="legenda-radio" for="radio_GSCM">Comprados</label>  
-                
-                <div id="Comprados" class="Comprados_nvis"><br>
-                    <select name="tComprados" id="cComprados" class="botao_select">
-                        <option value="" style="display: none;"></option>
-                        <option value="GSCM_001" selected>COMPRADOS: Absorption Materials - Cold End</option>
-                        <option value="GSCM_002">COMPRADOS: Hangers</option>
-                        <option value="GSCM_003">COMPRADOS: Hot End Insulation</option>
-                        <option value="GSCM_004">COMPRADOS: Support Mats</option>
-                        <option value="GSCM_005">COMPRADOS: Wire Mesh</option>
-                        <option value="GSCM_006">COMPRADOS: OE Monoliths</option>
-                        <option value="GSCM_007">COMPRADOS: Stainless Steel</option>
-                        <option value="GSCM_008">COMPRADOS: Steel / Aluminized Carbon Steel</option>
-                        <option value="GSCM_009">COMPRADOS: Tubing / Stainless Straight Tube</option>
-                        <option value="GSCM_010">COMPRADOS: ICY</option>
-                        <option value="GSCM_011">COMPRADOS: Welding Wire</option>
-                        <option value="GSCM_012">COMPRADOS: Manipulated Pipes (Nacional)</option>
-                        <option value="GSCM_013">COMPRADOS: Stampings (Nacional)</option>
-                        <option value="GSCM_014">COMPRADOS: Bosses</option>
-                        <option value="GSCM_015">COMPRADOS: Castings</option>
-                        <option value="GSCM_016">COMPRADOS: Clamps</option>
-                        <option value="GSCM_017">COMPRADOS: Cold Headings / Fasteners</option>
-                        <option value="GSCM_018">COMPRADOS: Flex Couplings</option>
-                        <option value="GSCM_019">COMPRADOS: Gaskets</option>
-                        <option value="GSCM_020">COMPRADOS: Plastic</option>
-                        <option value="GSCM_021">COMPRADOS: Rubber Components</option>
-                        <option value="GSCM_022">COMPRADOS: Hydroforming</option>
-                        <option value="GSCM_023">COMPRADOS: Manipulated Pipes(Importado)</option>
-                        <option value="GSCM_024">COMPRADOS: Stampings(Importado)</option>
+                                
 
-                       
-
-                    </select>   
-                    <br><input type="checkbox" id="importados" name="importados">
-                    <label class="legenda-radio" for="importados">IMPORTADO</label>
-                    </div>
-                </fieldset>
-            
+                                </select><br>   
+                                <input type="checkbox" id="importados" name="importados">
+                                <label class="legenda-radio" for="importados">IMPORTADO</label>
+                            </div>
+                        </fieldset>
+                    </section>
+                </form>
             </div>
 
-                <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
+            <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
                 <div id="resumo_final_div" style="width: 320px;text-align: center;"></div>
-                </fieldset>
+            </fieldset>
 
+            <ul id="tabelaNomeID_nvis">
+                <li id="MARCSANT ">DELETE TASK (Shift + F2)</li>
+                <li id="MARCSANT">MARCELO SANTOS</li>
+                <li id="FILIREGO">FILIPE REGOLIM</li>
+                <li id="JEANFRA1">JEAN FRANCO</li>
+                <li id="MAYCOLIV">MAYCON OLIVEIRA</li>
+                <li id="THIABRIT">THIAGO BRITO</li>
+                <li id="DENICARD">DENILSON CARDOSO</li>
+                <li id="SALAPEDA">SALATYEL PEDAO</li>
+                <li id="TULISILV">TULIO SILVA</li>
+                <li id="GRASDASI">GRASIELA SILVA</li>
+                <li id="CLEYALVE">CLEYTON ALVES</li>
+                <li id="CARLMART">CARLOS MARTINS</li>
+                <li id="ELTONOGU">ELTON NOGUEIRA</li>
+                <li id="ROMUMART">ROMULO MARTINS</li>
+                <li id="ANDRROSA">ANDRE ROSA</li>
+                <li id="DIOGBOVE">DIOGO BOVELONI</li>
+                <li id="JULILOPE">JULIO LOPES</li>
+                <li id="JOSEGASP">JOSE GASPARINI</li>
+                <li id="MAERLEON">MAERCIO LEONELLO</li>
+                <li id="ERIKBARB">ERIK BARBOSA</li>
+                <li id="CARLSOUS">CARLOS DE SOUSA</li>
+                <li id="SEBAREZE">MAURICIO REZENDE</li>
+                <li id="LUCEPOLL">LUCELIA POLLETTINI</li>
+                <li id="CELIINNO">CELIA INNOCENTE</li>
+                <li id="GIULSILV">GUILHERME SILVA</li>
+                <li id="SIDNSILV">SIDNEY DA SILVA</li>
+                <li id="GLEIDARO">GLEIDSON ROSA</li>
+                <li id="PALORIB1">PALOMA RIBEIRO</li>
+                <li id="EVERROSA">EVERI ROSADA</li>
+                <li id="RODRCHA1">RODRIGO CHAVES</li>
+                <li id="FLAVDOMI">FLAVIO DOMINGUES</li>
+                <li id="DENIALVE">DENISE ALVES</li>
+                <li id="X1GABRFA">GABRIELA FACHIN</li>
+
+            </ul>
             
-                <ul id="tabelaNomeID_nvis">
-                    <li id="MARCSANT ">DELETE TASK (Shift + F2)</li>
-                    <li id="MARCSANT">MARCELO SANTOS</li>
-                    <li id="FILIREGO">FILIPE REGOLIM</li>
-                    <li id="JEANFRA1">JEAN FRANCO</li>
-                    <li id="MAYCOLIV">MAYCON OLIVEIRA</li>
-                    <li id="THIABRIT">THIAGO BRITO</li>
-                    <li id="DENICARD">DENILSON CARDOSO</li>
-                    <li id="SALAPEDA">SALATYEL PEDAO</li>
-                    <li id="TULISILV">TULIO SILVA</li>
-                    <li id="GRASDASI">GRASIELA SILVA</li>
-                    <li id="CLEYALVE">CLEYTON ALVES</li>
-                    <li id="CARLMART">CARLOS MARTINS</li>
-                    <li id="ELTONOGU">ELTON NOGUEIRA</li>
-                    <li id="ROMUMART">ROMULO MARTINS</li>
-                    <li id="ANDRROSA">ANDRE ROSA</li>
-                    <li id="DIOGBOVE">DIOGO BOVELONI</li>
-                    <li id="JULILOPE">JULIO LOPES</li>
-                    <li id="JOSEGASP">JOSE GASPARINI</li>
-                    <li id="MAERLEON">MAERCIO LEONELLO</li>
-                    <li id="ERIKBARB">ERIK BARBOSA</li>
-                    <li id="CARLSOUS">CARLOS DE SOUSA</li>
-                    <li id="SEBAREZE">MAURICIO REZENDE</li>
-                    <li id="LUCEPOLL">LUCELIA POLLETTINI</li>
-                    <li id="CELIINNO">CELIA INNOCENTE</li>
-                    <li id="GIULSILV">GUILHERME SILVA</li>
-                    <li id="SIDNSILV">SIDNEY DA SILVA</li>
-                    <li id="GLEIDARO">GLEIDSON ROSA</li>
-                    <li id="PALORIB1">PALOMA RIBEIRO</li>
-                    <li id="EVERROSA">EVERI ROSADA</li>
-                    <li id="RODRCHA1">RODRIGO CHAVES</li>
-                    <li id="FLAVDOMI">FLAVIO DOMINGUES</li>
-                    <li id="DENIALVE">DENISE ALVES</li>
-                    <li id="X1GABRFA">GABRIELA FACHIN</li>
+            <table id="fluxo_ta2_vis" class="resultado_nvis">
+                <tr><td id="TA2_nomeID01">MARCSANT</td><td class="neutral">01</td><td id="TA2_start01">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due01">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID02">MARCSANT</td><td class="neutral">01</td><td id="TA2_start02">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due02">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID03">MARCSANT</td><td class="neutral">02</td><td id="TA2_start03">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due03">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID04">MARCSANT</td><td class="neutral">02</td><td id="TA2_start04">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due04">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID05">MARCSANT</td><td class="neutral">02</td><td id="TA2_start05">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due05">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID06">MARCSANT</td><td class="neutral">03</td><td id="TA2_start06">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due06">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID07">MARCSANT</td><td class="neutral">04</td><td id="TA2_start07">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due07">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID08">MARCSANT</td><td class="neutral">04</td><td id="TA2_start08">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due08">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID09">MARCSANT</td><td class="neutral">04</td><td id="TA2_start09">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due09">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID10">MARCSANT</td><td class="neutral">05</td><td id="TA2_start10">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due10">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID11">MARCSANT</td><td class="neutral">06</td><td id="TA2_start11">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due11">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID12">MARCSANT</td><td class="neutral">07</td><td id="TA2_start12">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due12">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID13">MARCSANT</td><td class="neutral">07</td><td id="TA2_start13">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due13">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID14">MARCSANT</td><td class="neutral">07</td><td id="TA2_start14">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due14">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID15">MARCSANT</td><td class="neutral">07</td><td id="TA2_start15">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due15">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID16">MARCSANT</td><td class="neutral">08</td><td id="TA2_start16">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due16">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID17">MARCSANT</td><td class="neutral">08</td><td id="TA2_start17">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due17">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID18">MARCSANT</td><td class="neutral">08</td><td id="TA2_start18">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due18">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID19">MARCSANT</td><td class="neutral">08</td><td id="TA2_start19">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due19">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID20">MARCSANT</td><td class="neutral">09</td><td id="TA2_start20">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due20">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID21">MARCSANT</td><td class="neutral">09</td><td id="TA2_start21">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due21">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID22">MARCSANT</td><td class="neutral">09</td><td id="TA2_start22">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due22">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID23">MARCSANT</td><td class="neutral">09</td><td id="TA2_start23">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due23">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID24">MARCSANT</td><td class="neutral">10</td><td id="TA2_start24">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due24">12.02.2020</td></tr>
+                <tr><td id="TA2_nomeID25">MARCSANT</td><td class="neutral">11</td><td id="TA2_start25">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due25">12.02.2020</td></tr>
 
-                </ul>
-            </section>
-            
-<table id="fluxo_ta2_vis" class="resultado_nvis">
-    <tr><td id="TA2_nomeID01">MARCSANT</td><td class="neutral">01</td><td id="TA2_start01">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due01">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID02">MARCSANT</td><td class="neutral">01</td><td id="TA2_start02">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due02">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID03">MARCSANT</td><td class="neutral">02</td><td id="TA2_start03">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due03">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID04">MARCSANT</td><td class="neutral">02</td><td id="TA2_start04">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due04">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID05">MARCSANT</td><td class="neutral">02</td><td id="TA2_start05">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due05">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID06">MARCSANT</td><td class="neutral">03</td><td id="TA2_start06">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due06">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID07">MARCSANT</td><td class="neutral">04</td><td id="TA2_start07">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due07">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID08">MARCSANT</td><td class="neutral">04</td><td id="TA2_start08">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due08">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID09">MARCSANT</td><td class="neutral">04</td><td id="TA2_start09">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due09">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID10">MARCSANT</td><td class="neutral">05</td><td id="TA2_start10">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due10">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID11">MARCSANT</td><td class="neutral">06</td><td id="TA2_start11">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due11">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID12">MARCSANT</td><td class="neutral">07</td><td id="TA2_start12">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due12">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID13">MARCSANT</td><td class="neutral">07</td><td id="TA2_start13">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due13">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID14">MARCSANT</td><td class="neutral">07</td><td id="TA2_start14">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due14">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID15">MARCSANT</td><td class="neutral">07</td><td id="TA2_start15">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due15">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID16">MARCSANT</td><td class="neutral">08</td><td id="TA2_start16">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due16">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID17">MARCSANT</td><td class="neutral">08</td><td id="TA2_start17">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due17">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID18">MARCSANT</td><td class="neutral">08</td><td id="TA2_start18">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due18">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID19">MARCSANT</td><td class="neutral">08</td><td id="TA2_start19">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due19">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID20">MARCSANT</td><td class="neutral">09</td><td id="TA2_start20">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due20">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID21">MARCSANT</td><td class="neutral">09</td><td id="TA2_start21">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due21">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID22">MARCSANT</td><td class="neutral">09</td><td id="TA2_start22">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due22">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID23">MARCSANT</td><td class="neutral">09</td><td id="TA2_start23">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due23">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID24">MARCSANT</td><td class="neutral">10</td><td id="TA2_start24">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due24">12.02.2020</td></tr>
-    <tr><td id="TA2_nomeID25">MARCSANT</td><td class="neutral">11</td><td id="TA2_start25">07.02.2020</td><td class="neutral">00:00:00</td><td id="TA2_Due25">12.02.2020</td></tr>
+            </table>
 
-</table>
+            <div class="tabela_workflow_ta2">
+                <table id="workflow_ref">
+                    <tr><td>Nivel</td>  <td>Atvidade</td>                                   <td>Responsável</td>         <td>Nome</td><td>Backup</td><td>Prazo</td></tr>
+                    <tr><td>01</td>     <td>SAP COST - Cadastrar dados mestres C01.</td>    <td id="nomeID01">MARCSANT</td><td id="nome01">MARCELO SANTOS</td><td><input type="checkbox" id="bkup01" name="bkup01"></td><td class="periodoDias_nvis" id="task01">4</td></tr>
+                    <tr><td>01</td>     <td>SAP ENG - Checar BOM.</td>                      <td id="nomeID02">MARCSANT</td><td id="nome02">MARCELO SANTOS</td><td><input type="checkbox" id="bkup02" name="bkup02"></td><td class="periodoDias_nvis" id="task02">4</td></tr>
+                    <tr><td>02</td>     <td>SAP COMPRAS - Definir Fornecedor.</td>          <td id="nomeID03">MARCSANT</td><td id="nome03">MARCELO SANTOS</td><td><input type="checkbox" id="bkup03" name="bkup03"></td><td class="periodoDias_nvis" id="task03">5</td></tr>
+                    <tr><td>02</td>     <td>SAP PCP - Cadastrar visoes de logistica.</td>   <td id="nomeID04">MARCSANT</td><td id="nome04">MARCELO SANTOS</td><td><input type="checkbox" id="bkup04" name="bkup04"></td><td class="periodoDias_nvis" id="task04">5</td></tr>
+                    <tr><td>02</td>     <td>SAP VENDAS - Cadastrar visão de venda.</td>     <td id="nomeID05">MARCSANT</td><td id="nome05">MARCELO SANTOS</td><td><input type="checkbox" id="bkup05" name="bkup05"></td><td class="periodoDias_nvis" id="task05">4</td></tr>
+                    <tr><td>03</td>     <td>SAP FISCAL - Verificar cadastros.</td>          <td id="nomeID06">MARCSANT</td><td id="nome06">MARCELO SANTOS</td><td><input type="checkbox" id="bkup06" name="bkup06"></td><td class="periodoDias_nvis" id="task06">4</td></tr>
+                    <tr><td>04</td>     <td>SAP QUAL - Criar roteiro de qualidade.</td>     <td id="nomeID07">MARCSANT</td><td id="nome07">MARCELO SANTOS</td><td><input type="checkbox" id="bkup07" name="bkup07"></td><td class="periodoDias_nvis" id="task07">5</td></tr>
+                    <tr><td>04</td>     <td>SAP QUAL - Cadastrar PPAP (temporario).</td>    <td id="nomeID08">MARCSANT</td><td id="nome08">MARCELO SANTOS</td><td><input type="checkbox" id="bkup08" name="bkup08"></td><td class="periodoDias_nvis" id="task08">5</td></tr>
+                    <tr><td>04</td>     <td>SAP PROCESSOS – Criar roteiro processo.</td>    <td id="nomeID09">MARCSANT</td><td id="nome09">MARCELO SANTOS</td><td><input type="checkbox" id="bkup09" name="bkup09"></td><td class="periodoDias_nvis" id="task09">14</td></tr>
+                    <tr><td>05</td>     <td>SAP COMPRAS - Checar cadastro/fixar LOF.</td>   <td id="nomeID10">MARCSANT</td><td id="nome10">MARCELO SANTOS</td><td><input type="checkbox" id="bkup10" name="bkup10"></td><td class="periodoDias_nvis" id="task10">30</td></tr>
+                    <tr><td>06</td>     <td>SAP CONTABILIDADE - Calcular Custos.</td>       <td id="nomeID11">MARCSANT</td><td id="nome11">MARCELO SANTOS</td><td><input type="checkbox" id="bkup11" name="bkup11"></td><td class="periodoDias_nvis" id="task11">5</td></tr>
+                    <tr><td>07</td>     <td>SAP QUAL - Cadastrar PPAP Comp. (30d)</td>      <td id="nomeID12">MARCSANT</td><td id="nome12">MARCELO SANTOS</td><td><input type="checkbox" id="bkup12" name="bkup12"></td><td class="periodoDias_nvis" id="task12">30</td></tr>
+                    <tr><td>07</td>     <td>DOC PROCESSOS – Atualizar FIP (30d)</td>        <td id="nomeID13">MARCSANT</td><td id="nome13">MARCELO SANTOS</td><td><input type="checkbox" id="bkup13" name="bkup13"></td><td class="periodoDias_nvis" id="task13">30</td></tr>
+                    <tr><td>07</td>     <td>DOC QUAL - Revisar cadastro e PCF (30d)</td>    <td id="nomeID14">MARCSANT</td><td id="nome14">MARCELO SANTOS</td><td><input type="checkbox" id="bkup14" name="bkup14"></td><td class="periodoDias_nvis" id="task14">30</td></tr>
+                    <tr><td>07</td>     <td>DOC ENG - Revisar DFEMEA e AVCE (30d)</td>      <td id="nomeID15">MARCSANT</td><td id="nome15">MARCELO SANTOS</td><td><input type="checkbox" id="bkup15" name="bkup15"></td><td class="periodoDias_nvis" id="task15">30</td></tr>
+                    <tr><td>08</td>     <td>SAP QUAL - Cadastrar PPAP Comp. (90d)</td>      <td id="nomeID16">MARCSANT</td><td id="nome16">MARCELO SANTOS</td><td><input type="checkbox" id="bkup16" name="bkup16"></td><td class="periodoDias_nvis" id="task16">90</td></tr>
+                    <tr><td>08</td>     <td>DOC PROCESSOS – Atualizar FIP (90d)</td>        <td id="nomeID17">MARCSANT</td><td id="nome17">MARCELO SANTOS</td><td><input type="checkbox" id="bkup17" name="bkup17"></td><td class="periodoDias_nvis" id="task17">90</td></tr>
+                    <tr><td>08</td>     <td>DOC QUAL - Revisar cadastro e PCF (90d)</td>    <td id="nomeID18">MARCSANT</td><td id="nome18">MARCELO SANTOS</td><td><input type="checkbox" id="bkup18" name="bkup18"></td><td class="periodoDias_nvis" id="task18">90</td></tr>
+                    <tr><td>08</td>     <td>DOC ENG - Revisar DFEMEA e AVCE (90d)</td>      <td id="nomeID19">MARCSANT</td><td id="nome19">MARCELO SANTOS</td><td><input type="checkbox" id="bkup19" name="bkup19"></td><td class="periodoDias_nvis" id="task19">90</td></tr>
+                    <tr><td>09</td>     <td>SAP QUAL - Cadastrar PPAP Comp. (180d)</td>     <td id="nomeID20">MARCSANT</td><td id="nome20">MARCELO SANTOS</td><td><input type="checkbox" id="bkup20" name="bkup20"></td><td class="periodoDias_nvis" id="task20">180</td></tr>
+                    <tr><td>09</td>     <td>DOC PROCESSOS – Atualizar FIP (180d)</td>       <td id="nomeID21">MARCSANT</td><td id="nome21">MARCELO SANTOS</td><td><input type="checkbox" id="bkup21" name="bkup21"></td><td class="periodoDias_nvis" id="task21">180</td></tr>
+                    <tr><td>09</td>     <td>DOC QUAL - Revisar cadastro e PCF (180d)</td>   <td id="nomeID22">MARCSANT</td><td id="nome22">MARCELO SANTOS</td><td><input type="checkbox" id="bkup22" name="bkup22"></td><td class="periodoDias_nvis" id="task22">180</td></tr>
+                    <tr><td>09</td>     <td>DOC ENG - Revisar DFEMEA e AVCE (180d)</td>     <td id="nomeID23">MARCSANT</td><td id="nome23">MARCELO SANTOS</td><td><input type="checkbox" id="bkup23" name="bkup23"></td><td class="periodoDias_nvis" id="task23">180</td></tr>
+                    <tr><td>10</td>     <td>SAP PCP - Ponto de Corte.</td>                  <td id="nomeID24">MARCSANT</td><td id="nome24">MARCELO SANTOS</td><td><input type="checkbox" id="bkup24" name="bkup24"></td><td class="periodoDias_nvis" id="task24">10</td></tr>
+                    <tr><td>11</td>     <td>SAP ENG - Providenciar liberação da ECM.</td>   <td id="nomeID25">MARCSANT</td><td id="nome25">MARCELO SANTOS</td><td><input type="checkbox" id="bkup25" name="bkup25"></td><td class="periodoDias_nvis" id="task25">5</td></tr>
+                </table>
+            </div>
 
-<div class="tabela_workflow_ta2">
-<table id="workflow_ref">
-    <tr><td>Nivel</td>  <td>Atvidade</td>                                   <td>Responsável</td>         <td>Nome</td><td>Backup</td><td>Prazo</td></tr>
-    <tr><td>01</td>     <td>SAP COST - Cadastrar dados mestres C01.</td>    <td id="nomeID01">MARCSANT</td><td id="nome01">MARCELO SANTOS</td><td><input type="checkbox" id="bkup01" name="bkup01"></td><td class="periodoDias_nvis" id="task01">4</td></tr>
-    <tr><td>01</td>     <td>SAP ENG - Checar BOM.</td>                      <td id="nomeID02">MARCSANT</td><td id="nome02">MARCELO SANTOS</td><td><input type="checkbox" id="bkup02" name="bkup02"></td><td class="periodoDias_nvis" id="task02">4</td></tr>
-    <tr><td>02</td>     <td>SAP COMPRAS - Definir Fornecedor.</td>          <td id="nomeID03">MARCSANT</td><td id="nome03">MARCELO SANTOS</td><td><input type="checkbox" id="bkup03" name="bkup03"></td><td class="periodoDias_nvis" id="task03">5</td></tr>
-    <tr><td>02</td>     <td>SAP PCP - Cadastrar visoes de logistica.</td>   <td id="nomeID04">MARCSANT</td><td id="nome04">MARCELO SANTOS</td><td><input type="checkbox" id="bkup04" name="bkup04"></td><td class="periodoDias_nvis" id="task04">5</td></tr>
-    <tr><td>02</td>     <td>SAP VENDAS - Cadastrar visão de venda.</td>     <td id="nomeID05">MARCSANT</td><td id="nome05">MARCELO SANTOS</td><td><input type="checkbox" id="bkup05" name="bkup05"></td><td class="periodoDias_nvis" id="task05">4</td></tr>
-    <tr><td>03</td>     <td>SAP FISCAL - Verificar cadastros.</td>          <td id="nomeID06">MARCSANT</td><td id="nome06">MARCELO SANTOS</td><td><input type="checkbox" id="bkup06" name="bkup06"></td><td class="periodoDias_nvis" id="task06">4</td></tr>
-    <tr><td>04</td>     <td>SAP QUAL - Criar roteiro de qualidade.</td>     <td id="nomeID07">MARCSANT</td><td id="nome07">MARCELO SANTOS</td><td><input type="checkbox" id="bkup07" name="bkup07"></td><td class="periodoDias_nvis" id="task07">5</td></tr>
-    <tr><td>04</td>     <td>SAP QUAL - Cadastrar PPAP (temporario).</td>    <td id="nomeID08">MARCSANT</td><td id="nome08">MARCELO SANTOS</td><td><input type="checkbox" id="bkup08" name="bkup08"></td><td class="periodoDias_nvis" id="task08">5</td></tr>
-    <tr><td>04</td>     <td>SAP PROCESSOS – Criar roteiro processo.</td>    <td id="nomeID09">MARCSANT</td><td id="nome09">MARCELO SANTOS</td><td><input type="checkbox" id="bkup09" name="bkup09"></td><td class="periodoDias_nvis" id="task09">14</td></tr>
-    <tr><td>05</td>     <td>SAP COMPRAS - Checar cadastro/fixar LOF.</td>   <td id="nomeID10">MARCSANT</td><td id="nome10">MARCELO SANTOS</td><td><input type="checkbox" id="bkup10" name="bkup10"></td><td class="periodoDias_nvis" id="task10">30</td></tr>
-    <tr><td>06</td>     <td>SAP CONTABILIDADE - Calcular Custos.</td>       <td id="nomeID11">MARCSANT</td><td id="nome11">MARCELO SANTOS</td><td><input type="checkbox" id="bkup11" name="bkup11"></td><td class="periodoDias_nvis" id="task11">5</td></tr>
-    <tr><td>07</td>     <td>SAP QUAL - Cadastrar PPAP Comp. (30d)</td>      <td id="nomeID12">MARCSANT</td><td id="nome12">MARCELO SANTOS</td><td><input type="checkbox" id="bkup12" name="bkup12"></td><td class="periodoDias_nvis" id="task12">30</td></tr>
-    <tr><td>07</td>     <td>DOC PROCESSOS – Atualizar FIP (30d)</td>        <td id="nomeID13">MARCSANT</td><td id="nome13">MARCELO SANTOS</td><td><input type="checkbox" id="bkup13" name="bkup13"></td><td class="periodoDias_nvis" id="task13">30</td></tr>
-    <tr><td>07</td>     <td>DOC QUAL - Revisar cadastro e PCF (30d)</td>    <td id="nomeID14">MARCSANT</td><td id="nome14">MARCELO SANTOS</td><td><input type="checkbox" id="bkup14" name="bkup14"></td><td class="periodoDias_nvis" id="task14">30</td></tr>
-    <tr><td>07</td>     <td>DOC ENG - Revisar DFEMEA e AVCE (30d)</td>      <td id="nomeID15">MARCSANT</td><td id="nome15">MARCELO SANTOS</td><td><input type="checkbox" id="bkup15" name="bkup15"></td><td class="periodoDias_nvis" id="task15">30</td></tr>
-    <tr><td>08</td>     <td>SAP QUAL - Cadastrar PPAP Comp. (90d)</td>      <td id="nomeID16">MARCSANT</td><td id="nome16">MARCELO SANTOS</td><td><input type="checkbox" id="bkup16" name="bkup16"></td><td class="periodoDias_nvis" id="task16">90</td></tr>
-    <tr><td>08</td>     <td>DOC PROCESSOS – Atualizar FIP (90d)</td>        <td id="nomeID17">MARCSANT</td><td id="nome17">MARCELO SANTOS</td><td><input type="checkbox" id="bkup17" name="bkup17"></td><td class="periodoDias_nvis" id="task17">90</td></tr>
-    <tr><td>08</td>     <td>DOC QUAL - Revisar cadastro e PCF (90d)</td>    <td id="nomeID18">MARCSANT</td><td id="nome18">MARCELO SANTOS</td><td><input type="checkbox" id="bkup18" name="bkup18"></td><td class="periodoDias_nvis" id="task18">90</td></tr>
-    <tr><td>08</td>     <td>DOC ENG - Revisar DFEMEA e AVCE (90d)</td>      <td id="nomeID19">MARCSANT</td><td id="nome19">MARCELO SANTOS</td><td><input type="checkbox" id="bkup19" name="bkup19"></td><td class="periodoDias_nvis" id="task19">90</td></tr>
-    <tr><td>09</td>     <td>SAP QUAL - Cadastrar PPAP Comp. (180d)</td>     <td id="nomeID20">MARCSANT</td><td id="nome20">MARCELO SANTOS</td><td><input type="checkbox" id="bkup20" name="bkup20"></td><td class="periodoDias_nvis" id="task20">180</td></tr>
-    <tr><td>09</td>     <td>DOC PROCESSOS – Atualizar FIP (180d)</td>       <td id="nomeID21">MARCSANT</td><td id="nome21">MARCELO SANTOS</td><td><input type="checkbox" id="bkup21" name="bkup21"></td><td class="periodoDias_nvis" id="task21">180</td></tr>
-    <tr><td>09</td>     <td>DOC QUAL - Revisar cadastro e PCF (180d)</td>   <td id="nomeID22">MARCSANT</td><td id="nome22">MARCELO SANTOS</td><td><input type="checkbox" id="bkup22" name="bkup22"></td><td class="periodoDias_nvis" id="task22">180</td></tr>
-    <tr><td>09</td>     <td>DOC ENG - Revisar DFEMEA e AVCE (180d)</td>     <td id="nomeID23">MARCSANT</td><td id="nome23">MARCELO SANTOS</td><td><input type="checkbox" id="bkup23" name="bkup23"></td><td class="periodoDias_nvis" id="task23">180</td></tr>
-    <tr><td>10</td>     <td>SAP PCP - Ponto de Corte.</td>                  <td id="nomeID24">MARCSANT</td><td id="nome24">MARCELO SANTOS</td><td><input type="checkbox" id="bkup24" name="bkup24"></td><td class="periodoDias_nvis" id="task24">10</td></tr>
-    <tr><td>11</td>     <td>SAP ENG - Providenciar liberação da ECM.</td>   <td id="nomeID25">MARCSANT</td><td id="nome25">MARCELO SANTOS</td><td><input type="checkbox" id="bkup25" name="bkup25"></td><td class="periodoDias_nvis" id="task25">5</td></tr>
-</table>
-</div>
-
-        </form>
-        <button id="copia_fluxo_vis" class="botao_nvis" value="Copiar Aprovadores" onclick="copiarfluxo();">Copiar Aprovadores</button>
+            <button id="copia_fluxo_vis" class="botao_nvis" value="Copiar Aprovadores" onclick="copiarfluxo();">Copiar Aprovadores</button>
         
         </aside>
 
-</div> <!--divGeral-->
+    </div> <!--divGeral-->
 
 <textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
 
 <script>
     parent.validacao();
 </script>
-
-
-
 </body>
 </html>
