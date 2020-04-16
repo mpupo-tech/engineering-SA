@@ -148,8 +148,8 @@ fieldset#itemtype {
     display: block;
     float: right;
     width: 340px;
-    height: 410px;
-    margin-bottom: 20px;
+    height: 408px;
+    margin-bottom: 10px;
     background-color: rgba(255, 255, 0, 0.2);
 }
 
@@ -343,28 +343,21 @@ div.itens-alterados {
         </div>
 
         <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
-            <div id="resumo_final_div" style="width: 320px;text-align: center;">
+            <div id="resumo_final_div">
+                
             </div>
         </fieldset>
 
         <div class="itens-alterados">
 
-            <textarea style="width: 393px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Material + Descrição"></textarea>
-            <textarea style="width: 84px; height: 100px; font-size: 10pt; margin: 5px auto 5px 1px; resize:none" placeholder="Usado em: MM"></textarea>
+            <textarea style="width: 393px; height: 102px; font-size: 10pt; margin: 5px 2px 0px 2px; resize:none" placeholder="Material + Descrição"></textarea>
+            <textarea style="width: 84px; height: 102px; font-size: 10pt; margin-top: 5px; resize:none" placeholder="Usado em: MM"></textarea>
             </div>
 
-        <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 100%;">
-            <h3 style="text-align: center;">Autorização de Modificação</h3>
+        <div style="background-color: rgb(145, 255, 0); padding: 0px; width: 100%; margin-top: -10px;">
+            <h2 style="text-align: center;">Autorização de Modificação</h2>
             
             <form>
-                <!--
-
-                <input type="button" value="Adic. Linha" onclick="add_ADM_MMDesc()">
-                <div id="ADM_itensAlterados">
-                    <span id="Add_ADM_Material">
-                <label for="ADM_MMDescricao_001">Material</label><input type="text" name="" id="ADM_MMDescricao_001" placeholder="Material+Descrição"><br></span>
-                
-                </div>-->
                 
                 <table>
                     <tr id="ADM_linha_titulo">
@@ -496,7 +489,7 @@ div.itens-alterados {
 
                     <fieldset><legend>Outros</legend>
                         <legend>Alterações</legend>
-                        <textarea name="ADM_outros" id="ADM_outros" cols="30" rows="10" placeholder="Detalhe das alterações."></textarea><br>
+                        <textarea name="ADM_outros" id="ADM_outros" cols="30" rows="10" placeholder="Detalhe das alterações." style="width: 100%; height: 100px; resize: none;"></textarea><br>
 
                         <input type="button" value="Add">
 
