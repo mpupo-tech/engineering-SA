@@ -732,3 +732,47 @@ function reiniciar() {
     document.getElementById("Comprados").className = "Comprados_nvis"
     document.getElementById("resumo_final_div").innerHTML = ""
 }
+
+function textomcm() {
+    var nomeCriador = document.querySelector('input[name="UserID"]:checked').value;
+    var tipoDocumento = document.querySelector('input[name="tTipo-ecm"]:checked').value;
+    var statusPrograma = document.querySelector('input[name="tStatus-programa"]:checked').value;
+    var clienteNomeFull = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].text;
+    var projectName = document.getElementById('cProjeto').value;
+    var mogimirim = document.getElementById('cMogi');
+    var camacari = document.getElementById('cCamacari');
+    var productType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].text;
+    //var tipoMaterial = document.getElementById('tipoMM').options[document.getElementById('tipoMM').selectedIndex].text;
+
+    var MOM2 = 'MOM2';
+    var CAM1 = 'CAM1';
+
+
+
+
+
+
+    //PLANTA
+
+    if (mogimirim.checked && camacari.checked) {            
+        txtplanta = `<strong>Planta:</strong> ${MOM2} e ${CAM1}.<br>`
+        } else { if (mogimirim.checked) {
+            txtplanta = `<strong>Planta:</strong> ${MOM2}.<br>`
+        } else { if (camacari.checked) {
+            txtplanta = `<strong>Planta:</strong> ${CAM1}.<br>`
+        } else { txtplanta = ''}
+        }
+        }
+    
+
+    alert(`${nomeCriador}
+    ${tipoDocumento}
+    ${statusPrograma}
+    ${clienteNomeFull}
+    ${projectName}
+    ${txtplanta}
+    ${productType}
+    `)
+
+
+}
