@@ -743,13 +743,12 @@ function textomcm() {
     var camacari = document.getElementById('cCamacari');
     var productType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].text;
     //var tipoMaterial = document.getElementById('tipoMM').options[document.getElementById('tipoMM').selectedIndex].text;
-
+    var date = new Date(2050, 0, 1);
+    dataADM = document.getElementById("ADM_BOM_date").value
+    dataADM = new Date(date)
+   
     var MOM2 = 'MOM2';
     var CAM1 = 'CAM1';
-
-
-
-
 
 
     //PLANTA
@@ -760,19 +759,17 @@ function textomcm() {
             txtplanta = `<strong>Planta:</strong> ${MOM2}.<br>`
         } else { if (camacari.checked) {
             txtplanta = `<strong>Planta:</strong> ${CAM1}.<br>`
-        } else { txtplanta = ''}
-        }
-        }
+        } else { txtplanta = ''}}}
     
+        
 
-    alert(`${nomeCriador}
-    ${tipoDocumento}
-    ${statusPrograma}
-    ${clienteNomeFull}
-    ${projectName}
-    ${txtplanta}
-    ${productType}
-    `)
+        
+
+
+
+
+
+    alert(`${dataADM}`)
 
 
 }
