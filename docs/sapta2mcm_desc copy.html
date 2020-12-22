@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tenneco Clean Air - South America Engineering</title>
+
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" src="javascript/funcoes_ta2.js">
+    </script>
+ <!--   <link href="../site_eng/css/reset.css" rel="stylesheet" type="text/css" />-->
+
+<style>
+
+
+#copia_fluxo_vis {
+    position: relative;
+    left: 355px;
+    top: -710px;
+}
+#botao_reset {
+    position: relative;
+    left: 420px;
+    top: 55px;
+}
+
+label.legenda-radio {
+    margin-right: 15px;
+    
+}
+legend.legenda {
+    font-size: 11pt;
+    font-weight: bold;
+    color: rgb(60, 41, 129);
+    background-color: white;
+}
+
+
+
+textarea.tarea-visivel {
+    display: unset;
+    position: absolute;
+    top: 90px;
+    left: 900px;
+}
+
+textarea.tarea-nvisivel {
+    display: none;
+}
+
+section#corpo {
+    display: block;
+    float: left;
+}
+
+
+.resultado_vis {
+    display: unset;
+}
+
+.resultado_nvis {
+    display: none;
+}
+
+#fluxo_ta2_vis {
+    position: absolute;
+    top: 5000px;
+
+}
+
+button.botao {
+    padding: 5px;
+    margin: 5px 5px 5px auto;
+}
+button.botao_nvis {
+display: none;
+}
+
+.prazo_nvis {
+    display: none;
+}
+
+
+.itemChanged_nvis {
+
+    display: none;
+}
+div.itemChanged_vis {
+    display: unset;
+}
+div.itemChanged_vis td{
+    height: auto;
+    background-color: rgba(255, 64, 0, 0.1);
+}
+
+
+.Comprados_nvis {
+    display: none;
+}
+
+.Comprados_vis {
+    display: unset;
+
+}
+
+#tabelaNomeID_nvis {
+    display: none;
+}
+
+.tabela_workflow_ta2 {
+    font-size: 12pt;
+    width: 100%;
+    }
+
+.tabela_workflow_ta2 table {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(15, 3, 36, 0.05);
+}
+
+
+fieldset#usuario {
+    height: auto;
+    padding-top: 10px;
+}
+fieldset#adm_businesStatus {
+    height: auto;
+    padding-top: 10px;
+}
+
+fieldset#customer_ECMtype {
+    height: auto;
+    padding-top: 10px;
+}
+
+fieldset#customer_ECMtype select{
+    margin-bottom: 10px;
+}
+
+fieldset#itemtype {
+    height: 100px;
+    padding-top: 10px;
+}
+
+
+#resumo_final {
+    display: block;
+    float: right;
+    width: 340px;
+    height: 410px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+div.itens-alterados {
+    width: 500px;
+    }
+
+    .ADM_tipo {
+        padding-left: 20px;
+    }
+
+    </style>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+<div id="interface">
+
+    <header id="cabecalho">
+        <div id="logo-topo">
+            <img src="imagens/logo_tenneco_peq.png" height="38px" width="200px" alt="">
+
+        </div><!--logo-topo"-->
+
+        <div id="titulo_cleanair">
+            <h1>Clean Air Engineering - South America</h1>
+        </div><!--titulo-->
+
+    </header>
+
+    <section id="lado_esquerdo">
+        </br>
+    
+        <nav id="menu">
+            <h1>Munu Principal</h1>
+            <ul>
+                <li><a href="index.html" target="_self">Home</a></li>
+                
+                <li class="linha_principal">SAP A104 - PLP (GPDM)</li>
+                
+                <li id="lista-segundo"><a href="sapplpecm_desc.html" target="_self">ECM (Texto Base)</a></li>
+                <li id="lista-segundo">MM (Descrição Standard)</li>
+                <li id="lista-segundo">Informações</li>
+
+                <li class="linha_principal">SAP A101 - TA2</li>
+                
+                <li id="lista-segundo"><a href="sapta2mcm_desc.html" target="_self">ECM - Texto Base</a></li>
+                <li id="lista-segundo"><a href="sapta2mcm_wf.html" target="_self">ECM - Aprovadores</a></li>
+                <li id="lista-segundo"><a href="sapta2mcm_info.html" target="_self">Procedimentos</a></li>
+    
+                <li class="linha_principal"><a href="calculo_projeos.html" target="_self">Cálculos</a></li>
+                
+                <li id="lista-segundo">Massa (kg)</li>
+                <li id="lista-segundo">Estudo de GAP</li>
+                <li id="lista-segundo">Catalisador</li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <aside id="lado_direito">
+        <div class="itens-alterados">
+            <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
+            <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
+
+            <form>
+                <section id="corpo">
+                    <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Identificação do Usuário</legend> 
+                        <input type="radio" name="UserID" id="cUserID" checked value="" style="display: none;"/>
+                        <input type="radio" name="UserID" id="radio_FILIREGO" value="FILIREGO"/><label class="legenda-radio" for="radio_FILIREGO">Filipe</label>
+                        <input type="radio" name="UserID" id="radio_JEANFRA1" value="JEANFRA1"/><label class="legenda-radio" for="radio_JEANFRA1">Jean</label>
+                        <input type="radio" name="UserID" id="radio_MARCSANT" value="MARCSANT"/><label class="legenda-radio" for="radio_MARCSANT">Marcelo</label>
+                    </fieldset>
+
+                    <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
+                        <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
+                        <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">Nova Produção</label>
+                        <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">Autorização de Modificação</label><br>
+                        <select class="botao_select" name="tCliente" id="cCliente">
+                            <option value="" selected style="display: none;"></option>
+                            <optgroup label="LV">
+                                <option value="VW">VOLKSWAGEN</option>
+                                <option value="FRD">FORD</option>
+                                <option value="GMB">GENERAL MOTORS</option>
+                                <option value="FCA">FIAT</option>
+                                <option value="PSA">PSA</option>
+                                <option value="KIA">KIA</option>
+                                <option value="HYU">HYUNDAI</option>
+                                <option value="CHE">CHERY</option>
+                                <option value="HPE">HPE</option>
+                                <option value="REN">RENAULT</option>
+                                <option value="NIS">NISSAN</option>
+                            </optgroup>
+                                <optgroup label="CTOH">
+                                    <option value="DAI">MERCEDES BENZ</option>
+                                    <option value="SCN">SCANIA</option>
+                                    <option value="IVE">IVECO</option>
+                                    <option value="MAN">MAN</option>
+                                    <option value="CAO">CAOA</option>
+                                    <option value="CNH">CNH</option>
+                                    <option value="MWM">MWM</option>
+                                    <option value="VOL">VOLVO</option>
+                                    <option value="TEN">TENNECO</option>
+                            </optgroup></select>
+
+                        <input type="text" name="tProjeto" id="cProjeto" class="botao_select" maxlength="40" size="20" placeholder="Nome do Projeto" list="adm_PROGRAMA"/>
+                        <datalist id="adm_PROGRAMA" class= "select_letra">
+                            <option value="" selected style="display: none;"></option>
+                            <option value="2 BOX"></option>
+                            <option value="B-DUO"></option>
+                            <option value="B-PAIR"></option>
+                            <option value="B562MCA"></option>
+                            <option value="MQBA1"></option>
+                            <option value="TAREK"></option>
+                            <option value="STRALIS"></option>
+                            <option value="TECTOR"></option>
+                            <option value="MILITAR"></option>
+                            <option value="FM/F3M"></option>
+                            <option value="ATS 4CYL"></option>
+                            <option value="ATS 6CYL"></option>
+                            </datalist>
+                            
+
+                            
+
+                        <select class="botao_select" name="tProduto" id="cProduto">
+                            <option value="" selected style="display: none;"></option>
+                            <optgroup label="LV">
+                                <option value="CE-LV">Cold End</option>
+                                <option value="HE-LV">Hot End</option>
+                                <option value="DP-LV">Down Pipe</option>
+                                <option value="CN-LV">Canning</option>
+                                <option value="CP-LV">Components for LV</option>
+                            </optgroup>
+                            <optgroup label="CTOH">
+                                <option value="BX-VI-CTOH">EURO VI - BOX</option>
+                                <option value="IL-VI-CTOH">EURO VI - IN LINE</option>
+                                <option value="BX-V-CTOH">EURO V - BOX</option>
+                                <option value="IL-V-CTOH">EURO V - IN LINE</option>
+                                <option value="CP-CTOH">Components for CTOH</option>
+                            </optgroup>
+                                <option value="Others">Outros</option>
+                        </select>
+                        
+                        
+                       <!-- <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>-->
+                        <!--<div class="itemChanged_vis" id="div_tipoSubstituido">
+                            <table>
+                                <p style="text-align: center;margin: 10px;"><strong>Item substituido na BOM</strong></p>
+                                <input type="radio" name="tipoSubstituido" id="TPS" value="" style="display: none;"/>
+                                <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="MPS" checked value="ERIKBARB"/><label class="legenda-radio" for="MPS">Matéria Prima</label>
+                                <input style="margin-bottom: 10px;" type="radio" name="tipoSubstituido" id="CPS" value="SEBAREZE"/><label class="legenda-radio" for="CPS">Componente</label></td></tr>
+                            </table>
+                        </div>-->
+                    </fieldset>
+
+                    <fieldset id="adm_businesStatus" class="formulario_nok"><legend class="legenda">Busines Status</legend> 
+                        <select name="TipoMM" id="TipoMM" class= "botao_select">
+                            <option value="" selected style="display: none;"></option>
+                            <optgroup label="FABRICADOS">
+                                <option value="TipoMM_A">PRODUTO ACABADO</option>
+                                <option value="TipoMM_B">SEMI ACABADO</option>
+                            </optgroup>
+                            <optgroup label="COMPRADOS">
+                                <option value="TipoMM_C">COMPONENTE CONTA PLENA</option>
+                                <option value="TipoMM_D">COMPONENTE SUBCONTRATADO</option>
+                                <option value="TipoMM_E">COMPONENTE CONTA PLENA</option>
+                                <option value="TipoMM_F">COMPONENTE INTERCOMPANY (ICY)</option>
+                                <option value="TipoMM_G">MATERIA PRIMA</option>
+                                <option value="TipoMM_H">CONSIGNADO PASSTHROUGH</option>
+                                <option value="TipoMM_I">EMBALAGEM</option>
+                                </optgroup>
+                        </select>
+                        <input type="checkbox" id="importados" name="importados">
+
+                        <label class="legenda-radio" for="importados">IMPORTADO</label>
+                        <br>
+                            
+                        <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
+                        <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
+                        <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label>
+                        
+
+                    </fieldset>
+
+                   <!-- <fieldset id="itemtype" class="formulario_nok"><legend class="legenda">Tipo de Material</legend>
+                        <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
+                            <input type="radio" name="tTipo-item" id="radio_FG" value="Produto Acabado"/><label class="legenda-radio" for="radio_FG">Produto Acabado</label>
+                            <input type="radio" name="tTipo-item" id="radio_SA" value="Semi Acabado"/><label class="legenda-radio" for="radio_SA">Semi Acabado</label>
+                            <input type="radio" name="tTipo-item" id="radio_GSCM" value="Comprados"/><label class="legenda-radio" for="radio_GSCM">Comprados</label>  
+                        
+                        <div id="Comprados" class="Comprados_nvis"><br>
+                            <select name="tComprados" id="cComprados" class="botao_select">
+                                <option value="" style="display: none;"></option>
+                                <option value="GSCM_001" selected>COMPRADOS: Absorption Materials - Cold End</option>
+                                <option value="GSCM_002">COMPRADOS: Hangers</option>
+                                <option value="GSCM_003">COMPRADOS: Hot End Insulation</option>
+                                <option value="GSCM_004">COMPRADOS: Support Mats</option>
+                                <option value="GSCM_005">COMPRADOS: Wire Mesh</option>
+                                <option value="GSCM_006">COMPRADOS: OE Monoliths</option>
+                                <option value="GSCM_007">COMPRADOS: Stainless Steel</option>
+                                <option value="GSCM_008">COMPRADOS: Steel / Aluminized Carbon Steel</option>
+                                <option value="GSCM_009">COMPRADOS: Tubing / Stainless Straight Tube</option>
+                                <option value="GSCM_010">COMPRADOS: ICY</option>
+                                <option value="GSCM_011">COMPRADOS: Welding Wire</option>
+                                <option value="GSCM_012">COMPRADOS: Manipulated Pipes (Nacional)</option>
+                                <option value="GSCM_013">COMPRADOS: Stampings (Nacional)</option>
+                                <option value="GSCM_014">COMPRADOS: Bosses</option>
+                                <option value="GSCM_015">COMPRADOS: Castings</option>
+                                <option value="GSCM_016">COMPRADOS: Clamps</option>
+                                <option value="GSCM_017">COMPRADOS: Cold Headings / Fasteners</option>
+                                <option value="GSCM_018">COMPRADOS: Flex Couplings</option>
+                                <option value="GSCM_019">COMPRADOS: Gaskets</option>
+                                <option value="GSCM_020">COMPRADOS: Plastic</option>
+                                <option value="GSCM_021">COMPRADOS: Rubber Components</option>
+                                <option value="GSCM_022">COMPRADOS: Hydroforming</option>
+                                <option value="GSCM_023">COMPRADOS: Manipulated Pipes(Importado)</option>
+                                <option value="GSCM_024">COMPRADOS: Stampings(Importado)</option>
+                            </select>   
+                            <br>
+                            <input type="checkbox" id="importados" name="importados">
+                            <label class="legenda-radio" for="importados">IMPORTADO</label>
+                        </div>
+                    </fieldset>-->
+                    
+                </section>
+            </form>
+        </div>
+
+        <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
+            <div id="resumo_final_div" style="width: 320px;text-align: center;">
+            </div>
+        </fieldset>
+
+        <div class="itens-alterados">
+
+            <textarea style="width: 393px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Material + Descrição"></textarea>
+            <textarea style="width: 84px; height: 100px; font-size: 10pt; margin: 5px auto 5px 1px; resize:none" placeholder="Usado em: MM"></textarea>
+            </div>
+
+        <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 100%;">
+            <h3 style="text-align: center;">Autorização de Modificação</h3>
+            <form>
+                <!--
+
+                <input type="button" value="Adic. Linha" onclick="add_ADM_MMDesc()">
+                <div id="ADM_itensAlterados">
+                    <span id="Add_ADM_Material">
+                <label for="ADM_MMDescricao_001">Material</label><input type="text" name="" id="ADM_MMDescricao_001" placeholder="Material+Descrição"><br></span>
+                
+                </div>-->
+                
+                <table>
+                    <tr id="ADM_linha_titulo">
+                        <td><input type="checkbox" name="" id="ADM_BOM"><label for="ADM_BOM">BOM</label></td>
+                        <td class="ADM_tipo"><input type="checkbox" name="" id="ADM_Notas"><label for="ADM_Notas">Notas</label></td>
+                        <td class="ADM_tipo"><input type="checkbox" name="" id="ADM_Tolerancia"><label for="ADM_Tolerancia">Tolerância</label></td>
+                        <td class="ADM_tipo"><input type="checkbox" name="" id="ADM_Outros"><label for="ADM_Outros">Outros</label></td>
+                        <td></td>
+                    </tr>
+            
+                </table>
+            
+                <div id="DIV_BOM_">
+                    <fieldset><legend>BOM</legend>
+                        <table>
+                            <tr>
+                                <td><label for="a">DE:</label></td>
+                                <td><input type="text" name="" id="a" placeholder="Material + Descrição"></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Qtde"></td>
+                                <td><select name="unidade_de" id="adm_unidade_de" placeholder="Unidade">
+                                    <option value="" selected style="display: none;"></option>
+                                    <option value="ADMDE_001">PC</option>
+                                    <option value="ADMDE_002">KG</option>
+                                    <option value="ADMDE_003">BM</option>
+
+                                    </select></td>
+                            </tr>
+                            <tr><td><label for="a">PARA:</label></td><td><input type="text" name="" id="a" placeholder="Material + Descrição"></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Qtde"></td>
+                                <td><select name="unidade_de" id="adm_unidade_de" placeholder="Unidade">
+                                <option value="" selected style="display: none;"></option>
+                                <option value="ADMDE_001">PC</option>
+                                <option value="ADMDE_002">KG</option>
+                                <option value="ADMDE_003">BM</option> 
+                            </select></td>
+                            </tr>
+                        </table>
+                        <input type="button" value="Add">
+
+                    </fieldset>
+                    
+                    <fieldset><legend>Notas</legend>
+                        <table>
+                            <tr>
+                                <td><label for="a">DE:</label></td>
+                                <td><input type="text" name="" id="a" placeholder="Nota antiga"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr><td><label for="a">PARA:</label></td><td><input type="text" name="" id="a" placeholder="Nota nova"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <input type="button" value="Add">
+
+                    </fieldset>
+
+                    <fieldset><legend>Tolerânia</legend>
+                        <select name="unidade_de" id="adm_unidade_de" placeholder="Unidade">
+                            <option value="" selected style="display: none;"></option>
+                            <option value="ADMDE_FRT">VISTA FRONTAL</option>
+                            <option value="ADMDE_TOP">VISTA TOPO</option>
+                            <option value="ADMDE_CORTE">VISTA CORTE</option> 
+                            <option value="ADMDE_DET">VISTA DETALHE</option> 
+                            <option value="ADMDE_AUX">VISTA AUXILIAR</option> 
+                            <option value="ADMDE_NA">NÃO DEFINIDO</option>
+                        </select>
+                        <select name="letraVista" id="letraVista" class= "select_letra" style="width: 40px;">
+                            <option value="" selected style="display: none;"></option>
+                            <option value="Vista_A">A</option>
+                            <option value="Vista_B">B</option>
+                            <option value="Vista_C">C</option>
+                            <option value="Vista_D">D</option>
+                            <option value="Vista_E">E</option>
+                            <option value="Vista_F">F</option>
+                            <option value="Vista_G">G</option>
+                            <option value="Vista_H">H</option>
+                            <option value="Vista_I">I</option>
+                            <option value="Vista_J">J</option>
+                            <option value="Vista_K">K</option>
+                            <option value="Vista_L">L</option>
+                            <option value="Vista_M">M</option>
+                            <option value="Vista_N">N</option>
+                            <option value="Vista_O">O</option>
+                            <option value="Vista_P">P</option>
+                            <option value="Vista_Q">Q</option>
+                            <option value="Vista_R">R</option>
+                            <option value="Vista_S">S</option>
+                            <option value="Vista_T">T</option>
+                            <option value="Vista_U">U</option>
+                            <option value="Vista_V">V</option>
+                            <option value="Vista_W">W</option>
+                            <option value="Vista_X">X</option>
+                            <option value="Vista_Y">Y</option>
+                            <option value="Vista_Z">Z</option>
+                            </select> <br>
+
+                            
+                            
+                            
+                        <table>
+                            <tr>
+                                <td style="text-align: right;">Tipo:</td>
+                                <td><input type="radio" name="ADM_Dimensao" id="dim_D"><label for="dim_D">Diâmetro</label>
+                                    <input type="radio" name="ADM_Dimensao" id="dim_R"><label for="dim_R">Raio</label>
+                                    <input type="radio" name="ADM_Dimensao" id="dim_A"><label for="dim_A">Angulo</label>
+                                    <input type="radio" name="ADM_Dimensao" id="dim_L"><label for="dim_L">Linear</label></td>
+                                <td></td></tr>
+
+                            <tr>
+                                <td style="text-align: right;"><label for="dim_valor">Dimensão:</label></td>
+                                <td><input type="number" name="dim_valor" id="dim_valor"></td>
+                                <td></td></tr>
+                            
+                            <tr>
+                                <td rowspan="2" style="text-align: right;">(Tolerância)</td>
+                                <td><input type="text" name="" id="a" placeholder="Nota antiga"><label for="a" style="margin-left: 10px;">(DE)</label></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" name="" id="a" placeholder="Nota nova"><label for="a" style="margin-left: 10px;">(PARA)</label></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <input type="button" value="Add">
+                    </fieldset>
+
+                    <fieldset><legend>Outros</legend>
+                        <legend>Alterações</legend>
+                        <textarea name="ADM_outros" id="ADM_outros" cols="30" rows="10" placeholder="Detalhe das alterações."></textarea><br>
+
+                        <input type="button" value="Add">
+
+                    </fieldset>
+                </div>
+               
+            </form>
+
+        </div>
+        
+        <!--
+        <div style="background-color: aqua; padding: 10px; width: 700px;">
+            <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">DETALHES DAS ALTERAÇÕES EM DESENHO</textarea>
+            </p>
+
+            <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+            </p>
+            <h3 style="text-align: center;">ADM BOM</h3>
+            <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+
+                <select style="vertical-align:4px; padding: 6px;" name="unidade_de" id="adm_unidade_de">
+                    <option value="" selected style="display: none;"></option>
+                    <option value="ADMDE_001">PC</option>
+                    <option value="ADMDE_002">KG</option>
+                    <option value="ADMDE_003">BM</option> 
+                </select>
+
+                <input style="vertical-align:4px ;padding: 6px; width: 70px;" type="number">
+            </p>
+
+            <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+
+                <select style="vertical-align:4px; padding: 6px;" name="unidade_de" id="adm_unidade_de">
+                    <option value="" selected style="display: none;"></option>
+                    <option value="ADMDE_001">PC</option>
+                    <option value="ADMDE_002">KG</option>
+                    <option value="ADMDE_003">BM</option> 
+                </select>
+
+                <input style="vertical-align:4px ;padding: 6px; width: 70px;" type="number">
+            </p>
+        </div>
+        <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 700px;">
+
+            <h3 style="text-align: center;">ADM DESENHO</h3>
+            <p style="margin-top: 5px;">DE:<textarea  style="margin-left: 26px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">DETALHES DAS ALTERAÇÕES EM DESENHO</textarea>
+            </p>
+
+            <p style="margin-top: 5px;">PARA:<textarea  style="margin-left: 5px; vertical-align:-8px; width: 460px; font-size: 12pt; height: 20px;padding: 5px; padding-left: 10px;">82090130 - 1234567890123456789012345678901234567890</textarea>
+            </p>
+        </div>-->
+
+    </aside>
+    
+
+</div> <!--divGeral-->
+
+<textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
+
+<!--
+<script>
+    parent.validacao();
+</script>-->
+
+
+
+</body>
+</html>

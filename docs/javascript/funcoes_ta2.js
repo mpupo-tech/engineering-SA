@@ -173,19 +173,19 @@ function ta2_workflow() {
     if (customerName_short == "FRC") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ERIKBARB'} else {
     if (customerName_short == "PSA") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'X1LUCAS1'} else {
     if (customerName_short == "MAN") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
-    if (customerName_short == "SCN") { ProdutoID = 'THIABRIT'; VendasID = 'TULISILV'; ProcessosID = 'WELLDESO'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "SCN") { ProdutoID = 'MAYCOLIV'; VendasID = 'TULISILV'; ProcessosID = 'WELLDESO'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "DAI") { ProdutoID = 'MAYCOLIV'; VendasID = 'GRASDASI'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "FCA") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'X1LUCAS1'} else {
     if (customerName_short == "CNH") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "KIA") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'X1LUCAS1'} else {
     if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "HYU") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'X1LUCAS1'} else {
-    if (customerName_short == "CHE") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ERIKBARB'} else {
-    if (customerName_short == "HPE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'LIBERF72'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'X1LUCAS1'} else {
-    if (customerName_short == "CAO") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "CHE") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ERIKBARB'} else {
+    if (customerName_short == "HPE") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'LIBERF72'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'X1LUCAS1'} else {
+    if (customerName_short == "CAO") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "REN") { ProdutoID = 'MAYCOLIV'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'X1LUCAS1'} else {
     if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
-    if (customerName_short == "NIS") { ProdutoID = 'MAYCOLIV'; VendasID = 'CARLMART'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ERIKBARB'} else {
+    if (customerName_short == "NIS") { ProdutoID = 'THIABRIT'; VendasID = 'CARLMART'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ERIKBARB'} else {
     if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "ARG") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'X1LUCAS1'} else {
     if (customerName_short == "TEN") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
@@ -737,4 +737,27 @@ function reiniciar() {
     document.getElementById("div_tipoSubstituido").className = "itemChanged_nvis"
     document.getElementById("Comprados").className = "Comprados_nvis"
     document.getElementById("resumo_final_div").innerHTML = ""
+}
+
+function ta2_description_validation() {
+    var teste_userID = document.querySelector('input[name="UserID"]:checked').value;
+    var teste_ECMtype = document.querySelector('input[name="tTipo-ecm"]:checked').value;
+    var teste_customer = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value;
+    var teste_producttype = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
+    var teste_producttype = document.getElementById('cTipoMM').options[document.getElementById('cTipoMM').selectedIndex];
+    
+    var val_group01 = document.getElementById("usuario")
+    var val_group03 = document.getElementById("customer_ECMtype")
+    var val_group04 = document.getElementById("mcm_materialtype")
+
+    if (teste_producttype.className == "itemMAKE") {
+        document.getElementById("Comprados").className = "Comprados_nvis"
+    } else document.getElementById("Comprados").className = "Comprados_vis"
+
+    alert(teste_producttype.className)
+
+
+}
+
+function ta2_description() {
 }
