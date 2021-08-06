@@ -122,7 +122,7 @@ function ta2_workflow() {
 
 
 //RESPONSAVEIS FIXOS
-    var userID_Cost = "DOSSAC98"
+    var userID_Cost = "CARDOA96"
     var userID_Fiscal = "DENIALVE"
     var userID_PPAP = "MAERLEON"
     var userID_InspQual = "JOSEGASP"
@@ -130,17 +130,17 @@ function ta2_workflow() {
 
     //ID OPR COMPRADOS
 
-    if (itensComprados == "GSCM_001") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_002") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_003") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_004") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_005") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_006") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_007") { PCPCompradosID = "ERIKBARB"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_008") { PCPCompradosID = "ERIKBARB"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_009") { PCPCompradosID = "ERIKBARB"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "CONSTR63"} else {
-    if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "CONSTR63"} else {
+    if (itensComprados == "GSCM_001") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_002") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_003") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_004") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_005") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_006") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_007") { PCPCompradosID = "ERIKBARB"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_008") { PCPCompradosID = "ERIKBARB"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_009") { PCPCompradosID = "ERIKBARB"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
     if (itensComprados == "GSCM_012") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
     if (itensComprados == "GSCM_013") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
     if (itensComprados == "GSCM_014") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
