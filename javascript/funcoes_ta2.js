@@ -244,7 +244,7 @@ if (itemType_short == 'radio_GSCM') {
 
     
 if (programStatus == "TENPLus" || programStatus == "") {
-prazoSeriesP = 0
+prazoSeriesP = 180
 }
 
 if (changeType_short == "ADMBOM") {
