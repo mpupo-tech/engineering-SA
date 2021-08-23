@@ -216,24 +216,52 @@ div.itens-alterados {
 
     <aside id="lado_direito">
         <div class="itens-alterados">
-            <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
+            <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> TEXTO BASE DAS MCMs</p>
             <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
 
-            <form>
+            <form onchange="ta2_description_validation();ta2_description()">
                 <section id="corpo">
-                    <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Identificação do Usuário</legend> 
+                    <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Documento criado por:</legend> 
                         <input type="radio" name="UserID" id="cUserID" checked value="" style="display: none;"/>
-                        <input type="radio" name="UserID" id="radio_FILIREGO" value="FILIREGO"/><label class="legenda-radio" for="radio_FILIREGO">Filipe</label>
-                        <input type="radio" name="UserID" id="radio_JEANFRA1" value="JEANFRA1"/><label class="legenda-radio" for="radio_JEANFRA1">Jean</label>
-                        <input type="radio" name="UserID" id="radio_MARCSANT" value="MARCSANT"/><label class="legenda-radio" for="radio_MARCSANT">Marcelo</label>
+                        <input type="radio" name="UserID" id="radio_FILIREGO" value="Fabio Costa"/><label class="legenda-radio" for="radio_FILIREGO">Fabio</label>
+                        <input type="radio" name="UserID" id="radio_JEANFRA1" value="Jean Franco"/><label class="legenda-radio" for="radio_JEANFRA1">Jean</label>
+                        <input type="radio" name="UserID" id="radio_MARCSANT" value="Marcelo Pupo"/><label class="legenda-radio" for="radio_MARCSANT">Marcelo</label>
                     </fieldset>
 
-                    <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
-                        <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
-                        <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">Nova Produção</label>
-                        <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">Autorização de Modificação</label><br>
+                    <fieldset id="adm_businesStatus" class="formulario_nok"><legend class="legenda">Tipo de MM e Busines Status</legend> 
+                        
+                        <select class="botao_select" name="TipoMM" id="TipoMM">
+                            <option value="" selected style="display: none;">Tipo de Produto</option>
+                            <optgroup label="FABRICADOS">
+                                <option value="FABRICADO, PRODUTO ACABADO">PRODUTO ACABADO</option>
+                                <option value="FABRICADO, SEMI ACABADO">SEMI ACABADO</option>
+                            </optgroup>
+                            <optgroup label="COMPRADOS">
+                                <option value="COMPRADO, COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                <option value="COMPRADO, COMPONENTE SUBCONTRATADO">COMPONENTE SUBCONTRATADO</option>
+                                <option value="COMPRADO, COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                <option value="COMPRADO, COMPONENTE INTERCOMPANY (ICY)">COMPONENTE INTERCOMPANY (ICY)</option>
+                                <option value="COMPRADO, MATERIA PRIMA">MATERIA PRIMA</option>
+                                <option value="COMPRADO, CONSIGNADO PASSTHROUGH">CONSIGNADO PASSTHROUGH</option>
+                                <option value="COMPRADO, EMBALAGEM">EMBALAGEM</option>
+                                </optgroup>
+                        </select>
+                        <input type="checkbox" id="importados" name="importados">
+
+                        <label class="legenda-radio" for="importados">IMPORTADO</label>
+                        <br>
+                            
+                        <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
+                        <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
+                        <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label>
+                        
+
+                    </fieldset>
+
+                    <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Tipo de MCM e Cliente</legend>
+
                         <select class="botao_select" name="tCliente" id="cCliente">
-                            <option value="" selected style="display: none;"></option>
+                            <option value="" selected style="display: none;">Selecione o cliente</option>
                             <optgroup label="LV">
                                 <option value="VW">VOLKSWAGEN</option>
                                 <option value="FRD">FORD</option>
@@ -259,7 +287,27 @@ div.itens-alterados {
                                     <option value="TEN">TENNECO</option>
                             </optgroup></select>
 
-                        <input type="text" name="tProjeto" id="cProjeto" class="botao_select" maxlength="40" size="20" placeholder="Nome do Projeto" list="adm_PROGRAMA"/>
+                        
+                        <select class="botao_select" name="tProduto" id="cProduto">
+                            <option value="" selected style="display: none;">Tipo de Produto</option>
+                            <optgroup label="LV">
+                                <option value="CE-LV">Cold End</option>
+                                <option value="HE-LV">Hot End</option>
+                                <option value="DP-LV">Down Pipe</option>
+                                <option value="CN-LV">Canning</option>
+                                <option value="CP-LV">Components for LV</option>
+                            </optgroup>
+                            <optgroup label="CTOH">
+                                <option value="BX-VI-CTOH">EURO VI - BOX</option>
+                                <option value="IL-VI-CTOH">EURO VI - IN LINE</option>
+                                <option value="BX-V-CTOH">EURO V - BOX</option>
+                                <option value="IL-V-CTOH">EURO V - IN LINE</option>
+                                <option value="CP-CTOH">Components for CTOH</option>
+                            </optgroup>
+                                <option value="Others">Outros</option>
+                        </select>
+                        
+                        <input type="text" name="tProjeto" id="cProjeto" class="botao_select" maxlength="40" size="60" placeholder="Nome do Projeto" list="adm_PROGRAMA"/>
                         <datalist id="adm_PROGRAMA" class= "select_letra">
                             <option value="" selected style="display: none;"></option>
                             <option value="2 BOX"></option>
@@ -279,25 +327,11 @@ div.itens-alterados {
 
                             
 
-                        <select class="botao_select" name="tProduto" id="cProduto">
-                            <option value="" selected style="display: none;"></option>
-                            <optgroup label="LV">
-                                <option value="CE-LV">Cold End</option>
-                                <option value="HE-LV">Hot End</option>
-                                <option value="DP-LV">Down Pipe</option>
-                                <option value="CN-LV">Canning</option>
-                                <option value="CP-LV">Components for LV</option>
-                            </optgroup>
-                            <optgroup label="CTOH">
-                                <option value="BX-VI-CTOH">EURO VI - BOX</option>
-                                <option value="IL-VI-CTOH">EURO VI - IN LINE</option>
-                                <option value="BX-V-CTOH">EURO V - BOX</option>
-                                <option value="IL-V-CTOH">EURO V - IN LINE</option>
-                                <option value="CP-CTOH">Components for CTOH</option>
-                            </optgroup>
-                                <option value="Others">Outros</option>
-                        </select>
-                        
+<br>
+                        <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
+                        <input type="radio" name="tTipo-ecm" id="NP" value="Nova Produção"/><label class="legenda-radio" for="NP">NP</label>
+                        <input type="radio" name="tTipo-ecm" id="ADM" value="Autorização de Modificação"/><label class="legenda-radio" for="ADM">ADM</label>
+                        <input type="radio" name="tTipo-ecm" id="ADMBOM" value="Autorização de Modificação (BOM)"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label><br>
                         
                        <!-- <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label>-->
                         <!--<div class="itemChanged_vis" id="div_tipoSubstituido">
@@ -310,61 +344,43 @@ div.itens-alterados {
                         </div>-->
                     </fieldset>
 
-                    <fieldset id="adm_businesStatus" class="formulario_nok"><legend class="legenda">Busines Status</legend> 
-                        <select name="TipoMM" id="TipoMM" class= "botao_select">
-                            <option value="" selected style="display: none;"></option>
-                            <optgroup label="FABRICADOS">
-                                <option value="TipoMM_A">PRODUTO ACABADO</option>
-                                <option value="TipoMM_B">SEMI ACABADO</option>
-                            </optgroup>
-                            <optgroup label="COMPRADOS">
-                                <option value="TipoMM_C">COMPONENTE CONTA PLENA</option>
-                                <option value="TipoMM_D">COMPONENTE SUBCONTRATADO</option>
-                                <option value="TipoMM_E">COMPONENTE CONTA PLENA</option>
-                                <option value="TipoMM_F">COMPONENTE INTERCOMPANY (ICY)</option>
-                                <option value="TipoMM_G">MATERIA PRIMA</option>
-                                <option value="TipoMM_H">CONSIGNADO PASSTHROUGH</option>
-                                <option value="TipoMM_I">EMBALAGEM</option>
-                                </optgroup>
-                        </select>
-                        <input type="checkbox" id="importados" name="importados">
-
-                        <label class="legenda-radio" for="importados">IMPORTADO</label>
-                        <br>
-                            
-                        <input type="radio" name="tStatus-programa" id="cStatus-programa" checked value="" style="display: none;"/>
-                        <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
-                        <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label>
+                    <fieldset id="MM_Changed" class="formulario_nok"><legend class="legenda">Materiais Alterados</legend>
+                        <p id="Item1">1</p>
+                        <textarea id="MM1" style="width: 100px; height: 30px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Material [MM]"></textarea>
+                        <textarea id="DE1"  style="width: 300px; height: 30px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Descrição:"></textarea>
+                        <textarea id="US1" style="width: 100px; height: 60px; font-size: 10pt; margin: 5px auto 5px 1px; resize:none" placeholder="Usado em:"></textarea><br>
                         
 
+
                     </fieldset>
+
                 </section>
             </form>
         </div>
 
         <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
-            <div id="resumo_final_div" style="width: 320px;text-align: center;">
+            <div id="resumo_final_div" style="width: 320px;text-align: left">
+                                
             </div>
         </fieldset>
+                    <button id="botao_inserir" class="botao" value="Inserir" onclick="InsertItemChanged();">Inserir</button>
 
-        <div class="itens-alterados">
+        <input type="number" value="1" id="ItemNumber">
 
-            <textarea style="width: 393px; height: 100px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Material + Descrição"></textarea>
-            <textarea style="width: 84px; height: 100px; font-size: 10pt; margin: 5px auto 5px 1px; resize:none" placeholder="Usado em: MM"></textarea>
-            </div>
 
-        <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 100%; display: none;">
+        
+            <!-- <div style="background-color: rgb(145, 255, 0); padding: 10px; width: 100%;">
             <h3 style="text-align: center;">Autorização de Modificação</h3>
             
             <form>
-                <!--
+                
 
                 <input type="button" value="Adic. Linha" onclick="add_ADM_MMDesc()">
                 <div id="ADM_itensAlterados">
                     <span id="Add_ADM_Material">
                 <label for="ADM_MMDescricao_001">Material</label><input type="text" name="" id="ADM_MMDescricao_001" placeholder="Material+Descrição"><br></span>
                 
-                </div>-->
+                </div>
                 
                 <table>
                     <tr id="ADM_linha_titulo">
@@ -505,7 +521,7 @@ div.itens-alterados {
                
             </form>
 
-        </div>
+        </div>-->
         
         <!--
         <div style="background-color: aqua; padding: 10px; width: 700px;">
@@ -556,10 +572,10 @@ div.itens-alterados {
 
 <textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
 
-<!--
+
 <script>
-    parent.validacao();
-</script>-->
+    parent.ta2_description_validation();
+</script>
 
 
 

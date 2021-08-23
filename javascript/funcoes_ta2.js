@@ -11,6 +11,8 @@ function validacao() {
     var val_group03 = document.getElementById("customer_ECMtype")
     var val_group04 = document.getElementById("itemtype")
 
+//TESTE PARA VALIDAÇÃO DO PRENCHIMENTO DO FORMULARIO E ATIVAR BOÃO  "COPIAR FLUXO".
+
     if (teste_itemtype == 'radio_GSCM') {
         document.getElementById("Comprados").className = "Comprados_vis"
 }   else (document.getElementById("Comprados").className = "Comprados_nvis")
@@ -56,6 +58,8 @@ var teste_grupo = group01 + group02 + group03 + group04
 
 
 }
+
+//FUNÇÃO COPIAR FLUXO.
 
 function copiarfluxo() {
     var tabela_ta2 = document.getElementById('fluxo_ta2_vis')
@@ -516,10 +520,7 @@ var date_nivel05 = new Date(date_nivel04);
 date_nivel05.setDate(date_nivel04.getDate()+nivel05);
 date_nivel05_full = (date_nivel05.getDate().toString().length == 1 ? '0' + date_nivel05.getDate().toString() : date_nivel05.getDate().toString()) + '.' + ((date_nivel05.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel05.getMonth() + 1).toString() : (date_nivel05.getMonth() + 1).toString()) + '.' + date_nivel05.getFullYear()
 
-/*nivel05 = Math.max(Compras02_Prazo)
-date_nivel05.setDate(date_nivel04.getDate()+nivel05);
-date_nivel05_full = (date_nivel05.getDate().toString().length == 1 ? '0' + date_nivel05.getDate().toString() : date_nivel05.getDate().toString()) + '.' + ((date_nivel05.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel05.getMonth() + 1).toString() : (date_nivel05.getMonth() + 1).toString()) + '.' + date_nivel05.getFullYear()
-*/
+
 nivel06 = Math.max(userID_Cost02_Prazo)
 var date_nivel06 = new Date(date_nivel05);
 date_nivel06.setDate(date_nivel05.getDate()+nivel06);
@@ -740,22 +741,46 @@ function reiniciar() {
 }
 
 function ta2_description_validation() {
-    var teste_userID = document.querySelector('input[name="UserID"]:checked').value;
-    var teste_ECMtype = document.querySelector('input[name="tTipo-ecm"]:checked').value;
-    var teste_customer = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value;
-    var teste_producttype = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
-    var teste_producttype = document.getElementById('cTipoMM').options[document.getElementById('cTipoMM').selectedIndex];
+    var CreatorName = document.querySelector('input[name="UserID"]:checked').value; //Documento Criado por:...
+    var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked').value;
+    var Customer = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex];
+    var MaterialType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
+    var ProductType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex];
+    var ProgramName = document.getElementById("cProjeto");
+    var programStatus = document.querySelector('input[name="tStatus-programa"]:checked');
     
-    var val_group01 = document.getElementById("usuario")
-    var val_group03 = document.getElementById("customer_ECMtype")
-    var val_group04 = document.getElementById("mcm_materialtype")
 
-    if (teste_producttype.className == "itemMAKE") {
-        document.getElementById("Comprados").className = "Comprados_nvis"
-    } else document.getElementById("Comprados").className = "Comprados_vis"
+    var TextSummary = `Documento criado por: ${CreatorName}.<br><br>
 
-    alert(teste_producttype.className)
+    PROJETO: ${Customer.innerText}, ${ProductType.innerText}, ${ProgramName.value} - ${programStatus.value}.<br>
+    PLANTA: MOM2.<br><br>
 
+    Tipo de MCM: ${ECMType}.<br><br>
+
+    Tipo de Material: ${MaterialType.value}`
+
+
+
+
+    document.getElementById("resumo_final_div").innerHTML = TextSummary
+
+
+}
+
+function InsertItemChanged(){
+
+    CurrentItems = document.getElementById("MM_Changed").innerHTML
+    ItemNumber = document.getElementById("ItemNumber").value
+    
+    ItemNumber ++
+
+    var ChangedMaterial = `<p id="Item${ItemNumber}">${ItemNumber}</p>
+    <textarea id="MM${ItemNumber}" style="width: 100px; height: 30px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Material [MM]"></textarea>
+    <textarea id="DE${ItemNumber}"  style="width: 300px; height: 30px; font-size: 10pt; margin: 5px 2px 5px 3px; resize:none" placeholder="Descrição:"></textarea>
+    <textarea id="US${ItemNumber}" style="width: 100px; height: 60px; font-size: 10pt; margin: 5px auto 5px 1px; resize:none" placeholder="Usado em:"></textarea><br>`
+
+    document.getElementById("MM_Changed").innerHTML = CurrentItems + ChangedMaterial    
+    document.getElementById("ItemNumber").value = ItemNumber
 
 }
 
