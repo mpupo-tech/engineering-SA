@@ -15,9 +15,9 @@
 
 
 #copia_fluxo_vis {
-    position: relative;
+    position: absolute;
     left: 355px;
-    top: -710px;
+    top: 430px;
 }
 #botao_reset {
     position: relative;
@@ -75,6 +75,8 @@ button.botao {
 }
 button.botao_nvis {
 display: none;
+padding: 5px;
+    margin: 5px 5px 5px auto;
 }
 
 .prazo_nvis {
@@ -300,10 +302,12 @@ fieldset#itemtype {
                         </fieldset>
 
                         <fieldset id="itemtype" class="formulario_nok"><legend class="legenda">Tipo de Material</legend>
+
                             <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
                             <input type="radio" name="tTipo-item" id="radio_FG" value="Produto Acabado"/><label class="legenda-radio" for="radio_FG">Produto Acabado</label>
                             <input type="radio" name="tTipo-item" id="radio_SA" value="Semi Acabado"/><label class="legenda-radio" for="radio_SA">Semi Acabado</label>
-                            <input type="radio" name="tTipo-item" id="radio_GSCM" value="Comprados"/><label class="legenda-radio" for="radio_GSCM">Comprados</label>                
+                            <input type="radio" name="tTipo-item" id="radio_GSCM" value="Comprados"/><label class="legenda-radio" for="radio_GSCM">Comprados</label>
+
                             <div id="Comprados" class="Comprados_nvis"><br>
                                 <select name="tComprados" id="cComprados" class="botao_select">
                                     <option value="" style="display: none;"></option>
@@ -338,6 +342,61 @@ fieldset#itemtype {
                                 <input type="checkbox" id="importados" name="importados">
                                 <label class="legenda-radio" for="importados">IMPORTADO</label>
                             </div>
+                        </fieldset>
+
+                        <fieldset id="MCMDescription" class="formulario_nok"><legend class="legenda">Informações para descrição da MCM</legend>
+                            <div id="CompradosTipo" class="Comprados_nvis">
+                            <select class="botao_select" name="TipoMM" id="TipoMM" style="width: 425px;">
+                                <option value="" selected style="display: none;">Classe do Material (Comprados).</option>
+                                <optgroup label="COMPRADOS">
+                                    <option value="COMPRADO, COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                    <option value="COMPRADO, COMPONENTE SUBCONTRATADO">COMPONENTE SUBCONTRATADO</option>
+                                    <option value="COMPRADO, COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                    <option value="COMPRADO, COMPONENTE INTERCOMPANY (ICY)">COMPONENTE INTERCOMPANY (ICY)</option>
+                                    <option value="COMPRADO, MATERIA PRIMA">MATERIA PRIMA</option>
+                                    <option value="COMPRADO, CONSIGNADO PASSTHROUGH">CONSIGNADO PASSTHROUGH</option>
+                                    <option value="COMPRADO, EMBALAGEM">EMBALAGEM</option>
+                                    </optgroup>
+                            </select></div>
+                            
+                            <select class="botao_select" name="tProduto" id="cProduto">
+                                <option value="" selected style="display: none;">Tipo de Produto</option>
+                                <optgroup label="LV">
+                                    <option value="CE-LV">Cold End</option>
+                                    <option value="HE-LV">Hot End</option>
+                                    <option value="DP-LV">Down Pipe</option>
+                                    <option value="CN-LV">Canning</option>
+                                    <option value="CP-LV">Components for LV</option>
+                                </optgroup>
+                                <optgroup label="CTOH">
+                                    <option value="BX-VI-CTOH">EURO VI - BOX</option>
+                                    <option value="IL-VI-CTOH">EURO VI - IN LINE</option>
+                                    <option value="BX-V-CTOH">EURO V - BOX</option>
+                                    <option value="IL-V-CTOH">EURO V - IN LINE</option>
+                                    <option value="CP-CTOH">Components for CTOH</option>
+                                </optgroup>
+                                    <option value="Others">Outros</option>
+                            </select>
+                            
+                            <input type="text" name="tProjeto" id="cProjeto" class="botao_select" maxlength="40" size="30" placeholder="Nome do Projeto" list="adm_PROGRAMA"/>
+                            <datalist id="adm_PROGRAMA" class= "select_letra">
+                                <option value="" selected style="display: none;"></option>
+                                <option value="BR900 2BOX"></option>
+                                <option value="D08 ATS 4CYL"></option>
+                                <option value="D08 ATS 4CYL"></option>
+                                <option value="STRALIS"></option>
+                                <option value="TECTOR"></option>
+                                <option value="TAREK"></option>
+                                <option value="STRALIS"></option>
+                                <option value="TECTOR"></option>
+                                <option value="MILITAR"></option>
+                                <option value="FM/F3M"></option>
+                                <option value="ATS 4CYL"></option>
+                                <option value="ATS 6CYL"></option>
+                                </datalist>
+                                <button id="copiar_descricao" class="botao_nvis" value="Copiar Aprovadores" onclick="ta2_description();">Copiar Descrição</button>
+
+
                         </fieldset>
                     </section>
                 </form>

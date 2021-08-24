@@ -2,20 +2,31 @@ function validacao() {
     var teste_userID = document.querySelector('input[name="UserID"]:checked').value;
     var teste_businesStatus = document.querySelector('input[name="tStatus-programa"]:checked').value;
     var teste_customer = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value;
+    var teste_TipoMM = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex].value;
+    var teste_tipoProduto = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
     var teste_ECMtype = document.querySelector('input[name="tTipo-ecm"]:checked').value;
     var teste_itemtype = document.querySelector('input[name="tTipo-item"]:checked').id;
     var teste_programStatus = document.querySelector('input[name="tStatus-programa"]:checked').id;
+    var teste_NomeProjeto = document.getElementById("cProjeto").value
     
     var val_group01 = document.getElementById("usuario")
     var val_group02 = document.getElementById("businesStatus")
     var val_group03 = document.getElementById("customer_ECMtype")
     var val_group04 = document.getElementById("itemtype")
+    var val_group05 = document.getElementById("MCMDescription")
 
 //TESTE PARA VALIDAÇÃO DO PRENCHIMENTO DO FORMULARIO E ATIVAR BOÃO  "COPIAR FLUXO".
 
     if (teste_itemtype == 'radio_GSCM') {
         document.getElementById("Comprados").className = "Comprados_vis"
-}   else (document.getElementById("Comprados").className = "Comprados_nvis")
+        document.getElementById("CompradosTipo").className = "Comprados_vis"
+        
+
+}   else {
+        document.getElementById("Comprados").className = "Comprados_nvis"
+        document.getElementById("CompradosTipo").className = "Comprados_nvis"
+        teste_TipoMM = ""
+        }
 
     if (teste_ECMtype == "ADMBOM") {
         document.getElementById("div_tipoSubstituido").className = "itemChanged_vis";
@@ -57,7 +68,41 @@ var teste_grupo = group01 + group02 + group03 + group04
 
 
 
+    if (teste_itemtype == "radio_GSCM"){
+        if (teste_TipoMM != "" && teste_tipoProduto != "" && teste_NomeProjeto != ""){
+        val_group05.className = "formulario_desc_ok"
+            group05 = 1
+            
+
+    } else {val_group05.className = "formulario_nok"
+            group05 = 0
+            
+
+    }} else {
+        if (teste_tipoProduto != "" && teste_NomeProjeto != "") {
+            val_group05.className = "formulario_desc_ok"
+            group05 = 1
+            
+
+        } else {val_group05.className = "formulario_nok"
+            group05 = 0
+           
+        }
+    }
+
+alert(group05)
+
+   /* if (group04 + group05 == 5) {
+        document.getElementById("copiar_descricao").className = 'botao'
+    } else {document.getElementById("copiar_descricao").className = 'botao_nvis'}*/
+
+
 }
+
+    
+     
+
+
 
 //FUNÇÃO COPIAR FLUXO.
 
@@ -89,6 +134,9 @@ function ta2_workflow() {
     var itemType_short = document.querySelector('input[name="tTipo-item"]:checked').id;
     var itensComprados = document.getElementById('cComprados').options[document.getElementById('cComprados').selectedIndex].value;
     var importados = document.getElementById('importados');
+    var TipoMM = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
+
+
 
  //Prazos
     var userID_Cost01_Prazo = 4
@@ -235,6 +283,7 @@ if (itemType_short == 'radio_GSCM') {
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
+
 
 } else { if (itemType_short == 'radio_SA') {
     PCP_ID = PCPFabricadosID; PCP01_Prazo = 5;

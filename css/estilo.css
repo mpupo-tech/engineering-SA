@@ -138,6 +138,10 @@ margin-top: 20px;
     background-color: rgba(46, 139, 86, 0.2);
     width: 470px;
 }
+.formulario_desc_ok {
+    background-color: rgba(46, 125, 139, 0.2);
+    width: 470px;
+}
 
 .formulario_nok {
     background-color: rgba(15, 3, 36, 0.05);
