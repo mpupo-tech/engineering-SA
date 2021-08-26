@@ -4,7 +4,7 @@ function validacao() {
     var teste_customer = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value;
     var teste_TipoMM = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex].value;
     var teste_tipoProduto = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
-    var teste_ECMtype = document.querySelector('input[name="tTipo-ecm"]:checked').value;
+    var teste_ECMtype = document.querySelector('input[name="tTipo-ecm"]:checked');
     var teste_itemtype = document.querySelector('input[name="tTipo-item"]:checked').id;
     var teste_programStatus = document.querySelector('input[name="tStatus-programa"]:checked').id;
     var teste_NomeProjeto = document.getElementById("cProjeto").value
@@ -28,7 +28,7 @@ function validacao() {
         teste_TipoMM = ""
         }
 
-    if (teste_ECMtype == "ADMBOM") {
+    if (teste_ECMtype.id == "ADMBOM") {
         document.getElementById("div_tipoSubstituido").className = "itemChanged_vis";
     } else {document.getElementById("div_tipoSubstituido").className = "itemChanged_nvis";}
 
@@ -49,7 +49,7 @@ function validacao() {
     } else { val_group02.className = "formulario_nok"
     group02 = 0}
 
-    if (teste_customer != "" && teste_ECMtype != "") {
+    if (teste_customer != "" && teste_ECMtype.value != "") {
         val_group03.className = "formulario_ok"
         group03 = 1
     } else { val_group03.className = "formulario_nok"
@@ -90,11 +90,10 @@ var teste_grupo = group01 + group02 + group03 + group04
         }
     }
 
-alert(group05)
 
-   /* if (group04 + group05 == 5) {
-        document.getElementById("copiar_descricao").className = 'botao'
-    } else {document.getElementById("copiar_descricao").className = 'botao_nvis'}*/
+    if (teste_grupo + group05 == 5) {
+        document.getElementById("copiar_descricao").className = 'copia_descricao_vis'
+    } else {document.getElementById("copiar_descricao").className = 'botao_nvis'}
 
 
 }
@@ -126,7 +125,6 @@ function ta2_workflow() {
     var programStatus = document.querySelector('input[name="tStatus-programa"]:checked').value;
     var customerFullName = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].text;
     var customerName_short = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value;
-    var changeType = document.querySelector('input[name="tTipo-ecm"]:checked').value;
     var changeType_short = document.querySelector('input[name="tTipo-ecm"]:checked').id;
     var prazoSeriesP = Number.parseInt(document.getElementById('prazoDias').options[document.getElementById('prazoDias').selectedIndex].value);
     var itemReplaced = document.querySelector('input[name="tipoSubstituido"]:checked').value;
@@ -789,32 +787,7 @@ function reiniciar() {
     document.getElementById("resumo_final_div").innerHTML = ""
 }
 
-function ta2_description_validation() {
-    var CreatorName = document.querySelector('input[name="UserID"]:checked').value; //Documento Criado por:...
-    var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked').value;
-    var Customer = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex];
-    var MaterialType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
-    var ProductType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex];
-    var ProgramName = document.getElementById("cProjeto");
-    var programStatus = document.querySelector('input[name="tStatus-programa"]:checked');
-    
 
-    var TextSummary = `Documento criado por: ${CreatorName}.<br><br>
-
-    PROJETO: ${Customer.innerText}, ${ProductType.innerText}, ${ProgramName.value} - ${programStatus.value}.<br>
-    PLANTA: MOM2.<br><br>
-
-    Tipo de MCM: ${ECMType}.<br><br>
-
-    Tipo de Material: ${MaterialType.value}`
-
-
-
-
-    document.getElementById("resumo_final_div").innerHTML = TextSummary
-
-
-}
 
 function InsertItemChanged(){
 
@@ -834,4 +807,44 @@ function InsertItemChanged(){
 }
 
 function ta2_description() {
+    var userProjetos = document.querySelector('input[name="UserID"]:checked').value;
+    var programStatus = document.querySelector('input[name="tStatus-programa"]:checked');
+    var customerName = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex];
+    var ProductType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex];
+    var itemType = document.querySelector('input[name="tTipo-item"]:checked').value;
+    var ProgramName = document.getElementById("cProjeto");
+    var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked');
+    var PurchaseType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
+    var importados = document.getElementById('importados');
+
+    if (importados.checked) {PurchaseLocal = PurchaseType.value + " IMPORTADO"}
+        else {PurchaseLocal = PurchaseType.value + " NACIONAL"}
+
+    if (itemType != "Comprados") {
+        MaterialType = `FABRICADO: ${itemType}`
+    } else {MaterialType = `COMPRADO: ${PurchaseLocal}`}
+
+    //NP ADM, ADM BOM
+    if (ECMType.id == "NP") {
+        TextMCMType = `1. 82XXXXXX - Descrição do [MM]<br> -Este Material (MM) será usado no Item: <br> -82YYYYYY`
+        } else {TextMCMType = `ADM IN WORk!`}
+
+    //Documento criado por:
+    ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
+
+    //PROJETO: CUSTOMER, Product type, ProjectName - Busines Status.
+
+
+    var TextSummary = `PROJETO: ${customerName.innerText}, ${ProductType.innerText}, ${ProgramName.value} - ${programStatus.value}.<br>
+    PLANTA: MOM2.<br><br>
+
+    Tipo de MCM: ${ECMType.value}.<br><br>
+
+    Tipo de Material: ${MaterialType}<br><br>
+    
+    ${TextMCMType}`
+
+    document.getElementById("ResumoDescricao").innerHTML = TextSummary
+
+
 }

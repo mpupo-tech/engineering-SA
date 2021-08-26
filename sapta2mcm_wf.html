@@ -19,6 +19,13 @@
     left: 355px;
     top: 430px;
 }
+.copia_descricao_vis {
+    position: absolute;
+    left: 355px;
+    top: 585px;
+    padding: 5px;
+    margin: 5px 5px 5px auto;
+}
 #botao_reset {
     position: relative;
     left: 420px;
@@ -151,6 +158,11 @@ fieldset#itemtype {
 }
 
 
+fieldset#MCMDescription {
+    height: 135px;
+    padding-top: 10px;
+}
+
 #resumo_final {
     display: block;
     float: right;
@@ -268,9 +280,9 @@ fieldset#itemtype {
                             </select></br>
 
                             <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
-                            <input type="radio" name="tTipo-ecm" id="NP" value="NP"/><label class="legenda-radio" for="NP">NP</label>
-                            <input type="radio" name="tTipo-ecm" id="ADM" value="ADM"/><label class="legenda-radio" for="ADM">ADM</label>
-                            <input type="radio" name="tTipo-ecm" id="ADMBOM" value="ADMBOM"/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label><br>
+                            <input type="radio" name="tTipo-ecm" id="NP" value="Nova Produção."/><label class="legenda-radio" for="NP">NP</label>
+                            <input type="radio" name="tTipo-ecm" id="ADM" value="Autorização de Modificação."/><label class="legenda-radio" for="ADM">ADM</label>
+                            <input type="radio" name="tTipo-ecm" id="ADMBOM" value="Autorização de Modificação (BOM)."/><label class="legenda-radio" for="ADMBOM">ADM (BOM)</label><br>
 
                             <div class="itemChanged_nvis" id="div_tipoSubstituido">
 
@@ -349,13 +361,13 @@ fieldset#itemtype {
                             <select class="botao_select" name="TipoMM" id="TipoMM" style="width: 425px;">
                                 <option value="" selected style="display: none;">Classe do Material (Comprados).</option>
                                 <optgroup label="COMPRADOS">
-                                    <option value="COMPRADO, COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
-                                    <option value="COMPRADO, COMPONENTE SUBCONTRATADO">COMPONENTE SUBCONTRATADO</option>
-                                    <option value="COMPRADO, COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
-                                    <option value="COMPRADO, COMPONENTE INTERCOMPANY (ICY)">COMPONENTE INTERCOMPANY (ICY)</option>
-                                    <option value="COMPRADO, MATERIA PRIMA">MATERIA PRIMA</option>
-                                    <option value="COMPRADO, CONSIGNADO PASSTHROUGH">CONSIGNADO PASSTHROUGH</option>
-                                    <option value="COMPRADO, EMBALAGEM">EMBALAGEM</option>
+                                    <option value="COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                    <option value="COMPONENTE SUBCONTRATADO">COMPONENTE SUBCONTRATADO</option>
+                                    <option value="COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                    <option value="COMPONENTE INTERCOMPANY (ICY)">COMPONENTE INTERCOMPANY (ICY)</option>
+                                    <option value="MATERIA PRIMA">MATERIA PRIMA</option>
+                                    <option value="CONSIGNADO PASSTHROUGH">CONSIGNADO PASSTHROUGH</option>
+                                    <option value="EMBALAGEM">EMBALAGEM</option>
                                     </optgroup>
                             </select></div>
                             
@@ -394,21 +406,32 @@ fieldset#itemtype {
                                 <option value="ATS 4CYL"></option>
                                 <option value="ATS 6CYL"></option>
                                 </datalist>
-                                <button id="copiar_descricao" class="botao_nvis" value="Copiar Aprovadores" onclick="ta2_description();">Copiar Descrição</button>
 
 
                         </fieldset>
                     </section>
                 </form>
+                <button id="copiar_descricao" class="botao_nvis" value="Copiar descricao" onclick="ta2_description();">Copiar Descrição</button>
+
             </div>
 
             <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
                 <div id="resumo_final_div" style="width: 320px;text-align: center;"></div>
+                <div id="ResumoDescricao" style="width: 320px;text-align: center;">
+                    Documento criado por: Fabio Costa.<br>
+                    <br>
+                    PROJETO: GENERAL MOTORS, Cold End, STRALIS - TENPLus.<br>
+                    PLANTA: MOM2.<br>
+                    <br>
+                    Tipo de MCM: Nova Produção.<br>
+                    <br>
+                    Tipo de Material: FABRICADO, PRODUTO ACABADO<br>
+                </div>
             </fieldset>
 
             <ul id="tabelaNomeID_nvis">
                 <li id="MARCSANT ">DELETE TASK (Shift + F2)</li>
-                <li id="MARCSANT">MARCELO SANTOS</li>
+                <li id="MARCSANT">MARCELO PUPO</li>
                 <li id="COSTAF12">FABIO COSTA</li>
                 <li id="JEANFRA1">JEAN FRANCO</li>
                 <li id="MAYCOLIV">MAYCON OLIVEIRA</li>
