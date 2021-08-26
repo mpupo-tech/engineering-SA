@@ -811,7 +811,7 @@ function ta2_description() {
     var programStatus = document.querySelector('input[name="tStatus-programa"]:checked');
     var customerName = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex];
     var ProductType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex];
-    var itemType = document.querySelector('input[name="tTipo-item"]:checked').value;
+    var itemType = document.querySelector('input[name="tTipo-item"]:checked');
     var ProgramName = document.getElementById("cProjeto");
     var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked');
     var PurchaseType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
@@ -820,14 +820,19 @@ function ta2_description() {
     if (importados.checked) {PurchaseLocal = PurchaseType.value + " IMPORTADO"}
         else {PurchaseLocal = PurchaseType.value + " NACIONAL"}
 
-    if (itemType != "Comprados") {
-        MaterialType = `FABRICADO: ${itemType}`
+    if (itemType.value != "Comprados") {
+        MaterialType = `FABRICADO: ${itemType.value}`
     } else {MaterialType = `COMPRADO: ${PurchaseLocal}`}
 
     //NP ADM, ADM BOM
+    if (itemType.id != "radio_FG") {
+        MM_Used_In = "<br> -Este Material (MM) será usado no Item: <br> -82YYYYYY."
+    } else {MM_Used_In = ""}
+
     if (ECMType.id == "NP") {
-        TextMCMType = `1. 82XXXXXX - Descrição do [MM]<br> -Este Material (MM) será usado no Item: <br> -82YYYYYY`
+        TextMCMType = `1. 82XXXXXX - Descrição do [MM]${MM_Used_In}`
         } else {TextMCMType = `ADM IN WORk!`}
+    
 
     //Documento criado por:
     ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
