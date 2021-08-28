@@ -817,22 +817,21 @@ function ta2_description() {
     var PurchaseType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
     var importados = document.getElementById('importados');
 
+    var ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
+
+    
     if (importados.checked) {PurchaseLocal = PurchaseType.value + " IMPORTADO"}
         else {PurchaseLocal = PurchaseType.value + " NACIONAL"}
 
     if (itemType.value != "Comprados") {
-        MaterialType = `FABRICADO: ${itemType.value}`
-    } else {MaterialType = `COMPRADO: ${PurchaseLocal}`}
+        MaterialType = `FABRICADO, ${itemType.value}`
+    } else {MaterialType = `COMPRADO, ${PurchaseLocal}`}
 
     //NP ADM, ADM BOM
     if (itemType.id != "radio_FG") {
         MM_Used_In = "<br> -Este Material (MM) será usado no Item: <br> -82YYYYYY."
     } else {MM_Used_In = ""}
 
-    if (ECMType.id == "NP") {
-        TextMCMType = `1. 82XXXXXX - Descrição do [MM]${MM_Used_In}`
-        } else {TextMCMType = `ADM IN WORk!`}
-    
 
     //Documento criado por:
     ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
@@ -840,15 +839,60 @@ function ta2_description() {
     //PROJETO: CUSTOMER, Product type, ProjectName - Busines Status.
 
 
-    var TextSummary = `PROJETO: ${customerName.innerText}, ${ProductType.innerText}, ${ProgramName.value} - ${programStatus.value}.<br>
-    PLANTA: MOM2.<br><br>
-
+    var TextTitle = `PLANTA: MOM2 - ${programStatus.value}.
+    <br>PROJETO: ${customerName.innerText}, ${ProductType.innerText}, ${ProgramName.value}.<br><br>
+    
     Tipo de MCM: ${ECMType.value}.<br><br>
 
-    Tipo de Material: ${MaterialType}<br><br>
-    
-    ${TextMCMType}`
+    Tipo de Material: ${MaterialType}<br><br>`
 
+
+
+    var TextCreatedby = `Documento criado por: ${ProjetosID_nomeFull}.`
+
+
+    var TextNP = `1. 82XXXXXX - Descrição do [MM]${MM_Used_In}<br><br>`
+
+    
+    var TextADMBOM = `Na lista técnica do “Descrição do [MM]” nº 82XXXXXX, foi alterado:<br><br>
+
+    TABELA BOM<br><br>
+    
+    DE:/PARA: - "COPIAR DO SHAREPOINT MCM TA2"<br><br>    
+        
+    Notas:<br>
+    Este documento deve ser liberado após ou em conjunto com a MCM 70XXXXXXMOM2, por todos os departamentos envolvidos.<br>
+    A lista técnica atualizada pode ser consultada usando a data futura 01.01.2050.<br><br>
+    
+    Motivo: Adequar a lista técnica conforme solicitado por...<br><br>`
+
+    var TextADM = `No desenho do(a) "Descrição do [MM]", nº 82XXXXXX, foi alterado:<br><br>
+
+    "DETALHAR AS MODIFICAÇÕES REALIZADAS NO DESENHO, por exemplo:<br>
+    Notas, Tolerâncias e outras especificações técnicas.<br><br>
+    
+    Notas:<br>
+    Solicitar atualização de PPAP junto aos fornecedores.<br>
+    Esse documento não altera dados no SAP TA2.<br><br>
+
+    Motivo: Adequar o desenho conforme solicitado por...<br><br>`
+
+  
+
+    if (ECMType.id == "NP") {
+        TextBody = TextNP
+        
+    } else {
+        if (ECMType.id == "ADMBOM") {
+            TextBody = TextADMBOM
+    } else {
+        TextBody = TextADM
+    }
+}
+
+    var TextSummary = `${TextTitle}${TextBody}${TextCreatedby}`
+    
+alert ()
     document.getElementById("ResumoDescricao").innerHTML = TextSummary
 
 
