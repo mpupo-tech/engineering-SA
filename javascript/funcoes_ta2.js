@@ -810,6 +810,15 @@ function reiniciar() {
     document.getElementById("div_tipoSubstituido").className = "itemChanged_nvis"
     document.getElementById("Comprados").className = "Comprados_nvis"
     document.getElementById("resumo_final_div").innerHTML = ""
+    document.getElementById('cProduto').selectedIndex = 0;
+    document.getElementById('TipoMM').selectedIndex = 0;
+    document.getElementById("CompradosTipo").className = "Comprados_nvis"
+    document.getElementById('cProjeto').value = ""
+    document.getElementById("MCMDescription").className = "formulario_nok"
+    document.getElementById("ResumoDescricao").style.display = "none"
+    document.getElementById("copiar_descricao").className = 'botao_nvis'
+
+
 }
 
 
@@ -869,7 +878,7 @@ function ta2_description() {
     
     Tipo de MCM: ${ECMType.value}.<br><br>
 
-    Tipo de Material: ${MaterialType}<br><br>`
+    Tipo de Material: ${MaterialType}.<br><br>`
 
 
 

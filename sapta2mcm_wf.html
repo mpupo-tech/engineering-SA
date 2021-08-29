@@ -234,6 +234,7 @@ fieldset#MCMDescription {
                     <li id="lista-segundo">Catalisador</li>
                 </ul>
             </nav>
+            <p style="font-size: 9pt;font-style: italic;margin-right: 15px;text-align: right;">Atualizado em 29 de Agosto de 2021<br>Por Marcelo Pupo</p>
         </section>
 
         <aside id="lado_direito">
@@ -266,7 +267,7 @@ fieldset#MCMDescription {
 
                         <fieldset id="customer_ECMtype" class="formulario_nok"><legend class="legenda">Cliente e tipo de MCM</legend>
                             <select class="botao_select" name="tCliente" id="cCliente">
-                                <option value="" selected style="display: none;"></option>
+                                <option value="" selected style="display: none;">Selecione o cliente</option>
                                 <optgroup label="LV">
                                     <option value="VW">VOLKSWAGEN</option>
                                     <option value="GMB">GENERAL MOTORS</option>
@@ -374,19 +375,7 @@ fieldset#MCMDescription {
                         </fieldset>
 
                         <fieldset id="MCMDescription" class="formulario_nok"><legend class="legenda">Informações para descrição da MCM</legend>
-                            <div id="CompradosTipo" class="Comprados_nvis">
-                            <select class="botao_select" name="TipoMM" id="TipoMM" style="width: 425px;">
-                                <option value="" selected style="display: none;">Classe do Material (Comprados).</option>
-                                <optgroup label="COMPRADOS">
-                                    <option value="COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
-                                    <option value="COMPONENTE SUBCONTRATADO">COMPONENTE SUBCONTRATADO</option>
-                                    <option value="COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
-                                    <option value="COMPONENTE INTERCOMPANY (ICY)">COMPONENTE INTERCOMPANY (ICY)</option>
-                                    <option value="MATERIA PRIMA">MATERIA PRIMA</option>
-                                    <option value="CONSIGNADO PASSTHROUGH">CONSIGNADO PASSTHROUGH</option>
-                                    <option value="EMBALAGEM">EMBALAGEM</option>
-                                    </optgroup>
-                            </select></div>
+
                             
                             <select class="botao_select" name="tProduto" id="cProduto">
                                 <option value="" selected style="display: none;">Tipo de Produto</option>
@@ -424,7 +413,19 @@ fieldset#MCMDescription {
                                 <option value="ATS 6CYL"></option>
                                 </datalist>
 
-
+                            <div id="CompradosTipo" class="Comprados_nvis">
+                                <select class="botao_select" name="TipoMM" id="TipoMM" style="width: 443px;">
+                                    <option value="" selected style="display: none;">Classe do Material (Comprados).</option>
+                                    <optgroup label="COMPRADOS">
+                                        <option value="COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                        <option value="COMPONENTE SUBCONTRATADO">COMPONENTE SUBCONTRATADO</option>
+                                        <option value="COMPONENTE CONTA PLENA">COMPONENTE CONTA PLENA</option>
+                                        <option value="COMPONENTE INTERCOMPANY (ICY)">COMPONENTE INTERCOMPANY (ICY)</option>
+                                        <option value="MATERIA PRIMA">MATERIA PRIMA</option>
+                                        <option value="CONSIGNADO PASSTHROUGH">CONSIGNADO PASSTHROUGH</option>
+                                        <option value="EMBALAGEM">EMBALAGEM</option>
+                                        </optgroup>
+                                </select></div>
                         </fieldset>
                     </section>
                 </form>
