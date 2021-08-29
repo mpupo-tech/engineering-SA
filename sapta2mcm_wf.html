@@ -18,18 +18,34 @@
     position: absolute;
     left: 355px;
     top: 430px;
+    width: 140px;
+
 }
+
 .copia_descricao_vis {
     position: absolute;
     left: 355px;
     top: 585px;
     padding: 5px;
     margin: 5px 5px 5px auto;
+    width: 140px;
 }
+
 #botao_reset {
     position: relative;
-    left: 420px;
+    left: 350px;
     top: 55px;
+    width: 140px;
+    }
+
+button.botao {
+    padding: 5px;
+    margin: 5px 5px 5px auto;
+    }
+button.botao_nvis {
+display: none;
+padding: 5px;
+    margin: 5px 5px 5px auto;
 }
 
 label.legenda-radio {
@@ -43,6 +59,13 @@ legend.legenda {
     background-color: white;
 }
 
+#resumo_final_div {
+    width: 320px;
+    text-align: center;
+    font-size: 12pt;
+    color:#1863ae ;
+    
+}
 
 
 textarea.tarea-visivel {
@@ -76,15 +99,7 @@ section#corpo {
 
 }
 
-button.botao {
-    padding: 5px;
-    margin: 5px 5px 5px auto;
-}
-button.botao_nvis {
-display: none;
-padding: 5px;
-    margin: 5px 5px 5px auto;
-}
+
 
 .prazo_nvis {
     display: none;
@@ -159,7 +174,7 @@ fieldset#itemtype {
 
 
 fieldset#MCMDescription {
-    height: 135px;
+    height: 195px;
     padding-top: 10px;
 }
 
@@ -167,8 +182,8 @@ fieldset#MCMDescription {
     display: block;
     float: right;
     width: 340px;
-    height: 570px;
-    margin-bottom: 20px;
+    height: 630px;
+    margin-bottom: 10px;
     background-color: rgba(255, 255, 0, 0.2);
 }
 
@@ -222,10 +237,11 @@ fieldset#MCMDescription {
         </section>
 
         <aside id="lado_direito">
+            <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES E DESCRIÇÃO DAS MCMs</p>
+
             <div style="width: 500px;">
-                <p style="margin-bottom: -35px;"><strong>SAP A101 - TA2:</strong> LISTA DE APROVADORES</p>
                 <button id="botao_reset" class="botao" value="Reiniciar" onclick="reiniciar();">Reiniciar</button>
-                <form onchange="validacao();ta2_workflow()">
+                <form onchange="validacao();ta2_workflow();ta2_description()">
 
                     <section id="corpo">
                         <fieldset id="usuario" class="formulario_nok"><legend class="legenda">Identificação do Usuário</legend> 
@@ -253,16 +269,16 @@ fieldset#MCMDescription {
                                 <option value="" selected style="display: none;"></option>
                                 <optgroup label="LV">
                                     <option value="VW">VOLKSWAGEN</option>
-                                    <option value="FRM">FORD (MOGI MIRIM)</option>
-                                    <option value="FRC">FORD (CAMAÇARI)</option>
                                     <option value="GMB">GENERAL MOTORS</option>
                                     <option value="FCA">FIAT</option>
                                     <option value="PSA">PSA</option>
+                                    <option value="HPE">HPE</option>
+                                    <option value="REN">RENAULT</option>
+                                <!--<option value="FRM">FORD (MOGI MIRIM)</option>
+                                    <option value="FRC">FORD (CAMAÇARI)</option>-->
                                     <option value="KIA">KIA</option>
                                     <option value="HYU">HYUNDAI</option>
                                     <option value="CHE">CHERY</option>
-                                    <option value="HPE">HPE</option>
-                                    <option value="REN">RENAULT</option>
                                     <option value="NIS">NISSAN</option>
                                 </optgroup>
                                 <optgroup label="CTOH">
@@ -274,9 +290,10 @@ fieldset#MCMDescription {
                                     <option value="CNH">CNH</option>
                                     <option value="MWM">MWM</option>
                                     <option value="VOL">VOLVO</option>
-                                    <option value="ARG">ARGENTINA</option>
-                                    <option value="TEN">TENNECO</option>
                                 </optgroup>
+                                <option value="ARG">ARGENTINA</option>
+                                <option value="TEN">TENNECO</option>
+
                             </select></br>
 
                             <input type="radio" name="tTipo-ecm" id="cTipo-ecm" value="" checked style="display: none;">
@@ -411,21 +428,13 @@ fieldset#MCMDescription {
                         </fieldset>
                     </section>
                 </form>
-                <button id="copiar_descricao" class="botao_nvis" value="Copiar descricao" onclick="ta2_description();">Copiar Descrição</button>
+                <button id="copiar_descricao" class="botao_nvis" value="Copiar descricao" onclick="copiarDescricao();">Copiar Descrição</button>
 
             </div>
 
             <fieldset id="resumo_final"><legend class="legenda">Resumo</legend>
-                <div id="resumo_final_div" style="width: 320px;text-align: center;"></div>
+                <div id="resumo_final_div"></div>
                 <div id="ResumoDescricao" style="width: 320px;text-align: left; font-size: 10pt;">
-                    Documento criado por: Fabio Costa.<br>
-                    <br>
-                    PROJETO: GENERAL MOTORS, Cold End, STRALIS - TENPLus.<br>
-                    PLANTA: MOM2.<br>
-                    <br>
-                    Tipo de MCM: Nova Produção.<br>
-                    <br>
-                    Tipo de Material: FABRICADO, PRODUTO ACABADO<br>
                 </div>
             </fieldset>
 
@@ -502,7 +511,7 @@ fieldset#MCMDescription {
 
             </table>
 
-            <div class="tabela_workflow_ta2">
+            <div class="tabela_workflow_ta2" id="workflow_ref_div">
                 <table id="workflow_ref">
                     <tr><td>Nivel</td>  <td>Atvidade</td>                                   <td>Responsável</td>         <td>Nome</td><td>Backup</td><td>Prazo</td></tr>
                     <tr><td>01</td>     <td>SAP COST - Cadastrar dados mestres C01.</td>    <td id="nomeID01">MARCSANT</td><td id="nome01">MARCELO SANTOS</td><td><input type="checkbox" id="bkup01" name="bkup01"></td><td class="periodoDias_nvis" id="task01">4</td></tr>
@@ -539,7 +548,9 @@ fieldset#MCMDescription {
 
     </div> <!--divGeral-->
 
-<textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
+    <textarea id="inputTest1_ta2" class="tarea-nvisivel" rows="50" cols="50">Teste</textarea>
+    <textarea id="inputDescricaoMCM" class="tarea-nvisivel" rows="50" cols="50">Descrição MCM</textarea>
+
 
 <script>
     parent.validacao();

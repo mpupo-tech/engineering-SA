@@ -64,7 +64,14 @@ var teste_grupo = group01 + group02 + group03 + group04
 
     if (teste_grupo == 4) {
         document.getElementById("copia_fluxo_vis").className = 'botao'
-    } else {document.getElementById("copia_fluxo_vis").className = 'botao_nvis'}
+        document.getElementById("resumo_final_div").style.display = "unset"
+        document.getElementById("workflow_ref_div").style.display = "unset"
+        
+
+    } else {document.getElementById("copia_fluxo_vis").className = 'botao_nvis'
+    document.getElementById("resumo_final_div").style.display = "none"
+    document.getElementById("workflow_ref_div").style.display = "none"
+}
 
 
 
@@ -93,7 +100,11 @@ var teste_grupo = group01 + group02 + group03 + group04
 
     if (teste_grupo + group05 == 5) {
         document.getElementById("copiar_descricao").className = 'copia_descricao_vis'
-    } else {document.getElementById("copiar_descricao").className = 'botao_nvis'}
+        document.getElementById("ResumoDescricao").style.display = "unset"
+
+    } else {document.getElementById("copiar_descricao").className = 'botao_nvis'
+    document.getElementById("ResumoDescricao").style.display = "none"
+}
 
 
 }
@@ -116,6 +127,20 @@ function copiarfluxo() {
     document.execCommand('copy')
     textocopia.className = "tarea-nvisivel"
     tabela_ta2.className = "resultado_nvis";
+
+}
+function copiarDescricao() {
+    //var tabela_ta2 = document.getElementById('fluxo_ta2_vis')
+    //tabela_ta2.className = "resultado_vis";
+    var TextDescription = document.getElementById('ResumoDescricao')
+
+    document.getElementById('inputDescricaoMCM').innerHTML = TextDescription.innerText
+    var textocopia = document.getElementById('inputDescricaoMCM')
+    textocopia.className = "tarea-visivel"
+    textocopia.select()
+    document.execCommand('copy')
+    textocopia.className = "tarea-nvisivel"
+    //tabela_ta2.className = "resultado_nvis";
 
 }
 
@@ -856,12 +881,12 @@ function ta2_description() {
     
     var TextADMBOM = `Na lista técnica do “Descrição do [MM]” nº 82XXXXXX, foi alterado:<br><br>
 
-    TABELA BOM<br><br>
+    <!--TABELA BOM<br><br>-->
     
     DE:/PARA: - "COPIAR DO SHAREPOINT MCM TA2"<br><br>    
         
     Notas:<br>
-    Este documento deve ser liberado após ou em conjunto com a MCM 70XXXXXXMOM2, por todos os departamentos envolvidos.<br>
+    Este documento deve ser liberado após ou em conjunto com a MCM 7000XXXXMOM2, por todos os departamentos envolvidos.<br>
     A lista técnica atualizada pode ser consultada usando a data futura 01.01.2050.<br><br>
     
     Motivo: Adequar a lista técnica conforme solicitado por...<br><br>`
@@ -892,7 +917,7 @@ function ta2_description() {
 
     var TextSummary = `${TextTitle}${TextBody}${TextCreatedby}`
     
-alert ()
+
     document.getElementById("ResumoDescricao").innerHTML = TextSummary
 
 
