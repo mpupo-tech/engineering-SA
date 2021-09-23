@@ -863,7 +863,7 @@ function ta2_description() {
 
     //NP ADM, ADM BOM
     if (itemType.id != "radio_FG") {
-        MM_Used_In = "<br> -Este Material (MM) será usado no Item: <br> -82YYYYYY."
+        MM_Used_In = "<br><br> -Este Material (MM) será usado no Item: <br> -82YYYYYY."
     } else {MM_Used_In = ""}
 
 
