@@ -70,7 +70,7 @@ div#descricao-titulo {
 }
 div#descricao-escopo {
     width: 350px;
-    height: 225px;
+    height: 355px;
     background-color: rgba(0, 0, 0, 0.15);
     padding: 10px;
     font-size: 11pt;
@@ -176,7 +176,7 @@ button.botao {
                     <li id="lista-segundo">Catalisador</li>
             </ul>
         </nav>
-        <p style="font-size: 9pt;font-style: italic;margin-right: 15px;text-align: right;">Atualizado em 29 de Agosto de 2021<br>Por Marcelo Pupo</p>
+        <p style="font-size: 9pt;font-style: italic;margin-right: 15px;text-align: right;">Atualizado em 14 de Outubro de 2021<br>Por Marcelo Pupo</p>
 
         </section>
 
@@ -201,7 +201,7 @@ button.botao {
             <tr class="linha-par">
                 <td class="coluna-titulo" rowspan="2">Programa</td>
                 <td class="coluna-opcao" id="linha03">
-                    <select style="margin-left: 8px;" class="select-maior" name="tCliente" id="cCliente">
+                    <!--<select style="margin-left: 8px;" class="select-maior" name="tCliente" id="cCliente">
                         <option value="" selected style="display: none;">Selecione o cliente</option>
                         <optgroup label="LV">
                             <option value="VW">VOLKSWAGEN</option>
@@ -226,20 +226,56 @@ button.botao {
                                 <option value="MWM">MWM</option>
                                 <option value="VOL">VOLVO</option>
                                 <option value="TEN">TENNECO</option>
-                        </optgroup> 
+                        </optgroup> </select>-->
+                        <select style="margin-left: -2px;" class="select-maior" name="tCliente" id="cCliente">
+                            <option value="" selected style="display: none;">Selecione o cliente</option>
+                            <optgroup label="LV">
+                                <option value="VW">VOLKSWAGEN</option>
+                                <option value="GMB">GENERAL MOTORS</option>
+                                <option value="FCA">FIAT</option>
+                                <option value="PSA">PSA</option>
+                                <option value="HPE">HPE</option>
+                                <option value="REN">RENAULT</option>
+                            <!--<option value="FRM">FORD (MOGI MIRIM)</option>
+                                <option value="FRC">FORD (CAMAÇARI)</option>-->
+                                <option value="KIA">KIA</option>
+                                <option value="HYU">HYUNDAI</option>
+                                <option value="CHE">CHERY</option>
+                                <option value="NIS">NISSAN</option>
+                            </optgroup>
+                            <optgroup label="CTOH">
+                                <option value="DAI">MERCEDES BENZ</option>
+                                <option value="SCN">SCANIA</option>
+                                <option value="IVE">IVECO</option>
+                                <option value="MAN">MAN</option>
+                                <option value="CAO">CAOA</option>
+                                <option value="CNH">CNH</option>
+                                <option value="MWM">MWM</option>
+                                <option value="VOL">VOLVO</option>
+                            </optgroup>
+                            <option value="ARG">ARGENTINA</option>
+                            <option value="TEN">TENNECO</option>
+
+                        </select>
+
                     <label for="cProjeto">Projeto:</label>
                     <input type="text" name="tProjeto" id="cProjeto" maxlength="40" size="20" placeholder="Nome do Projeto" list="projetos"/>
                     <datalist id="projetos">
-                        <option value="MQBA1"></option>
-                        <option value="B562MCA"></option>
-                        <option value="BR900"></option>
-                        <option value="NCG"></option></datalist>
+                        <option value="D08 4CYL"></option>
+                        <option value="D08 6CYL"></option>
+                        <option value="BR900 2BOX"></option>
+                        <option value="GSEN4"></option>
+                        <option value="SMARTCAR"></option>
+                        <option value="F3M"></option>
+                        <option value="PL7"></option>
+                        <option value="D2XX"></option>
+                    </datalist>
                 </td>
             </tr>
             
             <tr class="linha-par">
                 <td class="coluna-opcao" id="linha04">
-                    <select style="margin-left: 8px;" class="select-maior" name="tProduto" id="cProduto">
+                    <select style="margin-left: -2px;" class="select-maior" name="tProduto" id="cProduto">
                         <option value="" selected style="display: none;">Tipo de Produto</option>
                         <optgroup label="LV">
                             <option value="CE-LV">Cold End</option>
@@ -344,11 +380,12 @@ button.botao {
                     
     function descricao() {
         var customerFullName = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].text;
+        var customerName = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex];
         var projectName = document.getElementById('cProjeto').value;
         var changeType = document.querySelector('input[name="tTipo-ecm"]:checked').value;
         var programStatus = document.querySelector('input[name="tStatus-programa"]:checked').value;
         var ecmStatus = document.querySelector('input[name="Status-ECM"]:checked').value;
-        var productType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].text;
+        var productType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex];
         var itemType = document.querySelector('input[name="tTipo-item"]:checked').value;
         var engineeringRegion = document.querySelector('input[name="tRegion"]:checked').value;
         var yearsop = document.getElementById('cSOP').options[document.getElementById('cSOP').selectedIndex].text;
@@ -361,7 +398,6 @@ button.botao {
         var CAM1 = 'CAM1';
         var mcmtype = ''
 
-        
 
         if (mogimirim.checked && camacari.checked) {            
             txtplanta = `<strong>Planta:</strong> ${MOM2} e ${CAM1}.<br>`
@@ -374,13 +410,14 @@ button.botao {
             }
 
 
+
         //alert(changeType);
 
         //Linha Projetos: 
-        if (customerFullName && productType && projectName != "") {
-            linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${productType} - ${projectName}.<br>`
-            }else { if (customerFullName && productType != "") {
-                linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${productType}.<br>`
+        if (customerName.value && productType.value && projectName != "") {
+            linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${productType.text} - ${projectName}.<br>`
+            }else { if (customerFullName && productType.value != "") {
+                linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${productType.text}.<br>`
             } else { if (customerFullName && projectName != "") {
                 linhaProjetos = `<strong>Projeto:</strong> ${customerFullName} ${projectName}.<br>`
             } else {linhaProjetos = ""}
@@ -425,11 +462,17 @@ button.botao {
             linhasop = `<br><strong>Início de Produção em:</strong> ${yearsop}</strong>.<br>`
         } else { if (anualVolume != "") {
             linhasop = `<br>Volume anual de ${anualVolume}pçs.<br>`
-        } else {linhasop = ""
+        } else {linhasop = ""}}}
 
-        }
-        }
-        }
+        //Linha linha Notas Importantes.
+
+        if (customerName.value == "GMB" || customerName.value == "FCA") {
+            linha_notaCQI15 = `<br>Notas Importantes:
+                        <br>1. Elaboração e revisão dos desenhos 2D, devem conter os IDs de cada solda indicada.
+                        <br>2. DFMEA, PFMEA, FIP e PLANO DE CONTROLE, devem conter os mesmos IDs das soldas registrados nos desenhos 2D.
+                        <br>3. Elaboração e revisão da FIP, devem conter o sequenciamento e direcionamento de solda.`
+        } else {linha_notaCQI15 = ""}
+
 
         //Linha Titulo
         if (changeType != "") {
@@ -440,7 +483,7 @@ button.botao {
             var programStatus_short = document.querySelector('input[name="tStatus-programa"]:checked').id + " ";
         } else {var programStatus_short = ""}
 
-        if (customerFullName != "") {
+        if (customerName.value != "") {
             var customerName_short = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value + " ";
         } else {var customerName_short = ""}
 
@@ -457,19 +500,32 @@ button.botao {
         } else {yearsop_short = ""}
 
 
+        if (customerName.value == ""){tdivision = ""}
+        else {
+        if (customerName.value == "VW" ||
+    customerName.value == "GMB" ||
+    customerName.value == "FCA" ||
+    customerName.value == "PSA" ||
+    customerName.value == "HPE" ||
+    customerName.value == "REN" ||
+    customerName.value == "KIA" ||
+    customerName.value == "HYU" ||
+    customerName.value == "CHE" ||
+    customerName.value == "ARG" ||
+    customerName.value == "NIS") 
+    {tdivision = "Tenneco Clean Air - Light Vehicle (LV).<br><br>"}  else {tdivision = "Tenneco Clean Air - Commercial Truck & Off Highway (CTOH).<br><br>"}}
 
 
 
 
 
-
-
-        if ((linhaProjetos + txtplanta + linhatipoECM + linhastsus + linhasop) == "") {
+        if ((linhaProjetos + txtplanta + linhatipoECM + linhastsus + linhasop + linha_notaCQI15) == "") {
             document.getElementById('descricao-titulo').innerText = textodefault1
             document.getElementById('descricao-escopo').innerText = textodefault2
 
         } else {
-            document.getElementById('descricao-escopo').innerHTML = `${linhaProjetos}${txtplanta}${linhatipoECM}${linhastsus}${linhasop}
+            document.getElementById('descricao-escopo').innerHTML = `
+            ${tdivision}${linhaProjetos}${txtplanta}${linhatipoECM}${linhastsus}${linhasop}${linha_notaCQI15}
             <p>Detalhes da ECM:`;
 
             document.getElementById('descricao-titulo').innerText = `${changeType_short}${programStatus_short}${customerName_short}${projectName_short}${itemType_short}${yearsop_short}`

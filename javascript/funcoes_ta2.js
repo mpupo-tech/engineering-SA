@@ -850,10 +850,25 @@ function ta2_description() {
     var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked');
     var PurchaseType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
     var importados = document.getElementById('importados');
+    var teste_tipoProduto = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
 
     var ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
 
-    
+
+    if (customerName.value == "VW" ||
+    customerName.value == "GMB" ||
+    customerName.value == "FCA" ||
+    customerName.value == "PSA" ||
+    customerName.value == "HPE" ||
+    customerName.value == "REN" ||
+    customerName.value == "KIA" ||
+    customerName.value == "HYU" ||
+    customerName.value == "CHE" ||
+    customerName.value == "ARG" ||
+    customerName.value == "NIS") 
+    {tdivision = "Light Vehicle (LV)"}  else {tdivision = "Commercial Truck & Off Highway (CTOH)"}
+
+
     if (importados.checked) {PurchaseLocal = PurchaseType.value + " IMPORTADO"}
         else {PurchaseLocal = PurchaseType.value + " NACIONAL"}
 
@@ -873,7 +888,9 @@ function ta2_description() {
     //PROJETO: CUSTOMER, Product type, ProjectName - Busines Status.
 
 
-    var TextTitle = `PLANTA: MOM2 - ${programStatus.value}.
+    var TextTitle = `
+    Tenneco Clean Air - ${tdivision}.<br><br>
+    PLANTA: MOM2 - ${programStatus.value}.
     <br>PROJETO: ${customerName.innerText}, ${ProductType.innerText}, ${ProgramName.value}.<br><br>
     
     Tipo de MCM: ${ECMType.value}.<br><br>
