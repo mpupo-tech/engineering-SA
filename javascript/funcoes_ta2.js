@@ -242,12 +242,12 @@ function ta2_workflow() {
     // ROMUMART
     // LIBERF72
   
-    if (customerName_short == "VW") { ProdutoID = 'SALAPEDA'; VendasID = 'TULISILV'; ProcessosID = 'LIBERF72'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
+    if (customerName_short == "VWL") { ProdutoID = 'SALAPEDA'; VendasID = 'TULISILV'; ProcessosID = 'LIBERF72'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
     if (customerName_short == "GMB") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA77'} else {
     if (customerName_short == "FRM") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "FRC") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ERIKBARB'} else {
     if (customerName_short == "PSA") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "MAN") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "SCN") { ProdutoID = 'MAYCOLIV'; VendasID = 'TULISILV'; ProcessosID = 'WELLDESO'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "DAI") { ProdutoID = 'MAYCOLIV'; VendasID = 'GRASDASI'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
     if (customerName_short == "FCA") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
@@ -855,7 +855,7 @@ function ta2_description() {
     var ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
 
 
-    if (customerName.value == "VW" ||
+    if (customerName.value == "VWL" ||
     customerName.value == "GMB" ||
     customerName.value == "FCA" ||
     customerName.value == "PSA" ||
