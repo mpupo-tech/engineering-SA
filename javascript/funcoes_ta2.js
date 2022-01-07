@@ -244,24 +244,22 @@ function ta2_workflow() {
   
     if (customerName_short == "VWL") { ProdutoID = 'SALAPEDA'; VendasID = 'TULISILV'; ProcessosID = 'LIBERF72'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
     if (customerName_short == "GMB") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "FRM") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
-    if (customerName_short == "FRC") { ProdutoID = 'THIABRIT'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ERIKBARB'} else {
     if (customerName_short == "PSA") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
-    if (customerName_short == "SCN") { ProdutoID = 'MAYCOLIV'; VendasID = 'TULISILV'; ProcessosID = 'WELLDESO'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
-    if (customerName_short == "DAI") { ProdutoID = 'MAYCOLIV'; VendasID = 'GRASDASI'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "SCN") { ProdutoID = 'MAYCOLIV'; VendasID = 'TULISILV'; ProcessosID = 'WELLDESO'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "DAI") { ProdutoID = 'MAYCOLIV'; VendasID = 'GRASDASI'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "FCA") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "CNH") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "CNH") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "KIA") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "HYU") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA77'} else {
     if (customerName_short == "CHE") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ERIKBARB'} else {
     if (customerName_short == "HPE") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'LIBERF72'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "CAO") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "CAO") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "REN") { ProdutoID = 'MAYCOLIV'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA77'} else {
-    if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "NIS") { ProdutoID = 'THIABRIT'; VendasID = 'CARLMART'; ProcessosID = 'LIBERF72'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ERIKBARB'} else {
-    if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
+    if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "ARG") { ProdutoID = 'THIABRIT'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA77'} else {
     if (customerName_short == "TEN") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CARLSOUS'} else {
             ProdutoID = administrador;
@@ -269,7 +267,7 @@ function ta2_workflow() {
         ProcessosID = administrador;
         QualidadeID = administrador;
         PCPFabricadosID = administrador
-        }}}}}}}}}}}}}}}}}}}}}}
+        }}}}}}}}}}}}}}}}}}}}
 
 
 
@@ -564,14 +562,14 @@ var date = new Date();
 var dateStart = (date.getDate().toString().length == 1 ? '0' + date.getDate().toString() : date.getDate().toString()) + '.' + ((date.getMonth() + 1).toString().length == 1 ? '0' + (date.getMonth() + 1).toString() : (date.getMonth() + 1).toString()) + '.' + date.getFullYear();
 
 //GRUPO 01
-nivel01 = Math.max(userID_Cost01_Prazo,Projetos01_Prazo)
+nivel01 = Math.max(userID_Cost01_Prazo)
 var date_nivel01 = new Date(date);
 date_nivel01.setDate(date.getDate()+nivel01);
 date_nivel01_full = (date_nivel01.getDate().toString().length == 1 ? '0' + date_nivel01.getDate().toString() : date_nivel01.getDate().toString()) + '.' + ((date_nivel01.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel01.getMonth() + 1).toString() : (date_nivel01.getMonth() + 1).toString()) + '.' + date_nivel01.getFullYear()
 
 
 
-nivel02 = Math.max(Compras01_Prazo,PCP01_Prazo,Vendas01_Prazo)
+nivel02 = Math.max(Compras01_Prazo,PCP01_Prazo,Vendas01_Prazo,Projetos01_Prazo)
 var date_nivel02 = new Date(date_nivel01);
 date_nivel02.setDate(date_nivel01.getDate()+nivel02);
 date_nivel02_full = (date_nivel02.getDate().toString().length == 1 ? '0' + date_nivel02.getDate().toString() : date_nivel02.getDate().toString()) + '.' + ((date_nivel02.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel02.getMonth() + 1).toString() : (date_nivel02.getMonth() + 1).toString()) + '.' + date_nivel02.getFullYear()
@@ -636,8 +634,8 @@ var date_nivel01_due = new Date(date)
 date_nivel01_due.setDate(date.getDate()+userID_Cost01_Prazo)
 date_nivel01_due_std = (date_nivel01_due.getDate().toString().length == 1 ? '0' + date_nivel01_due.getDate().toString() : date_nivel01_due.getDate().toString()) + '.' + ((date_nivel01_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel01_due.getMonth() + 1).toString() : (date_nivel01_due.getMonth() + 1).toString()) + '.' + date_nivel01_due.getFullYear()
 
-var date_nivel02_due = new Date(date)
-date_nivel02_due.setDate(date.getDate()+Projetos01_Prazo)
+var date_nivel02_due = new Date(date_nivel01)
+date_nivel02_due.setDate(date_nivel01.getDate()+Projetos01_Prazo)
 date_nivel02_due_std = (date_nivel02_due.getDate().toString().length == 1 ? '0' + date_nivel02_due.getDate().toString() : date_nivel02_due.getDate().toString()) + '.' + ((date_nivel02_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel02_due.getMonth() + 1).toString() : (date_nivel02_due.getMonth() + 1).toString()) + '.' + date_nivel02_due.getFullYear()
 
 var date_nivel03_due = new Date(date_nivel01)
@@ -734,7 +732,7 @@ date_nivel25_due_std = (date_nivel25_due.getDate().toString().length == 1 ? '0' 
 
 
 document.getElementById("TA2_start01").innerHTML = dateStart
-document.getElementById("TA2_start02").innerHTML = dateStart
+document.getElementById("TA2_start02").innerHTML = date_nivel01_full
 document.getElementById("TA2_start03").innerHTML = date_nivel01_full
 document.getElementById("TA2_start04").innerHTML = date_nivel01_full
 document.getElementById("TA2_start05").innerHTML = date_nivel01_full
