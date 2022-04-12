@@ -277,9 +277,16 @@ function ta2_workflow() {
 //FORMULARIO
 
 
-if (userProjetos != "") {
+/*if (userProjetos != "") {
+    ProjetosID = userProjetos
+} else {ProjetosID = administrador}*/
+
+if (userProjetos == "DOSSAG30") 
+    {ProjetosID = "MARCSANT"} 
+    else if (userProjetos != "") {
     ProjetosID = userProjetos
 } else {ProjetosID = administrador}
+
  
 
 if (importados.checked) {
