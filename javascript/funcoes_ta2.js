@@ -225,13 +225,14 @@ function ta2_workflow() {
     if (itensComprados == "GSCM_018") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
     if (itensComprados == "GSCM_019") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
     if (itensComprados == "GSCM_020") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_021") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_022") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_021") { PCPCompradosID = "SEBAREZE"; ComprasID = "REISL099"} else {
+    if (itensComprados == "GSCM_022") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
     if (itensComprados == "GSCM_023") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
     if (itensComprados == "GSCM_024") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_025") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
         PCPCompradosID = administrador;
         ComprasID = administrador;
-        }}}}}}}}}}}}}}}}}}}}}}}}
+        }}}}}}}}}}}}}}}}}}}}}}}}}
         
         
 
