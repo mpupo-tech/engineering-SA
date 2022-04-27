@@ -129,6 +129,10 @@ margin-top: 20px;
 
 }
 
+#DivSheetMetal {
+	display: unset;
+}
+
 
 
 /*User frame OK*/
@@ -146,6 +150,11 @@ margin-top: 20px;
 .formulario_nok {
     background-color: rgba(15, 3, 36, 0.05);
     width: 470px;
+}
+
+.Select_Tools_nok {
+    background-color: rgba(15, 3, 36, 0.05);
+	width: 850 px;
 }
 
 .botao_select {

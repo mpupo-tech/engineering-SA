@@ -60,17 +60,27 @@
             <div id="calc_massa">
             <p><strong>Cálculos de Projetos:</strong> Massa (kg).</p>
 
-            <p><strong>Chapas</strong><input type="button" value="Reset" id="reseteChapa" onclick="resetarChapa();"></p>
+
+            <fieldset id="calculos" class="Select_Tools_nok"><legend class="legenda">Ferramentas</legend> 
+                <input type="radio" name="ToolsID" id="cToolsID" checked value="" style="display: none;"/>
+                <input type="radio" name="ToolsID" id="radio_SheetMetal" value="ToolsID01"/><label class="legenda-radio" for="radio_COSTAF12">Chapas & Bobinas</label>
+                <input type="radio" name="ToolsID" id="radio_Pipes" value="ToolsID02"/><label class="legenda-radio" for="radio_DOSSAG30">Tubos</label>
+                <input type="radio" name="ToolsID" id="radio_Catalyst" value="ToolsID03"/><label class="legenda-radio" for="radio_JEANFRA1">Catalisadores</label>
+                <input type="radio" name="ToolsID" id="radio_WeldWire" value="ToolsID"/><label class="legenda-radio" for="radio_MARCSANT">Arame de Solda</label>
+            </fieldset>
+
+            <div id="DivSheetMetal">
+            <p><strong>Chapas & Bobinas</strong><!--<input type="button" value="Reset" id="reseteChapa" onclick="resetarChapa();">--></p>
             <table>
                 <tr><td>Comprimento<br>[mm]</td>
                     <td>Largura<br>[mm]</td>
                     <td>Espessura<br>[mm]</td>
                     <td>Material<br>[mm]</td>
-                    <td><input type="button" onclick="calc_chapa()" value="Resultado"></td></tr>
+                    <td><!--<input type="button" onclick="calc_chapa()" value="Resultado">-->Massa [kg]</td></tr>
 
-                <tr><td><input type="number" id="comprimentoChapa"></td>
-                    <td><input type="number" id="larguraChapa"></td>
-                    <td><select id="espessuraChapa">
+                <tr><td><input type="number" id="comprimentoChapa" style="width: 100px;"></td>
+                    <td><input type="number" id="larguraChapa"  style="width: 100px;"></td>
+                    <td><select id="espessuraChapa"  style="width: 100px;">
                         <option value="0.6">0.6</option>
                         <option value="0.8">0.8</option>
                         <option value="1.0">1.0</option>
@@ -79,28 +89,82 @@
                         <option value="1.8">1.8</option>
                         <option value="2.0">2.0</option>
                     </select></td>
-                    <td><select id="materialChapa"><optgroup label="INOX">
+                    <td><select id="materialChapa"  style="width: 100px;">
+                        <optgroup label="INOX">
                             <option value="7900" selected>AISI 304</option>
                             <option value="7700">AISI 409</option>
                             <option value="7700">AISI 439</option>
                             <option value="7700">AISI 441</option>
                             <option value="7700">AISI 304</option>
                         </optgroup>
+                        <optgroup label="CARBONO">
+                            <option value="7870">SAE 1020</option>
+                            <option value="7850">St73-2</option>
+                            <option value="7850">LN 38</option>
+                        </optgroup></select>
+                    <td id="resultadoChapa">Resultado</td></tr>
+
+
+                    <tr><td><input type="number" id="comprimentoChapa" style="width: 100px;"></td>
+                        <td><input type="number" id="larguraChapa"  style="width: 100px;"></td>
+                        <td><select id="espessuraChapa"  style="width: 100px;">
+                            <option value="0.6">0.6</option>
+                            <option value="0.8">0.8</option>
+                            <option value="1.0">1.0</option>
+                            <option value="1.2" selected>1.2</option>
+                            <option value="1.5">1.5</option>
+                            <option value="1.8">1.8</option>
+                            <option value="2.0">2.0</option>
+                        </select></td>
+                        <td><select id="materialChapa"  style="width: 100px;">
+                            <optgroup label="INOX">
+                                <option value="7900" selected>AISI 304</option>
+                                <option value="7700">AISI 409</option>
+                                <option value="7700">AISI 439</option>
+                                <option value="7700">AISI 441</option>
+                                <option value="7700">AISI 304</option>
+                            </optgroup>
                             <optgroup label="CARBONO">
                                 <option value="7870">SAE 1020</option>
                                 <option value="7850">St73-2</option>
                                 <option value="7850">LN 38</option>
-                        </optgroup></select>
-                    <td id="resultadoChapa">Resultado</td></tr>
+                            </optgroup></select>
+                        <td id="resultadoChapa">Resultado</td></tr>
+
+                        <tr><td><input type="number" id="comprimentoChapa" style="width: 100px;"></td>
+                            <td><input type="number" id="larguraChapa"  style="width: 100px;"></td>
+                            <td><select id="espessuraChapa"  style="width: 100px;">
+                                <option value="0.6">0.6</option>
+                                <option value="0.8">0.8</option>
+                                <option value="1.0">1.0</option>
+                                <option value="1.2" selected>1.2</option>
+                                <option value="1.5">1.5</option>
+                                <option value="1.8">1.8</option>
+                                <option value="2.0">2.0</option>
+                            </select></td>
+                            <td><select id="materialChapa"  style="width: 100px;">
+                                <optgroup label="INOX">
+                                    <option value="7900" selected>AISI 304</option>
+                                    <option value="7700">AISI 409</option>
+                                    <option value="7700">AISI 439</option>
+                                    <option value="7700">AISI 441</option>
+                                    <option value="7700">AISI 304</option>
+                                </optgroup>
+                                <optgroup label="CARBONO">
+                                    <option value="7870">SAE 1020</option>
+                                    <option value="7850">St73-2</option>
+                                    <option value="7850">LN 38</option>
+                                </optgroup></select>
+                            <td id="resultadoChapa">Resultado</td></tr>
             </table>
             <div id="relatoriochapa" style="display: none;" class="relatorio"><fieldset id="descricaoChapa"><legend id="legendaChapa">Descrição da chapa.</legend>
             <table id="descricaoTabela">
             </table>
             </fieldset></div>
+        </div>
             
-            
-            <p><strong>Tubos</strong><input type="button" value="Reset" id="reseteTubo"></p>
-            <table>
+            <p style="display: none;"><strong>Tubos</strong><input type="button" value="Reset" id="reseteTubo"></p>
+            <table style="display: none;">
                 <tr><td>Comprimento<br>[mm]</td>
                     <td>Diâmetro<br>[mm]</td>
                     <td>Espessura<br>[mm]</td>
@@ -148,16 +212,16 @@
                         <option value="2.0">2.0</option>
                     </select></td>
                     <td><select id="materialTubo"><optgroup label="INOX">
-                            <option value="7900" selected>AISI 304</option>
-                            <option value="7700">AISI 409</option>
-                            <option value="7700">AISI 439</option>
-                            <option value="7700">AISI 441</option>
-                            <option value="7700">AISI 304</option>
+                            <option value="7860" selected>AISI 304</option>
+                            <option value="7860">AISI 409</option>
+                            <option value="7860">AISI 439</option>
+                            <option value="7860">AISI 441</option>
+                            <option value="7860">AISI 304</option>
                         </optgroup>
                             <optgroup label="CARBONO">
-                                <option value="7870">SAE 1020</option>
-                                <option value="7850">St73-2</option>
-                                <option value="7850">LN 38</option>
+                                <option value="7860">SAE 1020</option>
+                                <option value="7860">St73-2</option>
+                                <option value="7860">LN 38</option>
                         </optgroup></select>
                     <td id="resultadoTubo">Resultado</td></tr>
             </table>
