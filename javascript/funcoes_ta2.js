@@ -873,7 +873,7 @@ function ta2_description() {
     customerName.value == "CHE" ||
     customerName.value == "ARG" ||
     customerName.value == "NIS") 
-    {tdivision = "Light Vehicle (LV)"}  else {tdivision = "Commercial Truck & Off Highway (CTOH)"}
+    {tdivision = `Light Vehicle (LV)<br>Centro de Lucro: LVOE_MM.`}  else {tdivision = `Commercial Truck & Off Highway (CTOH)<br>Centro de Lucro: OEEC_MM.`}
 
 
     if (importados.checked) {PurchaseLocal = PurchaseType.value + " IMPORTADO"}
