@@ -245,20 +245,21 @@ function ta2_workflow() {
 
   
     if (customerName_short == "VWL") { ProdutoID = 'JEANFRA1'; VendasID = 'TULISILV'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "GMB") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "PSA") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "GMB") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "PSA") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "SCN") { ProdutoID = 'SALAPEDA'; VendasID = 'TULISILV'; ProcessosID = 'WELLDESO'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
-    if (customerName_short == "DAI") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'FLAVCATA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "DA6") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'WELLDESO'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "DA5") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'FLAVCATA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "FCA") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "CNH") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
-    if (customerName_short == "KIA") { ProdutoID = 'SALAPEDA'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; VendasID = 'CARLMART'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "KIA") { ProdutoID = 'SALAPEDA'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; VendasID = 'CARLMART'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "HYU") { ProdutoID = 'SALAPEDA'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "CHE") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "HPE") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "CAO") { ProdutoID = 'SALAPEDA'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "REN") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "REN") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "NIS") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
@@ -269,7 +270,7 @@ function ta2_workflow() {
         ProcessosID = administrador;
         QualidadeID = administrador;
         PCPFabricadosID = administrador
-        }}}}}}}}}}}}}}}}}}}}
+        }}}}}}}}}}}}}}}}}}}}}
 
 
 
@@ -284,10 +285,13 @@ function ta2_workflow() {
 } else {ProjetosID = administrador}*/
 
 if (userProjetos == "DOSSAG30") 
-    {ProjetosID = "MARCSANT"} 
+    {ProjetosID001 = "MARCSANT"
+    ProjetosID002 = userProjetos
+} 
     else if (userProjetos != "") {
-    ProjetosID = userProjetos
-} else {ProjetosID = administrador}
+    ProjetosID001 = userProjetos
+    ProjetosID002 = userProjetos
+} //else {ProjetosID = administrador}
 
  
 
@@ -416,7 +420,7 @@ if (prazoSeriesP == "30") {
 
 
 document.getElementById("nomeID01").innerHTML = userID_Cost;
-document.getElementById("nomeID02").innerHTML = ProjetosID;
+document.getElementById("nomeID02").innerHTML = ProjetosID001;
 document.getElementById("nomeID03").innerHTML = ComprasID;
 document.getElementById("nomeID04").innerHTML = PCP_ID;
 document.getElementById("nomeID05").innerHTML = VendasID;
@@ -443,11 +447,11 @@ document.getElementById("nomeID22").innerHTML = QualidadeID180;
 document.getElementById("nomeID23").innerHTML = ProdutoID180;
 
 document.getElementById("nomeID24").innerHTML = PtCortePcpID;
-document.getElementById("nomeID25").innerHTML = ProjetosID;
+document.getElementById("nomeID25").innerHTML = ProjetosID002;
 
 //TABELA TA2
 document.getElementById("TA2_nomeID01").innerHTML = userID_Cost;
-document.getElementById("TA2_nomeID02").innerHTML = ProjetosID;
+document.getElementById("TA2_nomeID02").innerHTML = ProjetosID001;
 document.getElementById("TA2_nomeID03").innerHTML = ComprasID;
 document.getElementById("TA2_nomeID04").innerHTML = PCP_ID;
 document.getElementById("TA2_nomeID05").innerHTML = VendasID;
@@ -470,13 +474,13 @@ document.getElementById("TA2_nomeID21").innerHTML = ProcessosID180;
 document.getElementById("TA2_nomeID22").innerHTML = QualidadeID180;
 document.getElementById("TA2_nomeID23").innerHTML = ProdutoID180;
 document.getElementById("TA2_nomeID24").innerHTML = PtCortePcpID;
-document.getElementById("TA2_nomeID25").innerHTML = ProjetosID;
+document.getElementById("TA2_nomeID25").innerHTML = ProjetosID002;
 
 
 //NOME COMPLETO
 
 userID_Cost_nomeFull = document.getElementById(userID_Cost).innerText
-ProjetosID_nomeFull = document.getElementById(ProjetosID).innerText
+ProjetosID001_nomeFull = document.getElementById(ProjetosID001).innerText
 ComprasID_nomeFull = document.getElementById(ComprasID).innerText
 PCP_ID_nomeFull = document.getElementById(PCP_ID).innerText
 VendasID_nomeFull = document.getElementById(VendasID).innerText
@@ -497,10 +501,10 @@ ProcessosID180_nomeFull = document.getElementById(ProcessosID180).innerText
 QualidadeID180_nomeFull = document.getElementById(QualidadeID180).innerText
 ProdutoID180_nomeFull = document.getElementById(ProdutoID180).innerText
 PtCortePcpID_nomeFull = document.getElementById(PtCortePcpID).innerText
-ProjetosID_nomeFull = document.getElementById(ProjetosID).innerText
+ProjetosID002_nomeFull = document.getElementById(ProjetosID002).innerText
 
 document.getElementById("nome01").innerHTML = userID_Cost_nomeFull;
-document.getElementById("nome02").innerHTML = ProjetosID_nomeFull;
+document.getElementById("nome02").innerHTML = ProjetosID001_nomeFull;
 document.getElementById("nome03").innerHTML = ComprasID_nomeFull;
 document.getElementById("nome04").innerHTML = PCP_ID_nomeFull;
 document.getElementById("nome05").innerHTML = VendasID_nomeFull;
@@ -523,7 +527,7 @@ document.getElementById("nome21").innerHTML = ProcessosID180_nomeFull;
 document.getElementById("nome22").innerHTML = QualidadeID180_nomeFull;
 document.getElementById("nome23").innerHTML = ProdutoID180_nomeFull;
 document.getElementById("nome24").innerHTML = PtCortePcpID_nomeFull;
-document.getElementById("nome25").innerHTML = ProjetosID_nomeFull;
+document.getElementById("nome25").innerHTML = ProjetosID002_nomeFull;
 //FIM NOME COMPLETO
 
 // PRAZOS
@@ -857,7 +861,7 @@ function ta2_description() {
     var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked');
     var PurchaseType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
     var importados = document.getElementById('importados');
-    var teste_tipoProduto = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
+    //var teste_tipoProduto = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
 
     var ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
 
