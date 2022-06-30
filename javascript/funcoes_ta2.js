@@ -198,7 +198,7 @@ function ta2_workflow() {
 
 //RESPONSAVEIS FIXOS
     var userID_Cost = "CARDOA96"
-    var userID_Fiscal = "DENIALVE"
+    var userID_Fiscal = "GERVPETR"
     var userID_PPAP = "MAERLEON"
     var userID_InspQual = "JOSEGASP"
     var userID_PCPimportados = "GIULSILV"
