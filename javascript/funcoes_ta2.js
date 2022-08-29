@@ -205,31 +205,31 @@ function ta2_workflow() {
 
     //ID OPR COMPRADOS
 
-    if (itensComprados == "GSCM_001") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_002") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_003") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_004") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_005") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_006") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_007") { PCPCompradosID = "ERIKBARB"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_008") { PCPCompradosID = "ERIKBARB"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_009") { PCPCompradosID = "ERIKBARB"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_001") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_002") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_003") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_004") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_005") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_006") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_007") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_008") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_009") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
     if (itensComprados == "GSCM_012") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
     if (itensComprados == "GSCM_013") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
-    if (itensComprados == "GSCM_014") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_015") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_016") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_017") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_018") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_019") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_020") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_014") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_015") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_016") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_017") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_018") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_019") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_020") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
     if (itensComprados == "GSCM_021") { PCPCompradosID = "SEBAREZE"; ComprasID = "REISL099"} else {
-    if (itensComprados == "GSCM_022") { PCPCompradosID = "SEBAREZE"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_023") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_024") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
-    if (itensComprados == "GSCM_025") { PCPCompradosID = "GIULSILV"; ComprasID = "RODRCHA1"} else {
+    if (itensComprados == "GSCM_022") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_023") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_024") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_025") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
         PCPCompradosID = administrador;
         ComprasID = administrador;
         }}}}}}}}}}}}}}}}}}}}}}}}}
@@ -244,11 +244,11 @@ function ta2_workflow() {
     // LIBERF72
 
   
-    if (customerName_short == "VWL") { ProdutoID = 'JEANFRA1'; VendasID = 'TULISILV'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "VWL") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "GMB") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "PSA") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'TULISILV'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
-    if (customerName_short == "SCN") { ProdutoID = 'SALAPEDA'; VendasID = 'TULISILV'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "SCN") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "DA6") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'WELLDESO'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "DA5") { ProdutoID = 'SALAPEDA'; VendasID = 'GRASDASI'; ProcessosID = 'FLAVCATA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "FCA") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
