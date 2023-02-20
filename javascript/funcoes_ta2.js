@@ -284,7 +284,7 @@ function ta2_workflow() {
     ProjetosID = userProjetos
 } else {ProjetosID = administrador}*/
 
-if (userProjetos == "X1GABRD7") 
+if (userProjetos == "X1GABRD7" || userProjetos == "LARICARD") 
     {ProjetosID001 = "MARCSANT"
     ProjetosID002 = userProjetos
 } 
