@@ -247,7 +247,7 @@ function ta2_workflow() {
     if (customerName_short == "VWL") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "GMB") { ProdutoID = 'NADIDINI'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "PSA") { ProdutoID = 'NADIDINI'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "SCN") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "DA6") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'WELLDESO'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "DA5") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'FLAVCATA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
@@ -260,7 +260,7 @@ function ta2_workflow() {
     if (customerName_short == "HPE") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "CAO") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "REN") { ProdutoID = 'NADIDINI'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'ANDRROSA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
+    if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "NIS") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
     if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'ELTOBORG'} else {
     if (customerName_short == "ARG") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
