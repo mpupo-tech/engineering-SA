@@ -294,10 +294,10 @@ button.botao {
                             <option value="Others">Outros</option>
                     </select>
             
-                    <input type="checkbox" id="cMogi" name="tMogi">
+                    <!--<input type="checkbox" id="cMogi" name="tMogi">
                     <label class="legenda-radio" for="cMogi">Mogi Mirim</label>
                     <input type="checkbox" id="cCamacari" name="tCamacari">
-                    <label class="legenda-radio" for="cCamacari">Camaçari</label>
+                    <label class="legenda-radio" for="cCamacari">Camaçari</label>-->
                 </td>
             </tr>
             <tr class="linha-impar">
@@ -305,7 +305,8 @@ button.botao {
                 <td class="coluna-opcao" id="linha05">
                     <input type="radio" name="tStatus-programa" id="cStatus-programa" value="" checked style="display: none;"/>
                     <input type="radio" name="tStatus-programa" id="TENPLus" value="TENPLus"/><label class="legenda-radio" for="TENPLus">TENPLus</label>
-                    <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label>
+                    <input type="radio" name="tStatus-programa" id="SeriesP" value="Series Production"/><label class="legenda-radio" for="SeriesP">Series Production</label><br><br>
+                    <input type="radio" name="tStatus-programa" id="L-Edge" value="Leading Edge"/><label class="legenda-radio" for="L-Edge">Leading Edge</label>
                     <input type="radio" name="tStatus-programa" id="Prototype" value="Protótipo"/><label class="legenda-radio" for="Prototype">Protótipo</label>
                 </td>
             </tr>
@@ -314,9 +315,6 @@ button.botao {
                     <label for="cSOP" style="margin-left: 8px;">SOP:</label>
                     <select class="input-menor" name="tSOP" id="cSOP">
                         <option value="" selected style="display: none;"></option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
                         <option value="2024">2024</option>
@@ -341,7 +339,7 @@ button.botao {
             
                 </td>
             </tr>
-            <tr class="linha-par">
+            <!--<tr class="linha-par">
                 <td class="coluna-titulo">Conteúdo</td>
                 <td class="coluna-opcao" id="linha08">
                     <input type="radio" name="tTipo-item" id="cTipo-item" checked value="" style="display: none;"/>
@@ -349,7 +347,7 @@ button.botao {
                     <input type="radio" name="tTipo-item" id="SA" value="Sub Conjunto"/><label class="legenda-radio" for="SA">Sub Conjunto</label>
                     <input type="radio" name="tTipo-item" id="IC" value="Componentes"/><label class="legenda-radio" for="IC">Componentes</label>  
                 </td>
-            </tr>
+            </tr>-->
             
             </table>
                
@@ -386,28 +384,28 @@ button.botao {
         var programStatus = document.querySelector('input[name="tStatus-programa"]:checked').value;
         var ecmStatus = document.querySelector('input[name="Status-ECM"]:checked').value;
         var productType = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex];
-        var itemType = document.querySelector('input[name="tTipo-item"]:checked').value;
+        //var itemType = document.querySelector('input[name="tTipo-item"]:checked').value;
         var engineeringRegion = document.querySelector('input[name="tRegion"]:checked').value;
         var yearsop = document.getElementById('cSOP').options[document.getElementById('cSOP').selectedIndex].text;
         var anualVolume = document.getElementById('cVolume').value;
         var textodefault2 = "Aqui vai o escopo do documento."
         var textodefault1 = "Aqui vai o titulo."
-        var mogimirim = document.getElementById('cMogi');
-        var camacari = document.getElementById('cCamacari');
-        var MOM2 = 'MOM2';
-        var CAM1 = 'CAM1';
+        //var mogimirim = document.getElementById('cMogi');
+        //var camacari = document.getElementById('cCamacari');
+        //var MOM2 = 'MOM2';
+        //var CAM1 = 'CAM1';
         var mcmtype = ''
 
-
-        if (mogimirim.checked && camacari.checked) {            
-            txtplanta = `<strong>Planta:</strong> ${MOM2} e ${CAM1}.<br>`
-            } else { if (mogimirim.checked) {
-                txtplanta = `<strong>Planta:</strong> ${MOM2}.<br>`
-            } else { if (camacari.checked) {
-                txtplanta = `<strong>Planta:</strong> ${CAM1}.<br>`
-            } else { txtplanta = ''}
-            }
-            }
+        var txtplanta = `<strong>Planta:</strong> MOM2.<br>`
+        //if (mogimirim.checked && camacari.checked) {            
+        //    txtplanta = `<strong>Planta:</strong> ${MOM2} e ${CAM1}.<br>`
+        //    } else { if (mogimirim.checked) {
+        //        txtplanta = `<strong>Planta:</strong> ${MOM2}.<br>`
+        //    } else { if (camacari.checked) {
+        //        txtplanta = `<strong>Planta:</strong> ${CAM1}.<br>`
+        //    } else { txtplanta = ''}
+        //    }
+        //    }
 
 
 
@@ -429,15 +427,11 @@ button.botao {
         
         //Fim Planta
         //Linha Tipo de ECM
-        if (changeType && itemType != "") {
-        linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${changeType} - ${itemType}.<br>`
-        } else {if (changeType != "") {
-            linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${changeType}.<br>`
-        } else {if (itemType != "") {
-            linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${itemType}.<br>`
-        } else {linhatipoECM = ""}
-        }
-        }
+        if (changeType != "") {
+            linhatipoECM = `<br><strong>Tipo de ECM:</strong> ${changeType}.<br>`}
+            else {linhatipoECM = ""}
+            
+            
 
         
         //Fim da linha Tipo da ECM
@@ -491,9 +485,9 @@ button.botao {
             var projectName_short = projectName + " "
         } else {var projectName_short = ""}
 
-        if (itemType != "") {
-            var itemType_short = document.querySelector('input[name="tTipo-item"]:checked').id + " ";
-        } else {var itemType_short = ""}
+        //if (itemType != "") {
+        //    var itemType_short = document.querySelector('input[name="tTipo-item"]:checked').id + " ";
+        //} else {var itemType_short = ""}
 
         if (yearsop != "") {
             yearsop_short = `- ${yearsop}`
@@ -503,23 +497,23 @@ button.botao {
         if (customerName.value == ""){tdivision = ""}
         else {
         if (customerName.value == "VW" ||
-    customerName.value == "GMB" ||
-    customerName.value == "FCA" ||
-    customerName.value == "PSA" ||
-    customerName.value == "HPE" ||
-    customerName.value == "REN" ||
-    customerName.value == "KIA" ||
-    customerName.value == "HYU" ||
-    customerName.value == "CHE" ||
-    customerName.value == "ARG" ||
-    customerName.value == "NIS") 
-    {tdivision = "Tenneco Clean Air - Light Vehicle (LV).<br><br>"}  else {tdivision = "Tenneco Clean Air - Commercial Truck & Off Highway (CTOH).<br><br>"}}
+            customerName.value == "GMB" ||
+            customerName.value == "FCA" ||
+            customerName.value == "PSA" ||
+            customerName.value == "HPE" ||
+            customerName.value == "REN" ||
+            customerName.value == "KIA" ||
+            customerName.value == "HYU" ||
+            customerName.value == "CHE" ||
+            customerName.value == "ARG" ||
+            customerName.value == "NIS") 
+            {tdivision = "Tenneco Clean Air - Light Vehicle (LV).<br><br>"}  else {tdivision = "Tenneco Clean Air - Commercial Truck & Off Highway (CTOH).<br><br>"}}
 
 
+ 
 
 
-
-        if ((linhaProjetos + txtplanta + linhatipoECM + linhastsus + linhasop + linha_notaCQI15) == "") {
+        if ((linhaProjetos + linhatipoECM + linhastsus + linhasop + linha_notaCQI15) == "") {
             document.getElementById('descricao-titulo').innerText = textodefault1
             document.getElementById('descricao-escopo').innerText = textodefault2
 
@@ -528,7 +522,7 @@ button.botao {
             ${tdivision}${linhaProjetos}${txtplanta}${linhatipoECM}${linhastsus}${linhasop}${linha_notaCQI15}
             <p>Detalhes da ECM:`;
 
-            document.getElementById('descricao-titulo').innerText = `${changeType_short}${programStatus_short}${customerName_short}${projectName_short}${itemType_short}${yearsop_short}`
+            document.getElementById('descricao-titulo').innerText = `${changeType_short}${programStatus_short}${customerName_short}${projectName_short}${yearsop_short}`
         }
                 
 
@@ -542,7 +536,7 @@ button.botao {
         if (customerFullName && projectName != "") {
             document.getElementById('linha03').style = 'background-color: rgba(46, 139, 86, 0.2);'
         }
-        if (txtplanta && productType != "") {
+        if (productType.value != "") {
             document.getElementById('linha04').style = 'background-color: rgba(46, 139, 86, 0.2);'
         }
         if (programStatus != "") {
@@ -554,10 +548,11 @@ button.botao {
         if (ecmStatus != "") {
             document.getElementById('linha07').style = 'background-color: rgba(46, 139, 86, 0.2);'
         }
-        if (itemType != "") {
-            document.getElementById('linha08').style = 'background-color: rgba(46, 139, 86, 0.2);'
-        }
-        }
+        //if (itemType != "") {
+           // document.getElementById('linha08').style = 'background-color: rgba(46, 139, 86, 0.2);'
+        //}
+    }
+        
 
     function copiatexto2() {
                 
@@ -587,12 +582,12 @@ button.botao {
         document.getElementById('cRegion').checked = true
         document.getElementById('cStatus-programa').checked = true
         document.getElementById('cStatus-ECM').checked = true
-        document.getElementById('cTipo-item').checked = true
+        //document.getElementById('cTipo-item').checked = true
         document.getElementById('cCliente').selectedIndex = 0;
         document.getElementById('cProjeto').value = ""
         document.getElementById('cProduto').selectedIndex = 0;
-        document.getElementById('cMogi').checked = false
-        document.getElementById('cCamacari').checked = false
+        //document.getElementById('cMogi').checked = false
+        //document.getElementById('cCamacari').checked = false
         document.getElementById('cSOP').selectedIndex = 0;
         document.getElementById('cVolume').value = ""
         document.getElementById('linha01').style = document.getElementsByClassName('linha-impar').style
@@ -602,7 +597,7 @@ button.botao {
         document.getElementById('linha05').style = document.getElementsByClassName('linha-impar').style
         document.getElementById('linha06').style = document.getElementsByClassName('linha-impar').style
         document.getElementById('linha07').style = document.getElementsByClassName('linha-impar').style
-        document.getElementById('linha08').style = document.getElementsByClassName('linha-par').style
+        //document.getElementById('linha08').style = document.getElementsByClassName('linha-par').style
         document.getElementById('descricao-escopo').innerText = "Aqui vai o escopo do documento."
         document.getElementById('descricao-titulo').innerText = "Aqui vai o titulo."
 

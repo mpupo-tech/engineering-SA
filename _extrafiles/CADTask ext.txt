@@ -1,0 +1,25 @@
+Subject: EXT-CAD-0031-23 FIAT 265 GSE N4 PL8 Cold End
+
+
+Hello Prashant,
+
+Task Number: EXT-CAD-0031-23.
+ECM: 30240205
+Project Number: MOG-23-0086 "FIAT 265 GSE N4 PL8 Cold End"
+Program Engineer: Nadie Diniz,
+CAD System: NX 1899
+CUSTOMER: FCA, but it is no necessary to work with customer environment.
+
+Create 2D drawings for the following items.
+
+82854650 - FRONT MUFFLER FCA 265
+82850015 - ENDPLATE INLET FM
+82850004 - HANGER 3
+82850006 - HANGER 2
+82850007 - HANGER
+
+
+Please, send an estimate to hours and planned delivery date.
+
+
+Task Requested
