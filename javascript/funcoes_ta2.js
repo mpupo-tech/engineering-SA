@@ -214,25 +214,26 @@ function ta2_workflow() {
     if (itensComprados == "GSCM_007") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_008") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_009") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
-    if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_012") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
     if (itensComprados == "GSCM_013") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
-    if (itensComprados == "GSCM_014") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_015") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_016") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_014") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_015") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_016") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_017") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
-    if (itensComprados == "GSCM_018") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_019") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_020") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_018") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_019") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_020") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_021") { PCPCompradosID = "SEBAREZE"; ComprasID = "REISL099"} else {
-    if (itensComprados == "GSCM_022") { PCPCompradosID = "SEBAREZE"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_023") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_024") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
-    if (itensComprados == "GSCM_025") { PCPCompradosID = "GIULSILV"; ComprasID = "PALORIB1"} else {
+    if (itensComprados == "GSCM_022") { PCPCompradosID = "SEBAREZE"; ComprasID = "REISL099"} else {
+    if (itensComprados == "GSCM_023") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_024") { PCPCompradosID = "GIULSILV"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_025") { PCPCompradosID = "GIULSILV"; ComprasID = "LOPESF82"} else {
+    if (itensComprados == "GSCM_026") { PCPCompradosID = "GIULSILV"; ComprasID = "LOPESF82"} else {
         PCPCompradosID = administrador;
         ComprasID = administrador;
-        }}}}}}}}}}}}}}}}}}}}}}}}}
+        }}}}}}}}}}}}}}}}}}}}}}}}}}
         
         
 
@@ -308,7 +309,16 @@ if (importados.checked) {
 
 
 
-if (itemType_short == 'radio_GSCM') {
+if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_021') {
+    PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
+    ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
+    VendasID = VendasID; Vendas01_Prazo = 4;
+    userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
+    userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
+
+
+} else { if (itemType_short == 'radio_GSCM' && itensComprados != 'GSCM_021') {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
@@ -317,7 +327,12 @@ if (itemType_short == 'radio_GSCM') {
     userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
 
 
-} else { if (itemType_short == 'radio_FG') {
+} else { 
+    
+    
+    
+    
+    if (itemType_short == 'radio_FG') {
     PCP_ID = PCPFabricadosID; PCP01_Prazo = 5;
     ProcessosSAPID = ProcessosID; ProcessosSAP01_Prazo = 14;
     ComprasID = administrador; Compras01_Prazo = 0; Compras02_Prazo = 0; 
@@ -333,7 +348,7 @@ if (itemType_short == 'radio_GSCM') {
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
-    }}}
+    }}}}
 
 
     

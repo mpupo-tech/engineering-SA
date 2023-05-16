@@ -1,0 +1,1 @@
+IF(AND([Região]="Brasil",[Veículo]="BUS LO",[Motor]="4 cilindros"),"1","99")
