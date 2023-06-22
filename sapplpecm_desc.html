@@ -236,8 +236,8 @@ button.botao {
                                 <option value="PSA">PSA</option>
                                 <option value="HPE">HPE</option>
                                 <option value="REN">RENAULT</option>
-                            <!--<option value="FRM">FORD (MOGI MIRIM)</option>
-                                <option value="FRC">FORD (CAMAÇARI)</option>-->
+                                <option value="FRD">FORD</option>
+                                <!--<option value="FRC">FORD (CAMAÇARI)</option>-->
                                 <option value="KIA">KIA</option>
                                 <option value="HYU">HYUNDAI</option>
                                 <option value="CHE">CHERY</option>
@@ -268,7 +268,7 @@ button.botao {
                         <option value="SMARTCAR"></option>
                         <option value="F3M"></option>
                         <option value="PL7"></option>
-                        <option value="D2XX"></option>
+                        <option value="GEM PU"></option>
                     </datalist>
                 </td>
             </tr>
@@ -315,7 +315,6 @@ button.botao {
                     <label for="cSOP" style="margin-left: 8px;">SOP:</label>
                     <select class="input-menor" name="tSOP" id="cSOP">
                         <option value="" selected style="display: none;"></option>
-                        <option value="2022">2022</option>
                         <option value="2023">2023</option>
                         <option value="2024">2024</option>
                         <option value="2025">2025</option>
@@ -460,7 +459,7 @@ button.botao {
 
         //Linha linha Notas Importantes.
 
-        if (customerName.value == "GMB" || customerName.value == "FCA" || customerName.value == "PSA") {
+        if (customerName.value == "GMB" || customerName.value == "FCA" || customerName.value == "PSA" || customerName.value == "FRD") {
             linha_notaCQI15 = `<br>Notas Importantes:
                         <br>1. Elaboração e revisão dos desenhos 2D, devem conter os IDs de cada solda indicada.
                         <br>2. DFMEA, PFMEA, FIP e PLANO DE CONTROLE, devem conter os mesmos IDs das soldas registrados nos desenhos 2D.
