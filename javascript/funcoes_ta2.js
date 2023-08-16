@@ -216,8 +216,8 @@ function ta2_workflow() {
     if (itensComprados == "GSCM_009") { PCPCompradosID = "ERIKBARB"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_010") { PCPCompradosID = "GIULSILV"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_011") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
-    if (itensComprados == "GSCM_012") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
-    if (itensComprados == "GSCM_013") { PCPCompradosID = "SEBAREZE"; ComprasID = "SIDNSILV"} else {
+    if (itensComprados == "GSCM_012") { PCPCompradosID = "LUCIAE11"; ComprasID = "SIDNSILV"} else {
+    if (itensComprados == "GSCM_013") { PCPCompradosID = "LUCIAE11"; ComprasID = "SIDNSILV"} else {
     if (itensComprados == "GSCM_014") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_015") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
     if (itensComprados == "GSCM_016") { PCPCompradosID = "SEBAREZE"; ComprasID = "LOPESF82"} else {
@@ -285,13 +285,13 @@ function ta2_workflow() {
     ProjetosID = userProjetos
 } else {ProjetosID = administrador}*/
 
-if (userProjetos == "LARICARD" || userProjetos == "COSTAF12" ) {
+if (userProjetos == "LARICARD" || userProjetos == "RODRPIRE" ) {
     ProjetosID001 = "MARCSANT"
     ProjetosID002 = userProjetos
 } 
 
 else if (userProjetos == "MARCSANT") {
-    ProjetosID001 = "COSTAF12"
+    ProjetosID001 = "MARCSANT"
     ProjetosID002 = userProjetos
 }
 

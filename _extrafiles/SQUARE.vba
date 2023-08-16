@@ -371,6 +371,35 @@ Sub SQUARE()
     Range("S1").Value = "NP/ADM"
     Range("T1").Value = "IW/DELAY"
     Range("U1").Value = "Custumer"
+    Range("W10002").Value = "NP_DL"
+    Range("X10002").Value = "ADM_DL"
+    Range("Y10002").Value = "NP_IT"
+    Range("Z10002").Value = "ADM_IT"
+    Range("V10003").Value = "PURCHASING"
+    Range("V10004").Value = "PROCESS ENG."
+    Range("V10005").Value = "QUALITY"
+    Range("V10006").Value = "ENGINEERING"
+    Range("V10007").Value = "PROJECT ENG."
+    Range("W10012").Value = "NP_DL"
+    Range("X10012").Value = "ADM_DL"
+    Range("Y10012").Value = "NP_IT"
+    Range("Z10012").Value = "ADM_IT"
+        
+    Range("V10013").Value = "FO"
+    Range("V10014").Value = "MA"
+    Range("V10015").Value = "MB"
+    Range("V10016").Value = "GM"
+    Range("V10017").Value = "CN"
+    Range("V10018").Value = "SC"
+    Range("V10019").Value = "VW"
+    Range("V10020").Value = "HP"
+    Range("V10021").Value = "FC"
+    Range("V10022").Value = "RE"
+    Range("V10023").Value = "PS"
+    Range("V10024").Value = "TE"
+    
+    
+
     
     
 '    Range("P1").Select
@@ -467,12 +496,22 @@ Sub SQUARE()
     End With
     Selection.FormatConditions(1).StopIfTrue = False
     
+    Range("W10003").FormulaR1C1 = "=COUNTIFS(C20,R10002C,C18,RC22,C4,""TSRL OPEN"")"
+    Range("W10003").AutoFill Destination:=Range("W10003:Z10003"), Type:=xlFillDefault
+    Range("W10003:Z10003").AutoFill Destination:=Range("W10003:Z10007"), Type:=xlFillDefault
+
+    Range("W10013").FormulaR1C1 = "=COUNTIFS(C20,R10002C,C21,RC22,C4,""TSRL OPEN"")"
+    Range("W10013").AutoFill Destination:=Range("W10013:Z10013"), Type:=xlFillDefault
+    Range("W10013:Z10013").AutoFill Destination:=Range("W10013:Z10024"), Type:=xlFillDefault
+
+    Range("V10002").FormulaR1C1 = "=SUM(R[1]C[1]:R[5]C[4])"
+    Range("V10012").FormulaR1C1 = "=SUM(R[1]C[1]:R[12]C[4])"
+
+
     
 '   ISOLANDO AS FORMULAS E REMOVENDO AS LINHAS 2 A 6
-    Columns("Q:U").Select
-    Selection.Copy
-    Range("Q1").Select
-    Selection.PasteSpecial Paste:=xlPasteValues
+    Columns("Q:Z").Copy
+    Range("Q1").PasteSpecial Paste:=xlPasteValues
     
 '    Rows("2:6").Select
 '    Selection.Delete Shift:=xlUp
@@ -493,6 +532,15 @@ Sub SQUARE()
     Cells.EntireColumn.AutoFit
     Selection.Font.Bold = True
     
+    'OCULTAR COLUNAS NÃO IMPORTANTES
+
+    Columns("A:A").EntireColumn.Hidden = True
+    Columns("C:H").EntireColumn.Hidden = True
+    Columns("L:O").EntireColumn.Hidden = True
+    Columns("S:Z").EntireColumn.Hidden = True
+    
+
+
     
     ActiveWindow.FreezePanes = False
     Application.ScreenUpdating = True
@@ -520,6 +568,8 @@ Sub SQUARE()
     ActiveWindow.Close
 '
 End Sub
+
+
 
 
 
