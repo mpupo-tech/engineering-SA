@@ -919,6 +919,7 @@ function ta2_description() {
     if (customerName.value == "VWL" ||
     customerName.value == "GMB" ||
     customerName.value == "FCA" ||
+    customerName.value == "FRD" ||
     customerName.value == "PSA" ||
     customerName.value == "HPE" ||
     customerName.value == "REN" ||
