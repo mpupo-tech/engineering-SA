@@ -158,6 +158,7 @@ function ta2_workflow() {
     var itensComprados = document.getElementById('cComprados').options[document.getElementById('cComprados').selectedIndex].value;
     var importados = document.getElementById('importados');
     var TipoMM = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
+    var MMclass = ""
 
 
 
@@ -235,7 +236,7 @@ function ta2_workflow() {
         ComprasID = administrador;
         }}}}}}}}}}}}}}}}}}}}}}}}}}
         
-        
+        //alert(itensComprados)
 
     
     //IDS POR CLIENTES
@@ -309,27 +310,64 @@ if (importados.checked) {
 } else {PCPCompradosID = PCPCompradosID}
 
 
+if (importados.checked && (TipoMM.value == "COMPONENTE CONTA PLENA" || TipoMM.value == "MATERIA PRIMA")) {
+    MMclass = "4005"
+} else {if (TipoMM.value == "COMPONENTE CONTA PLENA") {
+    MMclass = "3100"
+} else {if (TipoMM.value == "COMPONENTE SUBCONTRATADO") {
+    MMclass = "3100"
+} else {if (TipoMM.value == "COMPONENTE DIRECT BUY") {
+    MMclass = "3105"
+} else {if (TipoMM.value == "COMPONENTE INTERCOMPANY (ICY)") {
+    MMclass = "4005"
+} else {if (TipoMM.value == "PGM CONSIGNADO (PASSTHROUGH)") {
+    MMclass = "3110"
+} else {if (TipoMM.value == "MATERIA PRIMA") {
+    MMclass = "3100"
+} else {if (TipoMM.value == "EMBALAGEM") {
+    MMclass = "2250"
+} else {if (itemType_short == "radio_FG") {
+    MMclass = "5001"
+} else {if (itemType_short == "radio_SA") {
+    MMclass = "4006"
+}}}}}}}}}}
 
-if (itemType_short == 'radio_GSCM' && (itensComprados == 'GSCM_021' || itensComprados == 'GSCM_022')) {
+if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
     userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
-    TipoMM.innerText = "Classe do Material (Comprado)"; TipoMM.value = "EMBALAGEM - Classe de avaliação 2250"
+    TipoMM.value = "EMBALAGEM";
+    MMclass = "2250"
     document.getElementById("CompradosTipo").className = "Comprados_nvis"
 
 
 
-} else { if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_006' && (customerName_short != "FCA" && customerName_short != "MWM")) {
+} else {if (itemType_short == 'radio_GSCM' && (itensComprados == 'GSCM_022')) {
+    PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
+    ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
+    VendasID = administrador; Vendas01_Prazo = 0;
+    userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
+    userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
+    TipoMM.value = "EMBALAGEM";
+    MMclass = "2250"
+    document.getElementById("CompradosTipo").className = "Comprados_nvis"
+
+
+
+} else { if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_006' && (customerName_short == "FCA" || customerName_short == "MWM")) {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
     userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
-    TipoMM.innerText = "Classe do Material (Comprado)"; TipoMM.value = "COMPONENTE DIRECT BUY - Classe de avaliação 3105"
+    TipoMM.value = "PGM CONSIGNADO (PASSTHROUGH)";
+    MMclass = "3110"
+
     document.getElementById("CompradosTipo").className = "Comprados_nvis"
 
 
@@ -341,19 +379,19 @@ if (itemType_short == 'radio_GSCM' && (itensComprados == 'GSCM_021' || itensComp
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
     userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
-    TipoMM.innerText = "Classe do Material (Comprado)"; TipoMM.value = "PGM CONSIGNADO (PASSTHROUGH) - Classe de avaliação 3110"
+    TipoMM.value = "COMPONENTE DIRECT BUY";
+    MMclass = "3105"
     document.getElementById("CompradosTipo").className = "Comprados_nvis"
 
 
 
-} else { if (itemType_short == 'radio_GSCM' && itensComprados != 'GSCM_021') {
+} else { if (itemType_short == 'radio_GSCM') {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
     userID_InspQual = userID_InspQual; InspQual01_Prazo = 5;
-
 
 } else { 
     
@@ -376,7 +414,7 @@ if (itemType_short == 'radio_GSCM' && (itensComprados == 'GSCM_021' || itensComp
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
-    }}}}}}
+    }}}}}}}
 
 
     
@@ -392,7 +430,8 @@ if (changeType_short == "ADMBOM") {
     var PtCortePcpID = administrador
     PtCortePcp02 = 0
 }
-
+document.getElementById("inputDescricaoMCM").innerText = MMclass
+//alert(MMclass)
 
 //VERIFICAR PARA DIMINUIR A QUANTIDADE DE LINHAS.
 
@@ -911,9 +950,39 @@ function ta2_description() {
     var ECMType = document.querySelector('input[name="tTipo-ecm"]:checked');
     var PurchaseType = document.getElementById('TipoMM').options[document.getElementById('TipoMM').selectedIndex];
     var importados = document.getElementById('importados');
+    var MMclass = document.getElementById("inputDescricaoMCM")
+    var itemType_short = document.querySelector('input[name="tTipo-item"]:checked').id;
+    var itensComprados = document.getElementById('cComprados').options[document.getElementById('cComprados').selectedIndex].value;
+    var customerName_short = document.getElementById('cCliente').options[document.getElementById('cCliente').selectedIndex].value;
+
+
+
     //var teste_tipoProduto = document.getElementById('cProduto').options[document.getElementById('cProduto').selectedIndex].value;
 
     var ProjetosID_nomeFull = document.getElementById(userProjetos).innerText
+
+    
+    
+    if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
+        TipoMM = "EMBALAGEM";
+
+    
+    } else {if (itemType_short == 'radio_GSCM' && (itensComprados == 'GSCM_022')) {
+        TipoMM = "EMBALAGEM";
+
+        
+    } else { if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_006' && (customerName_short == "FCA" || customerName_short == "MWM")) {
+        TipoMM = "PGM CONSIGNADO (PASSTHROUGH)";
+
+    } else { if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_006') {
+        TipoMM = "COMPONENTE DIRECT BUY";
+
+    } else {TipoMM = PurchaseType.innerText;
+
+    }}}}
+
+    
+
 
 
     if (customerName.value == "VWL" ||
@@ -930,13 +999,18 @@ function ta2_description() {
     customerName.value == "NIS") 
     {tdivision = `Light Vehicle (LV)<br>Centro de Lucro: LVOE_MM.`}  else {tdivision = `Commercial Truck & Off Highway (CTOH)<br>Centro de Lucro: OEEC_MM.`}
 
+//alert(MMclass.innerText)
+    if (importados.checked) {PurchaseLocal = "IMPORTADO"
+        alert("IMPORTADO")
+    }
+        else {PurchaseLocal = "NACIONAL"
+        alert("NACIONAL")
+    }
 
-    if (importados.checked) {PurchaseLocal = "IMPORTADO, " + PurchaseType.value}
-        else {PurchaseLocal = "NACIONAL, " + PurchaseType.value}
 
     if (itemType.value != "Comprados") {
-        MaterialType = `FABRICADO, ${itemType.value}`
-    } else {MaterialType = `COMPRADO ${PurchaseLocal}`}
+        MaterialType = `FABRICADO: ${itemType.value}, Classe de avaliação ${MMclass.innerText}`
+    } else {MaterialType = `COMPRADO: ${TipoMM} ${PurchaseLocal}, Classe de avaliação ${MMclass.innerText}`}
 
     //NP ADM, ADM BOM
     if (itemType.id != "radio_FG") {
