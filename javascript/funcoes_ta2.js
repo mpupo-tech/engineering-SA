@@ -1001,10 +1001,10 @@ function ta2_description() {
 
 //alert(MMclass.innerText)
     if (importados.checked) {PurchaseLocal = "IMPORTADO"
-        alert("IMPORTADO")
+        //alert("IMPORTADO")
     }
         else {PurchaseLocal = "NACIONAL"
-        alert("NACIONAL")
+        //alert("NACIONAL")
     }
 
 
