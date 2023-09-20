@@ -217,6 +217,7 @@ Sub SQUARE()
     Range("K10005").Value = "SALES"
     Range("K10006").Value = "PRODUCT ENG."
     Range("K10007").Value = "PROJECT ENG."
+    Range("K10008").Value = "FG_NOTIFICATION"
     Range("L9998").Value = "NP_DL"
     Range("M9998").Value = "NP_IW"
     Range("N9998").Value = "ADM_DL"
@@ -232,10 +233,10 @@ Sub SQUARE()
     Range("O9999").Select
     ActiveCell.FormulaR1C1 = "=COUNTIFS(C16,RC11,C18,R9998C)"
 
-    Range("P10008").Select
-    ActiveCell.FormulaR1C1 = "=SUM(R[-9]C:R[-1]C)"
-    Range("Q10008").Select
-    ActiveCell.FormulaR1C1 = "=SUM(R[-9]C:R[-1]C)"
+    Range("P10009").Select
+    ActiveCell.FormulaR1C1 = "=SUM(R[-10]C:R[-1]C)"
+    Range("Q10009").Select
+    ActiveCell.FormulaR1C1 = "=SUM(R[-10]C:R[-1]C)"
    
     
     Range("K10012").Value = "FO"
@@ -259,21 +260,21 @@ Sub SQUARE()
     ActiveCell.FormulaR1C1 = "=COUNTIFS(C19,RC11,C18,R9998C)"
     Range("O10012").Select
     ActiveCell.FormulaR1C1 = "=COUNTIFS(C19,RC11,C18,R9998C)"
-    Range("P10008").Select
-    ActiveCell.FormulaR1C1 = "=SUM(R[-9]C:R[-1]C)"
-    Range("Q10008").Select
-    ActiveCell.FormulaR1C1 = "=SUM(R[-9]C:R[-1]C)"
+    'Range("P10008").Select
+    'ActiveCell.FormulaR1C1 = "=SUM(R[-9]C:R[-1]C)"
+    'Range("Q10008").Select
+    'ActiveCell.FormulaR1C1 = "=SUM(R[-9]C:R[-1]C)"
 
 '   INICIO REMOVE FORMULA GRAFICO
     
     Range("L9999:O9999").Select
     Selection.Copy
-    Range("L9999:O10007").Select
+    Range("L9999:O10008").Select
     ActiveSheet.Paste
     Application.CutCopyMode = False
 
 
-    Range("P10008:Q10008").Select
+    Range("P10009:Q10009").Select
     Selection.Copy
     ActiveSheet.Paste
     Application.CutCopyMode = False
@@ -291,23 +292,21 @@ Sub SQUARE()
         :=False, Transpose:=False
     Application.CutCopyMode = False
 
-    Range("P9998").Select
-    ActiveCell.FormulaR1C1 = "MCM DELAY"
+    Range("P9998").Value = "MCM DELAY"
     Range("P9999").Select
     ActiveCell.FormulaR1C1 = "=SUM(RC[-4],RC[-2])"
     'Range("P9999").Select
     'Selection.FillDown
-    Range("Q9998").Select
-    ActiveCell.FormulaR1C1 = "MCM TOTAL"
+    Range("Q9998").Value = "MCM TOTAL"
     Range("Q9999").Select
     ActiveCell.FormulaR1C1 = "=SUM(RC[-5]:RC[-2])"
     Range("P9999:Q9999").Select
     Selection.Copy
-    Range("P9999:Q10007").Select
+    Range("P9999:Q10008").Select
     ActiveSheet.Paste
     Application.CutCopyMode = False
 
-    Range("P9998:Q10022").Select
+    Range("P9998:Q10023").Select
     Selection.Copy
     Range("P9998").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
@@ -378,7 +377,7 @@ Sub SQUARE()
     Range("V10003").Value = "PURCHASING"
     Range("V10004").Value = "PROCESS ENG."
     Range("V10005").Value = "QUALITY"
-    Range("V10006").Value = "ENGINEERING"
+    Range("V10006").Value = "PRODUCT ENG."
     Range("V10007").Value = "PROJECT ENG."
     Range("W10012").Value = "NP_DL"
     Range("X10012").Value = "ADM_DL"
@@ -387,7 +386,7 @@ Sub SQUARE()
         
     Range("V10013").Value = "FO"
     Range("V10014").Value = "MA"
-    Range("V10015").Value = "MB"
+    Range("V10015").Value = "DA"
     Range("V10016").Value = "GM"
     Range("V10017").Value = "CN"
     Range("V10018").Value = "SC"
@@ -396,7 +395,8 @@ Sub SQUARE()
     Range("V10021").Value = "FC"
     Range("V10022").Value = "RE"
     Range("V10023").Value = "PS"
-    Range("V10024").Value = "TE"
+    Range("V10024").Value = "IV"
+    Range("V10025").Value = "TE"
     
     
 
@@ -502,10 +502,10 @@ Sub SQUARE()
 
     Range("W10013").FormulaR1C1 = "=COUNTIFS(C20,R10002C,C21,RC22,C4,""TSRL OPEN"")"
     Range("W10013").AutoFill Destination:=Range("W10013:Z10013"), Type:=xlFillDefault
-    Range("W10013:Z10013").AutoFill Destination:=Range("W10013:Z10024"), Type:=xlFillDefault
+    Range("W10013:Z10013").AutoFill Destination:=Range("W10013:Z10025"), Type:=xlFillDefault
 
     Range("V10002").FormulaR1C1 = "=SUM(R[1]C[1]:R[5]C[4])"
-    Range("V10012").FormulaR1C1 = "=SUM(R[1]C[1]:R[12]C[4])"
+    Range("V10012").FormulaR1C1 = "=SUM(R[1]C[1]:R[13]C[4])"
 
 
     
@@ -568,6 +568,8 @@ Sub SQUARE()
     ActiveWindow.Close
 '
 End Sub
+
+
 
 
 

@@ -186,10 +186,12 @@ function ta2_workflow() {
     var ProcessosSAP02180_Prazo = 180
     var Qualidade02180_Prazo = 180
     var Produto02180_Prazo = 180
+    var NotificacaoProducao = 30
+    var NotificacaoExpedicao = 30
     var PtCortePcp02 = 10
     var Projetos02_Prazo = 5
 
-
+//2023.09.06 - FALTA ACRESCENTAR PRODUCAO E EXPEDIÇÃO
 
 
 
@@ -201,7 +203,7 @@ function ta2_workflow() {
     var userID_Cost = "ANDRCAR2"
     var userID_Fiscal = "GERVPETR"
     var userID_PPAP = "MAERLEON"
-    var userID_InspQual = "JOSEGASP"
+    var userID_InspQual = "MAERLEON"
     var userID_PCPimportados = "GIULSILV"
 
     //ID OPR COMPRADOS
@@ -246,40 +248,39 @@ function ta2_workflow() {
     // LIBERF72
 
   
-    if (customerName_short == "VWL") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "GMB") { ProdutoID = 'NADIDINI'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "PSA") { ProdutoID = 'NADIDINI'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "FRD") { ProdutoID = 'NADIDINI'; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "SCN") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "DA6") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'WELLDESO'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "DA5") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'FLAVCATA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "FCA") { ProdutoID = 'NADIDINI'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "CNH") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "KIA") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; VendasID = 'CARLMART'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "HYU") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "CHE") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "HPE") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "CAO") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "REN") { ProdutoID = 'NADIDINI'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "NIS") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
-    if (customerName_short == "ARG") { ProdutoID = 'JEANFRA1'; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-    if (customerName_short == "TEN") { ProdutoID = 'JEANFRA1'; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
-            ProdutoID = administrador;
+    if (customerName_short == "VWL") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'EDMALIMA'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "GMB") { ProdutoID = 'NADIDINI'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "PSA") { ProdutoID = 'NADIDINI'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "FRD") { ProdutoID = 'NADIDINI'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GRASDASI'; ProcessosID = 'ROMUMART'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "VWC") { ProdutoID = 'DENICARD'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "SCN") { ProdutoID = 'DENICARD'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "DA6") { ProdutoID = 'MAYCOLIV'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'CARLMART'; ProcessosID = 'WELLDESO'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "DA5") { ProdutoID = 'MAYCOLIV'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'CARLMART'; ProcessosID = 'FLAVCATA'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "FCA") { ProdutoID = 'NADIDINI'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'CLEYALVE'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "CNH") { ProdutoID = 'DENICARD'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "KIA") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "MWM") { ProdutoID = 'DENICARD'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'CARLMART'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "HYU") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "CHE") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "HPE") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "CAO") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "REN") { ProdutoID = 'NADIDINI'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'VITODAMA'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "VOL") { ProdutoID = 'DENICARD'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'GRASDASI'; ProcessosID = 'LUCACALE'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "NIS") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "IVE") { ProdutoID = 'DENICARD'; ProducaoID = "EDIVCAVE"; ExpedicaoID = "JOAONETO"; VendasID = 'CLEYALVE'; ProcessosID = 'EDMALIMA'; QualidadeID = 'DIOGBOVE'; PCPFabricadosID = 'CIRINA14'} else {
+    if (customerName_short == "ARG") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'CARLMART'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+    if (customerName_short == "TEN") { ProdutoID = 'MAYCOLIV'; ProducaoID = "SERGMORA"; ExpedicaoID = "JOAONETO"; VendasID = 'GUSTTERR'; ProcessosID = 'ROMUMART'; QualidadeID = 'JULILOPE'; PCPFabricadosID = 'NADEFERR'} else {
+        ProdutoID = administrador;
+        ProducaoID = administrador;
+        ExpedicaoID = administrador;
         VendasID = administrador;
         ProcessosID = administrador;
         QualidadeID = administrador;
-        PCPFabricadosID = administrador
+        PCPFabricadosID = administrador;
         }}}}}}}}}}}}}}}}}}}}}}
 
 
         
-      
-
-
 //FORMULARIO
 
 
@@ -335,6 +336,8 @@ if (importados.checked && (TipoMM.value == "COMPONENTE CONTA PLENA" || TipoMM.va
 if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ProducaoID = administrador; NotificacaoProducao = 0;
+    ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
@@ -348,6 +351,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
 } else {if (itemType_short == 'radio_GSCM' && (itensComprados == 'GSCM_022')) {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ProducaoID = administrador; NotificacaoProducao = 0;
+    ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
@@ -361,6 +366,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
 } else { if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_006' && (customerName_short == "FCA" || customerName_short == "MWM")) {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ProducaoID = administrador; NotificacaoProducao = 0;
+    ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
@@ -375,6 +382,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
 } else { if (itemType_short == 'radio_GSCM' && itensComprados == 'GSCM_006') {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ProducaoID = administrador; NotificacaoProducao = 0;
+    ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
@@ -388,6 +397,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
 } else { if (itemType_short == 'radio_GSCM') {
     PCP_ID = PCPCompradosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ProducaoID = administrador; NotificacaoProducao = 0;
+    ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = ComprasID; Compras01_Prazo = 5; Compras02_Prazo = 30; 
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = userID_PPAP; PPAP01_Prazo = 5;
@@ -405,11 +416,15 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
+    
+
 
 
 } else { if (itemType_short == 'radio_SA') {
     PCP_ID = PCPFabricadosID; PCP01_Prazo = 5;
     ProcessosSAPID = administrador; ProcessosSAP01_Prazo = 0;
+    ProducaoID = administrador; NotificacaoProducao = 0;
+    ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = administrador; Compras01_Prazo = 0; Compras02_Prazo = 0; 
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
@@ -440,6 +455,8 @@ if (prazoSeriesP == "30") {
     PPAP0230_Prazo = 30
     ProcessosID30 = ProcessosID
     ProcessosSAP0230_Prazo = 30
+    NotificacaoProducao = 30
+    NotificacaoExpedicao = 30
     QualidadeID30 = QualidadeID
     Qualidade0230_Prazo = 30
     ProdutoID30 = ProdutoID
@@ -458,6 +475,8 @@ if (prazoSeriesP == "30") {
     if (prazoSeriesP == "90") {
     userID_PPAP90 = userID_PPAP
     PPAP0290_Prazo = 90
+    NotificacaoProducao = 90
+    NotificacaoExpedicao = 90
     ProcessosID90 = ProcessosID
     ProcessosSAP0290_Prazo = 90
     QualidadeID90 = QualidadeID
@@ -480,6 +499,8 @@ if (prazoSeriesP == "30") {
     PPAP02180_Prazo = 180
     ProcessosID180 = ProcessosID
     ProcessosSAP02180_Prazo = 180
+    NotificacaoProducao = 180
+    NotificacaoExpedicao = 180
     QualidadeID180 = QualidadeID
     Qualidade02180_Prazo = 180
     ProdutoID180 = ProdutoID
@@ -534,9 +555,11 @@ document.getElementById("nomeID20").innerHTML = userID_PPAP180;
 document.getElementById("nomeID21").innerHTML = ProcessosID180;
 document.getElementById("nomeID22").innerHTML = QualidadeID180;
 document.getElementById("nomeID23").innerHTML = ProdutoID180;
+document.getElementById("nomeID24").innerHTML = ProducaoID;
+document.getElementById("nomeID25").innerHTML = ExpedicaoID;
 
-document.getElementById("nomeID24").innerHTML = PtCortePcpID;
-document.getElementById("nomeID25").innerHTML = ProjetosID002;
+document.getElementById("nomeID26").innerHTML = PtCortePcpID;
+document.getElementById("nomeID27").innerHTML = ProjetosID002;
 
 //TABELA TA2
 document.getElementById("TA2_nomeID01").innerHTML = userID_Cost;
@@ -562,8 +585,10 @@ document.getElementById("TA2_nomeID20").innerHTML = userID_PPAP180;
 document.getElementById("TA2_nomeID21").innerHTML = ProcessosID180;
 document.getElementById("TA2_nomeID22").innerHTML = QualidadeID180;
 document.getElementById("TA2_nomeID23").innerHTML = ProdutoID180;
-document.getElementById("TA2_nomeID24").innerHTML = PtCortePcpID;
-document.getElementById("TA2_nomeID25").innerHTML = ProjetosID002;
+document.getElementById("TA2_nomeID24").innerHTML = ProducaoID;
+document.getElementById("TA2_nomeID25").innerHTML = ExpedicaoID;
+document.getElementById("TA2_nomeID26").innerHTML = PtCortePcpID;
+document.getElementById("TA2_nomeID27").innerHTML = ProjetosID002;
 
 
 //NOME COMPLETO
@@ -589,6 +614,8 @@ userID_PPAP180_nomeFull = document.getElementById(userID_PPAP180).innerText
 ProcessosID180_nomeFull = document.getElementById(ProcessosID180).innerText
 QualidadeID180_nomeFull = document.getElementById(QualidadeID180).innerText
 ProdutoID180_nomeFull = document.getElementById(ProdutoID180).innerText
+Producao_nomeFull = document.getElementById(ProducaoID).innerText
+Expedicao_nomeFull = document.getElementById(ExpedicaoID).innerText
 PtCortePcpID_nomeFull = document.getElementById(PtCortePcpID).innerText
 ProjetosID002_nomeFull = document.getElementById(ProjetosID002).innerText
 
@@ -615,8 +642,10 @@ document.getElementById("nome20").innerHTML = userID_PPAP180_nomeFull;
 document.getElementById("nome21").innerHTML = ProcessosID180_nomeFull;
 document.getElementById("nome22").innerHTML = QualidadeID180_nomeFull;
 document.getElementById("nome23").innerHTML = ProdutoID180_nomeFull;
-document.getElementById("nome24").innerHTML = PtCortePcpID_nomeFull;
-document.getElementById("nome25").innerHTML = ProjetosID002_nomeFull;
+document.getElementById("nome24").innerHTML = Producao_nomeFull;
+document.getElementById("nome25").innerHTML = Expedicao_nomeFull;
+document.getElementById("nome26").innerHTML = PtCortePcpID_nomeFull;
+document.getElementById("nome27").innerHTML = ProjetosID002_nomeFull;
 //FIM NOME COMPLETO
 
 // PRAZOS
@@ -652,10 +681,12 @@ document.getElementById("task20").innerHTML = PPAP02180_Prazo;
 document.getElementById("task21").innerHTML = ProcessosSAP02180_Prazo;
 document.getElementById("task22").innerHTML = Qualidade02180_Prazo;
 document.getElementById("task23").innerHTML = Produto02180_Prazo;
+document.getElementById("task24").innerHTML = NotificacaoProducao;
+document.getElementById("task25").innerHTML = NotificacaoExpedicao;
 //10
-document.getElementById("task24").innerHTML = PtCortePcp02;
+document.getElementById("task26").innerHTML = PtCortePcp02;
 //11
-document.getElementById("task25").innerHTML = Projetos02_Prazo;
+document.getElementById("task27").innerHTML = Projetos02_Prazo;
 
 //GRUPOS NIVEIS (CALCULOS)
 
@@ -699,26 +730,26 @@ date_nivel06.setDate(date_nivel05.getDate()+nivel06);
 date_nivel06_full = (date_nivel06.getDate().toString().length == 1 ? '0' + date_nivel06.getDate().toString() : date_nivel06.getDate().toString()) + '.' + ((date_nivel06.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel06.getMonth() + 1).toString() : (date_nivel06.getMonth() + 1).toString()) + '.' + date_nivel06.getFullYear()
 
 
-nivel07 = Math.max(PPAP0230_Prazo,ProcessosSAP0230_Prazo,Qualidade0230_Prazo,Produto0230_Prazo)
+nivel07 = Math.max(PPAP0230_Prazo,ProcessosSAP0230_Prazo,Qualidade0230_Prazo,Produto0230_Prazo,PPAP0290_Prazo,ProcessosSAP0290_Prazo,Qualidade0290_Prazo,Produto0290_Prazo,PPAP02180_Prazo,ProcessosSAP02180_Prazo,Qualidade02180_Prazo,Produto02180_Prazo,NotificacaoProducao, NotificacaoExpedicao)
 var date_nivel07 = new Date(date_nivel06);
 date_nivel07.setDate(date_nivel06.getDate()+nivel07);
 date_nivel07_full = (date_nivel07.getDate().toString().length == 1 ? '0' + date_nivel07.getDate().toString() : date_nivel07.getDate().toString()) + '.' + ((date_nivel07.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel07.getMonth() + 1).toString() : (date_nivel07.getMonth() + 1).toString()) + '.' + date_nivel07.getFullYear()
 
 
-nivel08 = Math.max(PPAP0290_Prazo,ProcessosSAP0290_Prazo,Qualidade0290_Prazo,Produto0290_Prazo)
-var date_nivel08 = new Date(date_nivel07);
-date_nivel08.setDate(date_nivel07.getDate()+nivel08);
-date_nivel08_full = (date_nivel08.getDate().toString().length == 1 ? '0' + date_nivel08.getDate().toString() : date_nivel08.getDate().toString()) + '.' + ((date_nivel08.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel08.getMonth() + 1).toString() : (date_nivel08.getMonth() + 1).toString()) + '.' + date_nivel08.getFullYear()
-
-nivel09 = Math.max(PPAP02180_Prazo,ProcessosSAP02180_Prazo,Qualidade02180_Prazo,Produto02180_Prazo)
-var date_nivel09 = new Date(date_nivel08);
-date_nivel09.setDate(date_nivel08.getDate()+nivel09);
-date_nivel09_full = (date_nivel09.getDate().toString().length == 1 ? '0' + date_nivel09.getDate().toString() : date_nivel09.getDate().toString()) + '.' + ((date_nivel09.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel09.getMonth() + 1).toString() : (date_nivel09.getMonth() + 1).toString()) + '.' + date_nivel09.getFullYear()
+//nivel08 = Math.max(PPAP0290_Prazo,ProcessosSAP0290_Prazo,Qualidade0290_Prazo,Produto0290_Prazo)
+//var date_nivel08 = new Date(date_nivel07);
+//date_nivel08.setDate(date_nivel07.getDate()+nivel08);
+//date_nivel08_full = (date_nivel08.getDate().toString().length == 1 ? '0' + date_nivel08.getDate().toString() : date_nivel08.getDate().toString()) + '.' + ((date_nivel08.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel08.getMonth() + 1).toString() : (date_nivel08.getMonth() + 1).toString()) + '.' + date_nivel08.getFullYear()
+//
+//nivel09 = Math.max(PPAP02180_Prazo,ProcessosSAP02180_Prazo,Qualidade02180_Prazo,Produto02180_Prazo)
+//var date_nivel09 = new Date(date_nivel08);
+//date_nivel09.setDate(date_nivel08.getDate()+nivel09);
+//date_nivel09_full = (date_nivel09.getDate().toString().length == 1 ? '0' + date_nivel09.getDate().toString() : date_nivel09.getDate().toString()) + '.' + ((date_nivel09.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel09.getMonth() + 1).toString() : (date_nivel09.getMonth() + 1).toString()) + '.' + date_nivel09.getFullYear()
 
 
 nivel10 = Math.max(PtCortePcp02)
-var date_nivel10 = new Date(date_nivel09);
-date_nivel10.setDate(date_nivel09.getDate()+nivel10);
+var date_nivel10 = new Date(date_nivel07);
+date_nivel10.setDate(date_nivel07.getDate()+nivel10);
 date_nivel10_full = (date_nivel10.getDate().toString().length == 1 ? '0' + date_nivel10.getDate().toString() : date_nivel10.getDate().toString()) + '.' + ((date_nivel10.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel10.getMonth() + 1).toString() : (date_nivel10.getMonth() + 1).toString()) + '.' + date_nivel10.getFullYear()
 
 
@@ -727,7 +758,10 @@ var date_nivel11 = new Date(date_nivel10);
 date_nivel11.setDate(date_nivel10.getDate()+nivel11);
 date_nivel11_full = (date_nivel11.getDate().toString().length == 1 ? '0' + date_nivel11.getDate().toString() : date_nivel11.getDate().toString()) + '.' + ((date_nivel11.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel11.getMonth() + 1).toString() : (date_nivel11.getMonth() + 1).toString()) + '.' + date_nivel11.getFullYear()
 
-var periodototal = nivel01 + nivel02 + nivel03 + nivel04 + nivel05 + nivel06 + nivel07 + nivel08 + nivel09 + nivel10 + nivel11
+var periodototal = nivel01 + nivel02 + nivel03 + nivel04 + nivel05 + nivel06 + nivel07 + nivel10 + nivel11
+
+
+
 
 //START DATE
 
@@ -792,46 +826,53 @@ var date_nivel15_due = new Date(date_nivel06)
 date_nivel15_due.setDate(date_nivel06.getDate()+Produto0230_Prazo)
 date_nivel15_due_std = (date_nivel15_due.getDate().toString().length == 1 ? '0' + date_nivel15_due.getDate().toString() : date_nivel15_due.getDate().toString()) + '.' + ((date_nivel15_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel15_due.getMonth() + 1).toString() : (date_nivel15_due.getMonth() + 1).toString()) + '.' + date_nivel15_due.getFullYear()
 
-var date_nivel16_due = new Date(date_nivel07)
-date_nivel16_due.setDate(date_nivel07.getDate()+PPAP0290_Prazo)
+var date_nivel16_due = new Date(date_nivel06)
+date_nivel16_due.setDate(date_nivel06.getDate()+PPAP0290_Prazo)
 date_nivel16_due_std = (date_nivel16_due.getDate().toString().length == 1 ? '0' + date_nivel16_due.getDate().toString() : date_nivel16_due.getDate().toString()) + '.' + ((date_nivel16_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel16_due.getMonth() + 1).toString() : (date_nivel16_due.getMonth() + 1).toString()) + '.' + date_nivel16_due.getFullYear()
 
-var date_nivel17_due = new Date(date_nivel07)
-date_nivel17_due.setDate(date_nivel07.getDate()+ProcessosSAP0290_Prazo)
+var date_nivel17_due = new Date(date_nivel06)
+date_nivel17_due.setDate(date_nivel06.getDate()+ProcessosSAP0290_Prazo)
 date_nivel17_due_std = (date_nivel17_due.getDate().toString().length == 1 ? '0' + date_nivel17_due.getDate().toString() : date_nivel17_due.getDate().toString()) + '.' + ((date_nivel17_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel17_due.getMonth() + 1).toString() : (date_nivel17_due.getMonth() + 1).toString()) + '.' + date_nivel17_due.getFullYear()
 
-var date_nivel18_due = new Date(date_nivel07)
-date_nivel18_due.setDate(date_nivel07.getDate()+Qualidade0290_Prazo)
+var date_nivel18_due = new Date(date_nivel06)
+date_nivel18_due.setDate(date_nivel06.getDate()+Qualidade0290_Prazo)
 date_nivel18_due_std = (date_nivel18_due.getDate().toString().length == 1 ? '0' + date_nivel18_due.getDate().toString() : date_nivel18_due.getDate().toString()) + '.' + ((date_nivel18_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel18_due.getMonth() + 1).toString() : (date_nivel18_due.getMonth() + 1).toString()) + '.' + date_nivel18_due.getFullYear()
 
-var date_nivel19_due = new Date(date_nivel07)
-date_nivel19_due.setDate(date_nivel07.getDate()+Produto0290_Prazo)
+var date_nivel19_due = new Date(date_nivel06)
+date_nivel19_due.setDate(date_nivel06.getDate()+Produto0290_Prazo)
 date_nivel19_due_std = (date_nivel19_due.getDate().toString().length == 1 ? '0' + date_nivel19_due.getDate().toString() : date_nivel19_due.getDate().toString()) + '.' + ((date_nivel19_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel19_due.getMonth() + 1).toString() : (date_nivel19_due.getMonth() + 1).toString()) + '.' + date_nivel19_due.getFullYear()
 
-var date_nivel20_due = new Date(date_nivel08)
-date_nivel20_due.setDate(date_nivel08.getDate()+PPAP02180_Prazo)
+var date_nivel20_due = new Date(date_nivel06)
+date_nivel20_due.setDate(date_nivel06.getDate()+PPAP02180_Prazo)
 date_nivel20_due_std = (date_nivel20_due.getDate().toString().length == 1 ? '0' + date_nivel20_due.getDate().toString() : date_nivel20_due.getDate().toString()) + '.' + ((date_nivel20_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel20_due.getMonth() + 1).toString() : (date_nivel20_due.getMonth() + 1).toString()) + '.' + date_nivel20_due.getFullYear()
 
-var date_nivel21_due = new Date(date_nivel08)
-date_nivel21_due.setDate(date_nivel08.getDate()+ProcessosSAP02180_Prazo)
+var date_nivel21_due = new Date(date_nivel06)
+date_nivel21_due.setDate(date_nivel06.getDate()+ProcessosSAP02180_Prazo)
 date_nivel21_due_std = (date_nivel21_due.getDate().toString().length == 1 ? '0' + date_nivel21_due.getDate().toString() : date_nivel21_due.getDate().toString()) + '.' + ((date_nivel21_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel21_due.getMonth() + 1).toString() : (date_nivel21_due.getMonth() + 1).toString()) + '.' + date_nivel21_due.getFullYear()
 
-var date_nivel22_due = new Date(date_nivel08)
-date_nivel22_due.setDate(date_nivel08.getDate()+Qualidade02180_Prazo)
+var date_nivel22_due = new Date(date_nivel06)
+date_nivel22_due.setDate(date_nivel06.getDate()+Qualidade02180_Prazo)
 date_nivel22_due_std = (date_nivel22_due.getDate().toString().length == 1 ? '0' + date_nivel22_due.getDate().toString() : date_nivel22_due.getDate().toString()) + '.' + ((date_nivel22_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel22_due.getMonth() + 1).toString() : (date_nivel22_due.getMonth() + 1).toString()) + '.' + date_nivel22_due.getFullYear()
 
-var date_nivel23_due = new Date(date_nivel08)
-date_nivel23_due.setDate(date_nivel08.getDate()+Produto02180_Prazo)
+var date_nivel23_due = new Date(date_nivel06)
+date_nivel23_due.setDate(date_nivel06.getDate()+Produto02180_Prazo)
 date_nivel23_due_std = (date_nivel23_due.getDate().toString().length == 1 ? '0' + date_nivel23_due.getDate().toString() : date_nivel23_due.getDate().toString()) + '.' + ((date_nivel23_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel23_due.getMonth() + 1).toString() : (date_nivel23_due.getMonth() + 1).toString()) + '.' + date_nivel23_due.getFullYear()
 
-var date_nivel24_due = new Date(date_nivel09)
-date_nivel24_due.setDate(date_nivel09.getDate()+PtCortePcp02)
+var date_nivel24_due = new Date(date_nivel06)
+date_nivel24_due.setDate(date_nivel06.getDate()+NotificacaoProducao)
 date_nivel24_due_std = (date_nivel24_due.getDate().toString().length == 1 ? '0' + date_nivel24_due.getDate().toString() : date_nivel24_due.getDate().toString()) + '.' + ((date_nivel24_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel24_due.getMonth() + 1).toString() : (date_nivel24_due.getMonth() + 1).toString()) + '.' + date_nivel24_due.getFullYear()
 
-var date_nivel25_due = new Date(date_nivel10)
-date_nivel25_due.setDate(date_nivel10.getDate()+Projetos02_Prazo)
+var date_nivel25_due = new Date(date_nivel06)
+date_nivel25_due.setDate(date_nivel06.getDate()+NotificacaoExpedicao)
 date_nivel25_due_std = (date_nivel25_due.getDate().toString().length == 1 ? '0' + date_nivel25_due.getDate().toString() : date_nivel25_due.getDate().toString()) + '.' + ((date_nivel25_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel25_due.getMonth() + 1).toString() : (date_nivel25_due.getMonth() + 1).toString()) + '.' + date_nivel25_due.getFullYear()
 
+var date_nivel26_due = new Date(date_nivel07)
+date_nivel26_due.setDate(date_nivel07.getDate()+PtCortePcp02)
+date_nivel26_due_std = (date_nivel26_due.getDate().toString().length == 1 ? '0' + date_nivel26_due.getDate().toString() : date_nivel26_due.getDate().toString()) + '.' + ((date_nivel26_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel26_due.getMonth() + 1).toString() : (date_nivel26_due.getMonth() + 1).toString()) + '.' + date_nivel26_due.getFullYear()
+
+var date_nivel27_due = new Date(date_nivel10)
+date_nivel27_due.setDate(date_nivel10.getDate()+Projetos02_Prazo)
+date_nivel27_due_std = (date_nivel27_due.getDate().toString().length == 1 ? '0' + date_nivel27_due.getDate().toString() : date_nivel27_due.getDate().toString()) + '.' + ((date_nivel27_due.getMonth() + 1).toString().length == 1 ? '0' + (date_nivel27_due.getMonth() + 1).toString() : (date_nivel27_due.getMonth() + 1).toString()) + '.' + date_nivel27_due.getFullYear()
 
 document.getElementById("TA2_start01").innerHTML = dateStart
 document.getElementById("TA2_start02").innerHTML = date_nivel01_full
@@ -848,16 +889,18 @@ document.getElementById("TA2_start12").innerHTML = date_nivel06_full
 document.getElementById("TA2_start13").innerHTML = date_nivel06_full
 document.getElementById("TA2_start14").innerHTML = date_nivel06_full
 document.getElementById("TA2_start15").innerHTML = date_nivel06_full
-document.getElementById("TA2_start16").innerHTML = date_nivel07_full
-document.getElementById("TA2_start17").innerHTML = date_nivel07_full
-document.getElementById("TA2_start18").innerHTML = date_nivel07_full
-document.getElementById("TA2_start19").innerHTML = date_nivel07_full
-document.getElementById("TA2_start20").innerHTML = date_nivel08_full
-document.getElementById("TA2_start21").innerHTML = date_nivel08_full
-document.getElementById("TA2_start22").innerHTML = date_nivel08_full
-document.getElementById("TA2_start23").innerHTML = date_nivel08_full
-document.getElementById("TA2_start24").innerHTML = date_nivel09_full
-document.getElementById("TA2_start25").innerHTML = date_nivel10_full
+document.getElementById("TA2_start16").innerHTML = date_nivel06_full
+document.getElementById("TA2_start17").innerHTML = date_nivel06_full
+document.getElementById("TA2_start18").innerHTML = date_nivel06_full
+document.getElementById("TA2_start19").innerHTML = date_nivel06_full
+document.getElementById("TA2_start20").innerHTML = date_nivel06_full
+document.getElementById("TA2_start21").innerHTML = date_nivel06_full
+document.getElementById("TA2_start22").innerHTML = date_nivel06_full
+document.getElementById("TA2_start23").innerHTML = date_nivel06_full
+document.getElementById("TA2_start24").innerHTML = date_nivel06_full
+document.getElementById("TA2_start25").innerHTML = date_nivel06_full
+document.getElementById("TA2_start26").innerHTML = date_nivel07_full
+document.getElementById("TA2_start27").innerHTML = date_nivel10_full
 
 document.getElementById("TA2_Due01").innerHTML = date_nivel01_due_std
 document.getElementById("TA2_Due02").innerHTML = date_nivel02_due_std
@@ -884,6 +927,8 @@ document.getElementById("TA2_Due22").innerHTML = date_nivel22_due_std
 document.getElementById("TA2_Due23").innerHTML = date_nivel23_due_std
 document.getElementById("TA2_Due24").innerHTML = date_nivel24_due_std
 document.getElementById("TA2_Due25").innerHTML = date_nivel25_due_std
+document.getElementById("TA2_Due26").innerHTML = date_nivel26_due_std
+document.getElementById("TA2_Due27").innerHTML = date_nivel27_due_std
 
 
 document.getElementById('inputTest1_ta2').innerHTML = ""
