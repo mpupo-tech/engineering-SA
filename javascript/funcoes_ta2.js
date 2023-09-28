@@ -416,6 +416,7 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     VendasID = VendasID; Vendas01_Prazo = 4;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
+    MMclass = "5001"
     
 
 
@@ -429,6 +430,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     VendasID = administrador; Vendas01_Prazo = 0;
     userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
+    MMclass = "4006"
+
     }}}}}}}
 
 
