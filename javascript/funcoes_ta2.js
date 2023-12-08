@@ -202,8 +202,9 @@ function ta2_workflow() {
 //RESPONSAVEIS FIXOS
     var userID_Cost = "ANDRCAR2"
     var userID_Fiscal = "GERVPETR"
-    var userID_PPAP = "MAERLEON"
-    var userID_InspQual = "FUJIMM34"
+    var userID_PPAP = "FUJIMM34"
+    var userID_PPAPFULL = "MAERLEON"
+    var userID_InspQual = "MAERLEON"
     var userID_PCPimportados = "GIULSILV"
 
     //ID OPR COMPRADOS
@@ -414,7 +415,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     ProcessosSAPID = ProcessosID; ProcessosSAP01_Prazo = 14;
     ComprasID = administrador; Compras01_Prazo = 0; Compras02_Prazo = 0; 
     VendasID = VendasID; Vendas01_Prazo = 4;
-    userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
+    userID_PPAP = administrador; PPAP01_Prazo = 0;
+    userID_PPAPFULL = administrador; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
     MMclass = "5001"
     
@@ -428,7 +430,8 @@ if ((itemType_short == 'radio_GSCM') && (itensComprados == 'GSCM_021')) {
     ExpedicaoID = administrador;NotificacaoExpedicao = 0;
     ComprasID = administrador; Compras01_Prazo = 0; Compras02_Prazo = 0; 
     VendasID = administrador; Vendas01_Prazo = 0;
-    userID_PPAP = administrador; PPAP01_Prazo = 0; PPAP02_Prazo = 0;
+    userID_PPAP = administrador; PPAP01_Prazo = 0;
+    userID_PPAPFULL = administrador; PPAP02_Prazo = 0;
     userID_InspQual = administrador; InspQual01_Prazo = 0;
     MMclass = "4006"
 
@@ -460,7 +463,7 @@ document.getElementById("inputDescricaoMCM").innerText = MMclass
 //VERIFICAR PARA DIMINUIR A QUANTIDADE DE LINHAS.
 
 if (prazoSeriesP == "30") {
-    userID_PPAP30 = userID_PPAP
+    userID_PPAP30 = userID_PPAPFULL
     PPAP0230_Prazo = 30
     ProcessosID30 = ProcessosID
     ProcessosSAP0230_Prazo = 30
@@ -482,7 +485,7 @@ if (prazoSeriesP == "30") {
     }
 
     if (prazoSeriesP == "90") {
-    userID_PPAP90 = userID_PPAP
+    userID_PPAP90 = userID_PPAPFULL
     PPAP0290_Prazo = 90
     NotificacaoProducao = 90
     NotificacaoExpedicao = 90
@@ -504,7 +507,7 @@ if (prazoSeriesP == "30") {
     }
 
     if (prazoSeriesP == "180") {
-    userID_PPAP180 = userID_PPAP
+    userID_PPAP180 = userID_PPAPFULL
     PPAP02180_Prazo = 180
     ProcessosID180 = ProcessosID
     ProcessosSAP02180_Prazo = 180
